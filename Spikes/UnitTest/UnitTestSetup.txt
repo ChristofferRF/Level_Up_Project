@@ -1,0 +1,63 @@
+---------------------
+UnitTestSpikeFormsApp
+---------------------
+Start visual studio
+Nyt project
+winforms
+Name : UnitTestSpikeFormsApp
+Tilføj klasse, her ligger de metoder testen skal bruge, Add(int a, int b)
+
+Opret nyt project, dette er selve testprojektet[class library]
+Name : UnitTest
+Tilføj klasse, denne er testklasse, Unittest
+Tilføj følgende referencer:
+(Disse referencer skal reference fra Unittesten og ud ad)
+
+	using Microsoft.VisualStudio.TestTools.UnitTesting;
+	(husk add reference fra 'UnitTest' til 'UnitTestSpikeFormsApp')
+
+	using UnitTestSpikeFormsApp; // using reference
+	(husk add reference fre 'UnitTest' til 'Microsoft.VisualStudioQualityToolsUnittestFramework')
+	
+
+Husk klasse skal være public, testklassen UnitTest
+Den skal dekoreres med attributten [testClass]
+De metoder der skal anvendes som testmetoder skal dekoreres med attributten [TestMethod]
+
+
+
+
+-----------------------
+UnitTestSpikeController
+-----------------------
+Start up Visual studio
+Nyt project
+winforms
+name : UnitTestSpikeController
+Tilføj to nye projekter begge class libraries, ModelLayer og ControlLayer
+
+Tilføj klasse til ModelLayer 'ApplicationUser'
+Opret instansvariable samt createUsermetoden
+ 
+Tilføj ny klasse til ControlLayer 'AppUserCtr'
+Tilføj reference reference fra controlLayer til ModelLayer
+using ModelLayer;
+Opret createUser metoden fra ApplicationUser i ModelLayer i ControlLayer
+
+Opret projekt mere i solution 'UnitTest'
+Tilføj reference fra UnitTest til ControlLayer
+Tilføj reference fra Unittest til Microsoft.VisualStudioQualityToolsUnittestFramework
+Husk using af begge to i klassen testklasse
+
+Testklassen skal være public
+Dekorer testklassen med attributten [TestClass]
+Dekorer testmetode med attributten [TestMethod]
+
+
+
+For at teste:
+i visual studio få test explorer frem
+->hovedmenu->test->windowa->test explorer
+
+CreateUserTest skulle nu figurere i test explorer vinduet
+RunAll kører testen
