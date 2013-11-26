@@ -11,8 +11,14 @@ namespace RESTtest
     // NOTE: In order to launch WCF Test Client for testing this service, please select PersonService.svc or PersonService.svc.cs at the Solution Explorer and start debugging.
     public class PersonService : IPersonService
     {
-        public void DoWork()
+        public string XMLData(string id)
         {
+            return "XML personid:  " + id;
+        }
+
+        public string JSONData(string id)
+        {
+            return "JSON personid " + id;
         }
     }
 }
