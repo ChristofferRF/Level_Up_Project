@@ -40,6 +40,13 @@ namespace RESTtest
             PersonModel pm = new PersonModel();
             return pm;
         }
+
+        public PersonModel JSONPostObject(string name)
+        {
+            PersonModel pm = new PersonModel();
+            pm.Name = name;
+            return pm;
+        }
         public string XMLUpdatePerson(string name)
         {
             XmlSerializer xs = new XmlSerializer(typeof(PersonModel));

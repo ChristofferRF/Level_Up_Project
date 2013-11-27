@@ -40,12 +40,18 @@ namespace RESTtest
             UriTemplate = "jsonobject/")]
         PersonModel JSONPersonObject();
 
+        [OperationContract]
+        [WebInvoke(Method = "POST",
+            ResponseFormat = WebMessageFormat.Json,
+            BodyStyle = WebMessageBodyStyle.Wrapped,
+            UriTemplate = "jsonpostobject")]
+        PersonModel JSONPostObject(string name);
 
         [OperationContract]
         [WebInvoke(Method = "POST",
             ResponseFormat = WebMessageFormat.Xml,
-            BodyStyle = WebMessageBodyStyle.Wrapped,
-            UriTemplate = "xmlobjectput/{name}")]
+            BodyStyle = WebMessageBodyStyle.Bare,
+            UriTemplate = "xmlobjectput")]
         string XMLUpdatePerson(string name);
 
     }
