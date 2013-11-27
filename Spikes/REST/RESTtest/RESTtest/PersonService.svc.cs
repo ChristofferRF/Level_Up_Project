@@ -4,6 +4,9 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
+using System.Xml.Serialization;
+using System.Xml;
+using System.IO;
 
 namespace RESTtest
 {
@@ -19,6 +22,34 @@ namespace RESTtest
         public string JSONData(string id)
         {
             return "JSON personid " + id;
+        }
+
+        public string XMLPersonObject()
+        {
+            XmlSerializer xs = new XmlSerializer(typeof(PersonModel));
+            var obj = new PersonModel();
+            StringWriter sw = new StringWriter();
+            XmlWriter writer = XmlWriter.Create(sw);
+            xs.Serialize(writer, obj);
+            string xml = sw.ToString();
+            return xml;
+        }
+
+        public PersonModel JSONPersonObject()
+        {
+            PersonModel pm = new PersonModel();
+            return pm;
+        }
+        public string XMLUpdatePerson(string name)
+        {
+            XmlSerializer xs = new XmlSerializer(typeof(PersonModel));
+            var obj = new PersonModel();
+            obj.Name = name;
+            StringWriter sw = new StringWriter();
+            XmlWriter writer = XmlWriter.Create(sw);
+            xs.Serialize(writer, obj);
+            string xml = sw.ToString();
+            return xml;
         }
     }
 }
