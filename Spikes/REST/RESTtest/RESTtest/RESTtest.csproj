@@ -63,6 +63,9 @@
     <None Include="Service References\ServiceReference\PersonService.disco" />
     <None Include="Service References\ServiceReference\configuration91.svcinfo" />
     <None Include="Service References\ServiceReference\configuration.svcinfo" />
+    <None Include="Service References\ServiceReference\PersonService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\ServiceReference\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
@@ -95,6 +98,9 @@
     <None Include="Service References\ServiceReference\PersonService1.xsd">
       <SubType>Designer</SubType>
     </None>
+    <Content Include="Service References\ServiceReference\RESTtest.ServiceReference.PersonModel.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

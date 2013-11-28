@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
+using System.ServiceModel.Activation;
 using System.Text;
 using System.Xml.Serialization;
 using System.Xml;
@@ -10,6 +11,11 @@ using System.IO;
 
 namespace RESTtest
 {
+    [AspNetCompatibilityRequirements
+    (RequirementsMode = AspNetCompatibilityRequirementsMode.Allowed)]
+
+    [ServiceBehavior(InstanceContextMode = InstanceContextMode.Single)]
+
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "PersonService" in code, svc and config file together.
     // NOTE: In order to launch WCF Test Client for testing this service, please select PersonService.svc or PersonService.svc.cs at the Solution Explorer and start debugging.
     public class PersonService : IPersonService
@@ -59,13 +65,13 @@ namespace RESTtest
             return xml;
         }
 
-        public PersonModel JSONPutObject(string name, int age)
-        {
-            PersonModel pm = new PersonModel();
-            pm.Name = name;
-            pm.Age = age;
-            return pm;
-            return pm;
-        }
+        //public PersonModel JSONPutObject(string name, int age)
+        //{
+        //    PersonModel pm = new PersonModel();
+        //    pm.Name = name;
+        //    pm.Age = age;
+        //    return pm;
+         
+        //}
     }
 }
