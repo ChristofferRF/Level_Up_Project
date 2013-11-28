@@ -1,7 +1,4 @@
 så laver vi sgu lige en merge test
-<<<<<<< .merge_file_a05060
-jeg laver lige noget igen
-=======
 
-Hej Christoffer...
->>>>>>> .merge_file_a05896
+jeg laver lige noget igen
+Hej Christoffer
