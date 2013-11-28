@@ -58,5 +58,14 @@ namespace RESTtest
             string xml = sw.ToString();
             return xml;
         }
+
+        public PersonModel JSONPutObject(string name, int age)
+        {
+            PersonModel pm = new PersonModel();
+            pm.Name = name;
+            pm.Age = age;
+            return pm;
+            return pm;
+        }
     }
 }
