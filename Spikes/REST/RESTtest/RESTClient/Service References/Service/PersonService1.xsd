@@ -1,83 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import schemaLocation="http://localhost:7976/PersonService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/RESTtest" />
-  <xs:element name="XMLData">
+  <xs:element name="GetXmlString">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="id" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="XMLDataResponse">
+  <xs:element name="GetXmlStringResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="XMLDataResult" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="GetXmlStringResult" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="JSONData">
+  <xs:element name="GetJSONString">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="id" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="JSONDataResponse">
+  <xs:element name="GetJSONStringResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="JSONDataResult" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="GetJSONStringResult" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="XMLPersonObject">
+  <xs:element name="GetPerson">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="XMLPersonObjectResponse">
+  <xs:element name="GetPersonResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="XMLPersonObjectResult" nillable="true" type="xs:string" />
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/RESTtest" minOccurs="0" name="GetPersonResult" nillable="true" type="q1:PersonModel" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="JSONPersonObject">
-    <xs:complexType>
-      <xs:sequence />
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="JSONPersonObjectResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/RESTtest" minOccurs="0" name="JSONPersonObjectResult" nillable="true" type="q1:PersonModel" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="JSONPostObject">
+  <xs:element name="UpdatePerson">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="JSONPostObjectResponse">
+  <xs:element name="UpdatePersonResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/RESTtest" minOccurs="0" name="JSONPostObjectResult" nillable="true" type="q2:PersonModel" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/RESTtest" minOccurs="0" name="UpdatePersonResult" nillable="true" type="q2:PersonModel" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="XMLUpdatePerson">
+  <xs:element name="CreatePerson">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="age" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="XMLUpdatePersonResponse">
+  <xs:element name="CreatePersonResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="XMLUpdatePersonResult" nillable="true" type="xs:string" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/RESTtest" minOccurs="0" name="CreatePersonResult" nillable="true" type="q3:PersonModel" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

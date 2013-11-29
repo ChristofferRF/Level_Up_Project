@@ -38,7 +38,7 @@ namespace RESTtest
             UriTemplate = "person/get")]
         PersonModel GetPerson();
 
-        //Opdatér en eksisterendde person
+        //Opdatér en eksisterende person
         [OperationContract]
         [WebInvoke(Method = "POST",
             ResponseFormat = WebMessageFormat.Json,
@@ -52,6 +52,6 @@ namespace RESTtest
             ResponseFormat = WebMessageFormat.Json,
             BodyStyle = WebMessageBodyStyle.Wrapped,
             UriTemplate = "person/create/{name},{age}")]
-        PersonModel CreatePerson(string name, int age);
+        PersonModel CreatePerson(string name, string age);
     }
 }

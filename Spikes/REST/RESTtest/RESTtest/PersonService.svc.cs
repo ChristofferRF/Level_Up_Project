@@ -66,16 +66,16 @@ namespace RESTtest
  
 
         /// <summary>
-        /// Opret en ny person med navn og id.
+        /// Opret en ny person med navn og alder.
         /// </summary>
         /// <param name="name">personens navn</param>
         /// <param name="age">personens alder</param>
         /// <returns>Den nye person</returns>
-        public PersonModel CreatePerson(string name, int age)
+        public PersonModel CreatePerson(string name, string age)
         {
             PersonModel pm = new PersonModel();
             pm.Name = name;
-            pm.Age = age;
+            pm.Age = Convert.ToInt32(age);
             return pm;
 
         }
