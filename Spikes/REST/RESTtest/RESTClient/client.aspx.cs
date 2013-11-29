@@ -10,6 +10,7 @@ using System.Net;
 using System.IO;
 using Newtonsoft.Json;
 using System.Diagnostics;
+using System.Text;
 
 namespace RESTClient
 {
@@ -17,11 +18,17 @@ namespace RESTClient
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //test();
-            test2();
+            test();
+            //test2();
         }
 
         private void test()
+        {
+            HttpWebRequest webReq = (HttpWebRequest)WebRequest.Create("http://localhost:7976/PersonService.svc/rest");
+            
+        }
+
+        private void test2()
         {
             WebChannelFactory<IPersonService> factory =
                 new WebChannelFactory<IPersonService>(new Uri("http://localhost:7976/PersonService.svc/rest/"));
