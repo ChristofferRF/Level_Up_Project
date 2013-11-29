@@ -17,21 +17,12 @@ namespace RESTClient
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //test();
-            test2();
+            test();
         }
+
+
 
         private void test()
-        {
-            WebChannelFactory<IPersonService> factory =
-                new WebChannelFactory<IPersonService>(new Uri("http://localhost:7976/PersonService.svc/rest/"));
-            IPersonService channel = factory.CreateChannel();
-            PersonModel person = channel.JSONPersonObject();
-
-            getPersonJSONBox.Text = person.Name + " - " + person.Age;
-        }
-
-        private void test2()
         {
             string text = "";
             string url = string.Format("http://localhost:7976/PersonService.svc/rest/jsonpostobject/{0}", "Hans");
