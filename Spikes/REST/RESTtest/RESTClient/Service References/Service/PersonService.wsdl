@@ -7,66 +7,56 @@
       <xsd:import schemaLocation="http://localhost:7976/PersonService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/RESTtest" />
     </xsd:schema>
   </wsdl:types>
-  <wsdl:message name="IPersonService_XMLData_InputMessage">
-    <wsdl:part name="parameters" element="tns:XMLData" />
+  <wsdl:message name="IPersonService_GetXmlString_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetXmlString" />
   </wsdl:message>
-  <wsdl:message name="IPersonService_XMLData_OutputMessage">
-    <wsdl:part name="parameters" element="tns:XMLDataResponse" />
+  <wsdl:message name="IPersonService_GetXmlString_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetXmlStringResponse" />
   </wsdl:message>
-  <wsdl:message name="IPersonService_JSONData_InputMessage">
-    <wsdl:part name="parameters" element="tns:JSONData" />
+  <wsdl:message name="IPersonService_GetJSONString_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetJSONString" />
   </wsdl:message>
-  <wsdl:message name="IPersonService_JSONData_OutputMessage">
-    <wsdl:part name="parameters" element="tns:JSONDataResponse" />
+  <wsdl:message name="IPersonService_GetJSONString_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetJSONStringResponse" />
   </wsdl:message>
-  <wsdl:message name="IPersonService_XMLPersonObject_InputMessage">
-    <wsdl:part name="parameters" element="tns:XMLPersonObject" />
+  <wsdl:message name="IPersonService_GetPerson_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPerson" />
   </wsdl:message>
-  <wsdl:message name="IPersonService_XMLPersonObject_OutputMessage">
-    <wsdl:part name="parameters" element="tns:XMLPersonObjectResponse" />
+  <wsdl:message name="IPersonService_GetPerson_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPersonResponse" />
   </wsdl:message>
-  <wsdl:message name="IPersonService_JSONPersonObject_InputMessage">
-    <wsdl:part name="parameters" element="tns:JSONPersonObject" />
+  <wsdl:message name="IPersonService_UpdatePerson_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePerson" />
   </wsdl:message>
-  <wsdl:message name="IPersonService_JSONPersonObject_OutputMessage">
-    <wsdl:part name="parameters" element="tns:JSONPersonObjectResponse" />
+  <wsdl:message name="IPersonService_UpdatePerson_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePersonResponse" />
   </wsdl:message>
-  <wsdl:message name="IPersonService_JSONPostObject_InputMessage">
-    <wsdl:part name="parameters" element="tns:JSONPostObject" />
+  <wsdl:message name="IPersonService_CreatePerson_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreatePerson" />
   </wsdl:message>
-  <wsdl:message name="IPersonService_JSONPostObject_OutputMessage">
-    <wsdl:part name="parameters" element="tns:JSONPostObjectResponse" />
-  </wsdl:message>
-  <wsdl:message name="IPersonService_XMLUpdatePerson_InputMessage">
-    <wsdl:part name="parameters" element="tns:XMLUpdatePerson" />
-  </wsdl:message>
-  <wsdl:message name="IPersonService_XMLUpdatePerson_OutputMessage">
-    <wsdl:part name="parameters" element="tns:XMLUpdatePersonResponse" />
+  <wsdl:message name="IPersonService_CreatePerson_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreatePersonResponse" />
   </wsdl:message>
   <wsdl:portType name="IPersonService">
-    <wsdl:operation name="XMLData">
-      <wsdl:input wsaw:Action="http://tempuri.org/IPersonService/XMLData" message="tns:IPersonService_XMLData_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IPersonService/XMLDataResponse" message="tns:IPersonService_XMLData_OutputMessage" />
+    <wsdl:operation name="GetXmlString">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPersonService/GetXmlString" message="tns:IPersonService_GetXmlString_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPersonService/GetXmlStringResponse" message="tns:IPersonService_GetXmlString_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="JSONData">
-      <wsdl:input wsaw:Action="http://tempuri.org/IPersonService/JSONData" message="tns:IPersonService_JSONData_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IPersonService/JSONDataResponse" message="tns:IPersonService_JSONData_OutputMessage" />
+    <wsdl:operation name="GetJSONString">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPersonService/GetJSONString" message="tns:IPersonService_GetJSONString_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPersonService/GetJSONStringResponse" message="tns:IPersonService_GetJSONString_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="XMLPersonObject">
-      <wsdl:input wsaw:Action="http://tempuri.org/IPersonService/XMLPersonObject" message="tns:IPersonService_XMLPersonObject_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IPersonService/XMLPersonObjectResponse" message="tns:IPersonService_XMLPersonObject_OutputMessage" />
+    <wsdl:operation name="GetPerson">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPersonService/GetPerson" message="tns:IPersonService_GetPerson_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPersonService/GetPersonResponse" message="tns:IPersonService_GetPerson_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="JSONPersonObject">
-      <wsdl:input wsaw:Action="http://tempuri.org/IPersonService/JSONPersonObject" message="tns:IPersonService_JSONPersonObject_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IPersonService/JSONPersonObjectResponse" message="tns:IPersonService_JSONPersonObject_OutputMessage" />
+    <wsdl:operation name="UpdatePerson">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPersonService/UpdatePerson" message="tns:IPersonService_UpdatePerson_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPersonService/UpdatePersonResponse" message="tns:IPersonService_UpdatePerson_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="JSONPostObject">
-      <wsdl:input wsaw:Action="http://tempuri.org/IPersonService/JSONPostObject" message="tns:IPersonService_JSONPostObject_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IPersonService/JSONPostObjectResponse" message="tns:IPersonService_JSONPostObject_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="XMLUpdatePerson">
-      <wsdl:input wsaw:Action="http://tempuri.org/IPersonService/XMLUpdatePerson" message="tns:IPersonService_XMLUpdatePerson_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IPersonService/XMLUpdatePersonResponse" message="tns:IPersonService_XMLUpdatePerson_OutputMessage" />
+    <wsdl:operation name="CreatePerson">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPersonService/CreatePerson" message="tns:IPersonService_CreatePerson_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPersonService/CreatePersonResponse" message="tns:IPersonService_CreatePerson_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:service name="PersonService" />

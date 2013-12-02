@@ -12,55 +12,46 @@ namespace RESTtest
     [ServiceContract]
     public interface IPersonService
     {
+
+        //Lynhurtige testeksempler
+        //Se om der er hul igennem, also, xml test
         [OperationContract]
         [WebInvoke(Method= "GET",                       //Get-metode
                 ResponseFormat= WebMessageFormat.Xml,   //Returnerer XMl format
-                BodyStyle= WebMessageBodyStyle.Wrapped, //pas
+                BodyStyle= WebMessageBodyStyle.Wrapped, //ikke helt sikker, det har at gøre med hvordan beskeden formatteres. vi går ikke galt med .Wrapped
                 UriTemplate = "xml/{id}")]              //URI består af: En URL-sti og en query
-        string XMLData(string id);                      //metodekald
+        string GetXmlString(string id);                 //metodekald
 
         [OperationContract]
         [WebInvoke(Method= "GET",
             ResponseFormat = WebMessageFormat.Json,      //returnerer JSON format
             BodyStyle = WebMessageBodyStyle.Wrapped,
             UriTemplate = "json/{id}")]
-        string JSONData(string id);
+        string GetJSONString(string id);
 
-        [OperationContract]
-        [WebInvoke(Method = "GET",
-            ResponseFormat = WebMessageFormat.Xml,
-            BodyStyle = WebMessageBodyStyle.Wrapped,
-            UriTemplate = "xmlobject")]
-        string XMLPersonObject();
-
+        //Operationelle eksempler - CRUD
+        //Hent et person-objekt
         [OperationContract]
         [WebInvoke(Method = "GET",
             ResponseFormat = WebMessageFormat.Json,
             BodyStyle = WebMessageBodyStyle.Wrapped,
-            UriTemplate = "jsonobject")]
-        PersonModel JSONPersonObject();
+            UriTemplate = "person/get")]
+        PersonModel GetPerson();
 
+        //Opdatér en eksisterende person
         [OperationContract]
         [WebInvoke(Method = "POST",
             ResponseFormat = WebMessageFormat.Json,
             BodyStyle = WebMessageBodyStyle.WrappedRequest,
-            UriTemplate = "jsonpostobject/{name}")]
-        PersonModel JSONPostObject(string name);
-
-        [OperationContract]
-        [WebInvoke(Method = "POST",
-            ResponseFormat = WebMessageFormat.Xml,
-            BodyStyle = WebMessageBodyStyle.Wrapped,
-            UriTemplate = "xmlobjectput")]
-        string XMLUpdatePerson(string name);
-
+            UriTemplate = "person/update/{name}")]
+        PersonModel UpdatePerson(string name);
         
-
-        //[OperationContract]
-        //[WebInvoke(Method = "PUT",
-        //    ResponseFormat = WebMessageFormat.Json,
-        //    BodyStyle = WebMessageBodyStyle.Wrapped,
-        //    UriTemplate = "jsonputobject")]
-        //PersonModel JSONPutObject(string name, int age);
+        //Opret et nyt person-objekt
+        [OperationContract]
+        [WebInvoke(Method = "PUT",
+            ResponseFormat = WebMessageFormat.Json,
+            BodyStyle = WebMessageBodyStyle.Wrapped,
+            UriTemplate = "person/create/{name},{age}")]
+        PersonModel CreatePerson(string name, string age);
     }
 }

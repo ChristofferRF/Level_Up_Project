@@ -73,18 +73,6 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
     <Content Include="Web.config" />
-    <None Include="Service References\Service\PersonService.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\Service\PersonService1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\Service\PersonService2.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <Content Include="Service References\Service\RESTClient.Service.PersonModel.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="client.aspx.cs">
@@ -103,12 +91,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\Service\PersonService.wsdl" />
+    <None Include="Service References\Service\PersonService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Service\PersonService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Service\PersonService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RESTtest\RESTtest.csproj">
+      <Project>{bd23e001-db57-431b-80fa-3e6fa68d7c15}</Project>
+      <Name>RESTtest</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
