@@ -15,8 +15,9 @@ namespace Controller
             
         }
 
-        public void AddEntryToDb(string typeOfExcercise, string distance, int minutes)
+        public int AddEntryToDb(string typeOfExcercise, string distance, int minutes)
         {
+            int result = -1;
             using (var db = new DataAccessContext())
             {
                 LogEntry log = new LogEntry
@@ -27,8 +28,10 @@ namespace Controller
                 };
 
                 db.LogEntries.Add(log);
-                db.SaveChanges();
+                result = db.SaveChanges();
             }
+
+            return result;
         }
     }
 }

@@ -8,6 +8,7 @@ namespace DataAccess
 {
     public class LogEntry
     {
+        public int LogEntryId { get; set; }
         public string TypeOfExcercise { get; set; }
         public string Distance { get; set; }
         public int Minutes { get; set; }
