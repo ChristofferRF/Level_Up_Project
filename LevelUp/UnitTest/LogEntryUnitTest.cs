@@ -5,7 +5,7 @@ using Controller;
 namespace UnitTest
 {
     [TestClass]
-    public class LogEntryTest
+    public class LogEntryUnitTest
     {
         [TestMethod]
         public void LogEntryTest()
@@ -21,8 +21,6 @@ namespace UnitTest
 
             if(result != -1)
             {   
-
-                //asd
                 Console.WriteLine("It incremented");
             }
            
