@@ -12,6 +12,7 @@
         <asp:Label Text="get person JSON:" runat="server"></asp:Label>
         <br />
         <asp:TextBox ID="getPersonJSONBox" runat="server" Height="106px" Width="307px"></asp:TextBox>
+        <asp:Button ID="theButton" runat="server" Text="Get All The Things" OnClick="theButton_Click" />
 
 
     </div>

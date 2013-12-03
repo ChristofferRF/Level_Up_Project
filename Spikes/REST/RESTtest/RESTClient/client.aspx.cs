@@ -7,9 +7,10 @@ using System.Web.UI.WebControls;
 using System.ServiceModel.Web;
 using System.Net;
 using System.IO;
-using Newtonsoft.Json;
 using System.Diagnostics;
-using System.Text;
+using System.Text;  //Til Encoding
+using System.Web.Script.Serialization;
+using System.Runtime.Serialization.Json;
 using RESTtest;
 namespace RESTClient
 {
@@ -17,83 +18,85 @@ namespace RESTClient
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            test();
-            //test2();
+           
         }
 
+        /// <summary>
+        /// Serialiser et object til en JSON streng.
+        /// Jeg bruger det ikke her i eksemplet, men det er til at sende til servicen
+        /// Jeg har ikke skrevet de her par metoder, derfor ingen detailkommentarer.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="type"></param>
+        /// <returns></returns>
+        private string JSONSerializer<T>(T type)
+        {
+            DataContractJsonSerializer ser = new DataContractJsonSerializer(typeof(T));
+            MemoryStream ms = new MemoryStream();
+            ser.WriteObject(ms, type);
+            string jsonString = Encoding.UTF8.GetString(ms.ToArray());
+            ms.Close();
+            return jsonString;
+        }
+
+        /// <summary>
+        /// Deserialiser en JSON-streng til et givent objekt.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="jsonString"></param>
+        /// <returns></returns>
+        public static T JsonDeserialize<T>(string jsonString)
+        {
+            DataContractJsonSerializer ser = new DataContractJsonSerializer(typeof(T));
+            MemoryStream ms = new MemoryStream(Encoding.UTF8.GetBytes(jsonString));
+            T obj = (T)ser.ReadObject(ms);
+            return obj;
+        }
 
         private void test()
         {
 
             try
             {
+                string name = "joe";    //Ændringen
+                HttpWebRequest webReq = (HttpWebRequest)WebRequest.Create("http://localhost:7976/PersonService.svc/rest/person/update"); //Addressen på metoden
+                string postData = "{\"name\":" + "\"" + name + "\"}";       //Manuel serialisering..
 
-                string name = "joe";
-                string jsonName = SerializeJson<string>(name);
-                HttpWebRequest webReq = (HttpWebRequest)WebRequest.Create("http://localhost:7976/PersonService.svc/rest/person/update");
-                UTF8Encoding encoding = new UTF8Encoding();
-                string postData = "{\"name\":" + "\"" + name + "\"}";
-                Debug.WriteLine(postData);
-                byte[] data = encoding.GetBytes(postData);
+                webReq.Method = "POST";                                     //Set metodetypen. Default er POST, men vi skriver det ALTID alligevel.
+                webReq.ContentType = "application/json; charset=utf-8";     //Sæt contenttypen, i.e Sæt til JSON
+                webReq.ContentLength = postData.Length;                     //Længden på strengen
+                Debug.WriteLine(webReq.ContentLength.ToString());
 
-                webReq.Method = "POST";
-                webReq.ContentType = "application/json; charset=utf-8";
-                webReq.ContentLength = data.Length;
-
-
-                using (Stream stream = webReq.GetRequestStream())
+                using (StreamWriter sw = new StreamWriter(webReq.GetRequestStream()))   //Opret en streamwriter med vores request som parameter (aner ikke hvad requeststream er, slå det selv op)
                 {
-                    stream.Write(data, 0, data.Length);
+                    sw.Write(postData); //Skyder requesten afsted.
                 }
 
-                HttpWebResponse response = (HttpWebResponse)webReq.GetResponse();
-                if (response.GetResponseStream() != null)
+                HttpWebResponse response = (HttpWebResponse)webReq.GetResponse();           //Opret et objekt der kan modtage svar på vores request
+                using (StreamReader sr = new StreamReader(response.GetResponseStream()))    //Opret et objekt der kan læse svaret
                 {
+                    string text = sr.ReadToEnd();                           //Læs svaret igennem og gem det i en streng. Det er JSON streng svaret kommer i.
 
-                
-                string responseString = new StreamReader(response.GetResponseStream()).ReadToEnd();
+                    PersonModel pm = JsonDeserialize<PersonModel>(text);    //kør json-strengen igennem deserialiseringen, med PersonModel som type objekt
+                    getPersonJSONBox.Text = "navn: " + pm.Name + " alder: " + pm.Age; //tadaa...
+                }
 
-                PersonModel jsonObj = JsonConvert.DeserializeObject<PersonModel>(responseString);
-                getPersonJSONBox.Text = jsonObj.Name + " - " + jsonObj.Age;
-                    }
-                //getPersonJSONBox.Text = responseString;
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 Debug.WriteLine(e);
             }
 
         }
 
-        public static string SerializeJson<T>(T obj)
+        /// <summary>
+        /// Klik event til test metoden
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void theButton_Click(object sender, EventArgs e)
         {
-            var settings = new JsonSerializerSettings() { DateFormatHandling = DateFormatHandling.MicrosoftDateFormat };
-            return JsonConvert.SerializeObject(obj, settings);
-        }
-
-        private void test2()
-        {
-            string text = "";
-            string url = string.Format("http://localhost:7976/PersonService.svc/rest/jsonpostobject/{0}", "Hans");
-            string urlEasy = string.Format("http://localhost:7976/PersonService.svc/rest/json/{0}", 23);
-            var request = WebRequest.Create(urlEasy);
-            Debug.WriteLine(url);
-
-
-            var response = (HttpWebResponse)request.GetResponse();
-            if (response.GetResponseStream() != null)
-            {
-                using (var sr = new StreamReader(response.GetResponseStream()))
-                {
-                    text = sr.ReadToEnd();
-                }
-            }
-
-            getPersonJSONBox.Text = text;
-
-            //PersonModel jsonObj = JsonConvert.DeserializeObject<PersonModel>(text);
-            //getPersonJSONBox.Text = jsonObj.Name + " - " + jsonObj.Age;
-            
+            test();
         }
     }
 }
