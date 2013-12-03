@@ -20,7 +20,9 @@ namespace UnitTest
             result = logCon.AddEntryToDb(typeOfExcercise, distance, minutes);
 
             if(result != -1)
-            {
+            {   
+
+                //asd
                 Console.WriteLine("It incremented");
             }
            
