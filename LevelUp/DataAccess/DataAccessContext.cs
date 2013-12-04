@@ -10,5 +10,7 @@ namespace DataAccess
     public class DataAccessContext : DbContext
     {
         public DbSet<LogEntry> LogEntries { get; set; }
+
+        public DbSet<User> Users { get; set; }
     }
 }
