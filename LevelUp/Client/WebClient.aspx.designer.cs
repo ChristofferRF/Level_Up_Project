@@ -58,21 +58,48 @@ namespace Client {
         protected global::System.Web.UI.WebControls.TextBox distanceTextBox;
         
         /// <summary>
-        /// Tid control.
+        /// TimeLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Tid;
+        protected global::System.Web.UI.WebControls.Label TimeLabel;
         
         /// <summary>
-        /// TimeTextBox control.
+        /// HoursTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TimeTextBox;
+        protected global::System.Web.UI.WebControls.TextBox HoursTextBox;
+        
+        /// <summary>
+        /// MinutesTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox MinutesTextBox;
+        
+        /// <summary>
+        /// SecondsTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox SecondsTextBox;
+        
+        /// <summary>
+        /// CreateLogButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button CreateLogButton;
     }
 }

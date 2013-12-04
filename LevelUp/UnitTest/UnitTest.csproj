@@ -59,11 +59,16 @@
   <ItemGroup>
     <Compile Include="LogEntryUnitTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserUnitTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Controller\Controller.csproj">
       <Project>{2ff48bd1-b8fc-4508-8416-c0193a168060}</Project>
       <Name>Controller</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataAccess\DataAccess.csproj">
+      <Project>{d068552a-f2e3-4ec0-b215-358cc9ff762e}</Project>
+      <Name>DataAccess</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

@@ -13,16 +13,21 @@
 <body class="body">
     <form id="form1" runat="server">
         <div class="container">
-            <asp:Label ID="ExcerciseLabel" Text="Aktivitet" runat="server"></asp:Label>
+            <asp:Label ID="ExcerciseLabel" runat="server"></asp:Label>
             <asp:TextBox ID="excerciseTextBox" runat="server"></asp:TextBox>
             <br />
             <br />
-            <asp:Label ID="DistanceLabel" Text="Distance" runat="server"></asp:Label>
+            <asp:Label ID="DistanceLabel" runat="server"></asp:Label>
             <asp:TextBox ID="distanceTextBox" runat="server"></asp:TextBox>
             <br />
             <br />
-            <asp:Label ID="Tid" Text="Tid" runat="server"></asp:Label>
-            <asp:TextBox ID="TimeTextBox" runat="server"></asp:TextBox>
+            <asp:Label ID="TimeLabel" Text="Tid" runat="server"></asp:Label>
+            <asp:TextBox ID="HoursTextBox" runat="server"></asp:TextBox>/
+            <asp:TextBox ID="MinutesTextBox" runat="server"></asp:TextBox>/
+            <asp:TextBox ID="SecondsTextBox" runat="server"></asp:TextBox>
+            <br /><br />
+            <asp:Button OnClick="CreateLog_Click" ID="CreateLogButton" runat="server" />
+            <%--<asp:Button ID Text--%>
         </div>
     </form>
 </body>
