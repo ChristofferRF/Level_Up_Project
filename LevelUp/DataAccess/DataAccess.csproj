@@ -49,7 +49,9 @@
   <ItemGroup>
     <Compile Include="DataAccessContext.cs" />
     <Compile Include="LogEntry.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="User.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
