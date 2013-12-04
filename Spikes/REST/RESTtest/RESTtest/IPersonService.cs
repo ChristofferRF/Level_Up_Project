@@ -43,7 +43,7 @@ namespace RESTtest
         [WebInvoke(Method = "POST",
             ResponseFormat = WebMessageFormat.Json,
             BodyStyle = WebMessageBodyStyle.WrappedRequest,
-            UriTemplate = "person/update/{name}")]
+            UriTemplate = "person/update/")]
         PersonModel UpdatePerson(string name);
         
         //Opret et nyt person-objekt
