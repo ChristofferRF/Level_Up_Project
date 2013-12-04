@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Controller;
+using DataAccess;
 
 namespace UnitTest
 {
@@ -10,18 +11,18 @@ namespace UnitTest
         [TestMethod]
         public void LogEntryTest()
         {
-            int result = -1;
+            LogEntry demoLog = new LogEntry();
             LogEntryController logCon = new LogEntryController();
 
             string typeOfExcercise = "Running";
             string distance = "22km";
             int minutes = 90;
 
-            result = logCon.AddEntryToDb(typeOfExcercise, distance, minutes);
+            demoLog = logCon.AddEntryToDb(typeOfExcercise, distance, minutes);
 
-            if(result != -1)
+            if(demoLog.TypeOfExcercise == typeOfExcercise && demoLog.Distance == distance && demoLog.Minutes == minutes)
             {   
-                Console.WriteLine("It incremented");
+                Console.WriteLine("Great justice!");
             }
            
         }
