@@ -13,21 +13,33 @@
 <body class="body">
     <form id="form1" runat="server">
         <div class="container">
-            <asp:Label ID="ExcerciseLabel" runat="server"></asp:Label>
-            <asp:TextBox ID="excerciseTextBox" runat="server"></asp:TextBox>
-            <br />
-            <br />
-            <asp:Label ID="DistanceLabel" runat="server"></asp:Label>
-            <asp:TextBox ID="distanceTextBox" runat="server"></asp:TextBox>
-            <br />
-            <br />
-            <asp:Label ID="TimeLabel" Text="Tid" runat="server"></asp:Label>
-            <asp:TextBox ID="HoursTextBox" runat="server"></asp:TextBox>/
-            <asp:TextBox ID="MinutesTextBox" runat="server"></asp:TextBox>/
-            <asp:TextBox ID="SecondsTextBox" runat="server"></asp:TextBox>
-            <br /><br />
-            <asp:Button OnClick="CreateLog_Click" ID="CreateLogButton" runat="server" />
-            <%--<asp:Button ID Text--%>
+            <div class="logBox">
+                <asp:Label ID="ExcerciseLabel" runat="server"></asp:Label><br />
+                <asp:TextBox ID="excerciseTextBox" runat="server" class="form-control"></asp:TextBox>
+                <br />
+                <asp:Label ID="DistanceLabel" runat="server"></asp:Label><br />
+                <asp:TextBox ID="distanceTextBox" runat="server" class="form-control"></asp:TextBox>
+                <br />
+                <asp:Label ID="TimeLabel" Text="Tid" runat="server"></asp:Label><br />
+                <asp:TextBox ID="HoursTextBox" runat="server" class="timeInput" placeholder="Hours"></asp:TextBox>
+                : 
+            <asp:TextBox ID="MinutesTextBox" runat="server" class="timeInput" placeholder="Minutes"></asp:TextBox>
+                : 
+            <asp:TextBox ID="SecondsTextBox" runat="server" class="timeInput" placeholder="Seconds"></asp:TextBox>
+                <br />
+                <br />
+
+                <asp:Button OnClick="CreateLog_Click" ID="CreateLogButton" runat="server" class="btn btn-primary" />
+                <%--<asp:Button ID Text--%>
+            </div>
+
+            <div class="rewardBox">
+                Rewards
+            </div>
+
+            <div class="logHistory">
+                Testing
+            </div>
         </div>
     </form>
 </body>
