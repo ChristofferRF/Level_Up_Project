@@ -19,14 +19,15 @@ namespace RESTService
         /// <summary>
         /// Kalder add entry controlleren.
         /// Bemærk conversionen fra string minutes til int.
+        /// {"Distance":"50","LogEntryId":0,"Minutes":50,"TypeOfExcercise":"bike"}
         /// </summary>
         /// <param name="typeOfExercise"></param>
         /// <param name="distance"></param>
         /// <param name="minutes"></param>
         /// <returns></returns>
-        public LogEntry AddEntry(string typeOfExercise, string distance, string minutes)
+        public LogEntry AddEntry(string distance, string logEntryId, string minutes, string typeOfExcercise)
         {
-           return logCon.AddEntryToDb(typeOfExercise, distance, Convert.ToInt32(minutes));
+           return logCon.AddEntryToDb(typeOfExcercise, distance, Convert.ToInt32(minutes));
         }
     }
 }

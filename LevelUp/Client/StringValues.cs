@@ -7,11 +7,10 @@ namespace Client
 {
     public static class StringValues
     {
-
-        public const string EXCERCISELABEL = "Aktivitet";
-        public const string DISTANCELABEL = "Distance";
-        public const string TIMELABEL = "Tid";
-        public const string CREATELOGBUTTON = "Opret aktivitet";
+        public const string EXCERCISE_LABEL = "Aktivitet";
+        public const string DISTANCE_LABEL = "Distance";
+        public const string TIME_LABEL = "Tid";
+        public const string CREATE_LOG_BUTTON = "Opret aktivitet";
     }
 
     

@@ -13,13 +13,12 @@ namespace RESTService
     [ServiceContract]
     public interface ILog
     {
-
         [OperationContract]
-        [WebInvoke(Method = "PUT", 
+        [WebInvoke(Method = "POST", 
             ResponseFormat = WebMessageFormat.Json, 
             BodyStyle = WebMessageBodyStyle.Wrapped,
-            UriTemplate = "levelUp/entry/add")]
-        LogEntry AddEntry(string typeOfExercise, string distance, string minutes);
+            UriTemplate = "entry/add")]
+        LogEntry AddEntry(string Distance, string LogEntryId, string Minutes, string TypeOfExcercise);
 
     }
 
