@@ -30,11 +30,6 @@ namespace Controller
                     Age = age,
                     Weight = weight,
                     Height = height,
-
-                    Logs = new List<LogEntry>
-                    {
-                        new LogEntry {TypeOfExcercise = "Running", Distance = "1,5km", Minutes = 15}
-                    }
                 };
 
                 db.Users.Add(user);
