@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess
 {
-    public class Class1
+    class Class1
     {
-
     }
 }
