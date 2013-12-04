@@ -1,9 +1,12 @@
 ﻿.body {
-    background-color: #a9a9a9;
+    background-color: #2ad457;
 
 }
 
 .container {
     margin-top: 20px;
+    padding: 25px;
     background-color:white;
+
+    border-radius: 10px;
 }
