@@ -12,13 +12,13 @@ namespace RESTService
 {
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "Service1" in code, svc and config file together.
     // NOTE: In order to launch WCF Test Client for testing this service, please select Service1.svc or Service1.svc.cs at the Solution Explorer and start debugging.
-    public class LevelService : ILog
+    public class LevelService : ILog, IUser
     {
         public LogEntryController logCon = new LogEntryController();
-
+        public UserController userCon = new UserController();
         /// <summary>
         /// Kalder add entry controlleren.
-        /// Bemærk conversionen fra string minutes til int.
+        /// Bemærk konverteringen fra string minutes til int.
         /// {"Distance":"50","LogEntryId":0,"Minutes":50,"TypeOfExcercise":"bike"}
         /// </summary>
         /// <param name="typeOfExercise"></param>
@@ -29,5 +29,22 @@ namespace RESTService
         {
            return logCon.AddEntryToDb(typeOfExcercise, distance, Convert.ToInt32(minutes));
         }
+
+        /// <summary>
+        /// Kalder add user controlleren
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <param name="userName"></param>
+        /// <param name="password"></param>
+        /// <param name="name"></param>
+        /// <param name="age"></param>
+        /// <param name="weight"></param>
+        /// <param name="height"></param>
+        /// <returns></returns>
+        public User AddUser(string userId, string userName, string password, string name, string age, string weight, string height)
+        {
+            return userCon.AddUserToDb(userName, password, name, Convert.ToInt32(age), Convert.ToInt32(weight), Convert.ToInt32(height));
+        }
+
     }
 }
