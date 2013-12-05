@@ -26,10 +26,10 @@ namespace DataAccess
         public int Age { get; set; }
 
         [DataMember]
-        public int Weight { get; set; }
+        public double Weight { get; set; }
 
         [DataMember]
-        public int Height { get; set; }
+        public double Height { get; set; }
 
         public virtual List<LogEntry> Logs { get; set; }
     }
