@@ -17,6 +17,10 @@ namespace DataAccess
         [DataMember]
         public string Distance { get; set; }
         [DataMember]
+        public int Hours { get; set; }
+        [DataMember]
         public int Minutes { get; set; }
+        [DataMember]
+        public int Seconds { get; set; }
     }
 }
