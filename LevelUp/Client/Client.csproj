@@ -71,11 +71,8 @@
     <Content Include="WebClient.aspx" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
     <Compile Include="App_Code\JSONhelper.cs" />
     <Compile Include="App_Code\EntryCalls.cs" />
-=======
->>>>>>> e59c4ced31ce095a0cc904b71dd5979b92fc85cf
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StringValues.cs" />
     <Compile Include="WebClient.aspx.cs">
