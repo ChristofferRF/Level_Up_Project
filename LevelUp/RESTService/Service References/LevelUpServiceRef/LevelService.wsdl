@@ -13,10 +13,22 @@
   <wsdl:message name="ILog_AddEntry_OutputMessage">
     <wsdl:part name="parameters" element="tns:AddEntryResponse" />
   </wsdl:message>
+  <wsdl:message name="IUser_AddUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddUser" />
+  </wsdl:message>
+  <wsdl:message name="IUser_AddUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddUserResponse" />
+  </wsdl:message>
   <wsdl:portType name="ILog">
     <wsdl:operation name="AddEntry">
       <wsdl:input wsaw:Action="http://tempuri.org/ILog/AddEntry" message="tns:ILog_AddEntry_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ILog/AddEntryResponse" message="tns:ILog_AddEntry_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IUser">
+    <wsdl:operation name="AddUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUser/AddUser" message="tns:IUser_AddUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUser/AddUserResponse" message="tns:IUser_AddUser_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:service name="LevelService" />

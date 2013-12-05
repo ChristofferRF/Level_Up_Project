@@ -17,7 +17,7 @@ namespace Client.App_Code
 
             string jsonString = JSONhelper.JSONSerializer<LogEntry>(entry);
             Debug.WriteLine(jsonString);
-            HttpWebRequest webReq = (HttpWebRequest)WebRequest.Create("http://localhost:3369/LevelService.svc/LevelUp/entry/add"); //Addressen på metoden
+            HttpWebRequest webReq = (HttpWebRequest)WebRequest.Create("http://localhost:3369/LevelService.svc/entry/add"); //Addressen på metoden
 
             webReq.Method = "POST";                                     //Set metodetypen. Default er POST, men vi skriver det ALTID alligevel.
             webReq.ContentType = "application/json; charset=utf-8";     //Sæt contenttypen, i.e Sæt til JSON
