@@ -53,6 +53,10 @@
     <Compile Include="Migrations\201312041128247_CreateUser.Designer.cs">
       <DependentUpon>201312041128247_CreateUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201312050907145_Changed height and weight to double.cs" />
+    <Compile Include="Migrations\201312050907145_Changed height and weight to double.Designer.cs">
+      <DependentUpon>201312050907145_Changed height and weight to double.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="User.cs" />
@@ -64,6 +68,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201312041128247_CreateUser.resx">
       <DependentUpon>201312041128247_CreateUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201312050907145_Changed height and weight to double.resx">
+      <DependentUpon>201312050907145_Changed height and weight to double.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
