@@ -39,7 +39,9 @@ namespace Client
                 log.LogEntryId = 0;
                 log.TypeOfExcercise = excerciseTextBox.Text;
                 log.Distance = distanceTextBox.Text;
+                log.Hours = Convert.ToInt32(HoursTextBox.Text);
                 log.Minutes = Convert.ToInt32(MinutesTextBox.Text);
+                log.Seconds = Convert.ToInt32(SecondsTextBox.Text);
 
                 log = EntryCalls.AddLogEntry(log);
                 UpdateFields(log);
@@ -59,7 +61,8 @@ namespace Client
             excerciseTextBox.Text = log.TypeOfExcercise;
             distanceTextBox.Text = log.Distance;
             MinutesTextBox.Text = log.Minutes.ToString();
-            HoursTextBox.Text = "Grand succes!";
+            HoursTextBox.Text = log.Hours.ToString();
+            SecondsTextBox.Text = log.Seconds.ToString();
         }
 
         // Check for valid time input
