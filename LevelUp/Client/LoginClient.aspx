@@ -17,7 +17,7 @@
                 <asp:Label ID="lblPassword" runat="server" Text="Password:" Style="margin-top: 20px;"></asp:Label>
                 <asp:TextBox ID="txtBoxPassword" runat="server" Style="margin-top: 8px;"></asp:TextBox>
                 <br />
-                <asp:Button ID="btnCreateUser" runat="server" Text="Sign Up" Style="margin-top: 10px; margin-left:105px; float:left;"/>
+                <asp:Button ID="btnCreateUser" runat="server" Text="SignUp" Style="margin-top: 10px; margin-left:105px; float:left;"/>
                 <asp:Button ID="btnLogin" runat="server" Text="Login" Style="margin-top: 10px; margin-right:57px; float:right;"/>
             </div>
         </form>
