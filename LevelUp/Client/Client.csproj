@@ -76,6 +76,7 @@
     <Compile Include="App_Code\EntryCalls.cs" />
     <Compile Include="LoginClient.aspx.cs">
       <DependentUpon>LoginClient.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="LoginClient.aspx.designer.cs">
       <DependentUpon>LoginClient.aspx</DependentUpon>
