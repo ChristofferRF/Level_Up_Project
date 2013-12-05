@@ -1,5 +1,0 @@
-diff a/LevelUp/Client/Client.csproj b/LevelUp/Client/Client.csproj	     <Compile Include="App_Code\JSONhelper.cs" />
-     <Compile Include="App_Code\EntryCalls.cs" />
-     <Compile Include="LoginClient.aspx.cs">
-       <DependentUpon>LoginClient.aspx</DependentUpon>
-       <SubType>ASPXCodeBehind</SubType>
