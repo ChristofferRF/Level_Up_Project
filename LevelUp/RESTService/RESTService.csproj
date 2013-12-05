@@ -78,6 +78,7 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IUser.cs" />
     <Compile Include="LevelService.svc.cs">
       <DependentUpon>LevelService.svc</DependentUpon>
     </Compile>
@@ -89,9 +90,7 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="packages.config" />
     <Content Include="Service References\LevelUpServiceRef\LevelService.wsdl" />
