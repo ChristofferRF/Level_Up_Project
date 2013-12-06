@@ -4,9 +4,12 @@
   <xs:element name="AddEntry">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="typeOfExercise" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="distance" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="minutes" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Distance" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="LogEntryId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Hours" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Minutes" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Seconds" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="TypeOfExcercise" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -14,6 +17,26 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/DataAccess" minOccurs="0" name="AddEntryResult" nillable="true" type="q1:LogEntry" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Age" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Height" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="UserId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Username" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Weight" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/DataAccess" minOccurs="0" name="AddUserResult" nillable="true" type="q2:User" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

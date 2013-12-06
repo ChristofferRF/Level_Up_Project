@@ -3,10 +3,24 @@
   <xs:complexType name="LogEntry">
     <xs:sequence>
       <xs:element minOccurs="0" name="Distance" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Hours" type="xs:int" />
       <xs:element minOccurs="0" name="LogEntryId" type="xs:int" />
       <xs:element minOccurs="0" name="Minutes" type="xs:int" />
+      <xs:element minOccurs="0" name="Seconds" type="xs:int" />
       <xs:element minOccurs="0" name="TypeOfExcercise" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="LogEntry" nillable="true" type="tns:LogEntry" />
+  <xs:complexType name="User">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Age" type="xs:int" />
+      <xs:element minOccurs="0" name="Height" type="xs:double" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserId" type="xs:int" />
+      <xs:element minOccurs="0" name="Username" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Weight" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="User" nillable="true" type="tns:User" />
 </xs:schema>

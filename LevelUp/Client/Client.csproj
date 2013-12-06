@@ -75,6 +75,7 @@
   <ItemGroup>
     <Compile Include="App_Code\JSONhelper.cs" />
     <Compile Include="App_Code\EntryCalls.cs" />
+    <Compile Include="App_Code\UserCalls.cs" />
     <Compile Include="LoginClient.aspx.cs">
       <DependentUpon>LoginClient.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

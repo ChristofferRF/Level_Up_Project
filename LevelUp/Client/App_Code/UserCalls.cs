@@ -2,23 +2,23 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using DataAccess;
 using System.Net;   //HttpWebRequest, WebRequest
 using System.Diagnostics;
 using System.IO;    //StreamWriter
+using DataAccess;
 
 namespace Client.App_Code
 {
-    public static class EntryCalls
+    public static class UserCalls
     {
-        public static LogEntry AddLogEntry(LogEntry entry)
+        public static User AddUser(User u)
         {
-            LogEntry returnLog = new LogEntry();
+            User returnUser = new User();
 
-            string jsonString = JSONhelper.JSONSerializer<LogEntry>(entry);
+            string jsonString = JSONhelper.JSONSerializer<User>(u);
             Debug.WriteLine(jsonString);
-            HttpWebRequest webReq = (HttpWebRequest)WebRequest.Create("http://localhost:3369/LevelService.svc/entry/add"); //Addressen på metoden
-
+            
+            HttpWebRequest webReq = (HttpWebRequest)WebRequest.Create("http://localhost:3369/LevelService.svc/users/add");
             webReq.Method = "POST";                                     //Set metodetypen. Default er POST, men vi skriver det ALTID alligevel.
             webReq.ContentType = "application/json; charset=utf-8";     //Sæt contenttypen, i.e Sæt til JSON
             webReq.ContentLength = jsonString.Length;                     //Længden på strengen
@@ -29,14 +29,14 @@ namespace Client.App_Code
                 sw.Write(jsonString); //Skyder requesten afsted.
             }
 
-           try
-           {
+            try
+            {
                 HttpWebResponse response = (HttpWebResponse)webReq.GetResponse();           //Opret et objekt der kan modtage svar på vores request
                 using (StreamReader sr = new StreamReader(response.GetResponseStream()))    //Opret et objekt der kan læse svaret
                 {
                     string text = sr.ReadToEnd();                           //Læs svaret igennem og gem det i en streng. Det er JSON streng svaret kommer i.
 
-                    returnLog = JSONhelper.JsonDeserialize<LogEntry>(text);    //kør json-strengen igennem deserialiseringen, med PersonModel som type objekt
+                    returnUser = JSONhelper.JsonDeserialize<User>(text);    //kør json-strengen igennem deserialiseringen, med PersonModel som type objekt
                 }
             }
             catch (Exception e)
@@ -44,10 +44,7 @@ namespace Client.App_Code
                 Debug.WriteLine(e);
             }
 
-           return returnLog;
-
+            return returnUser;
         }
-
     }
-               
 }

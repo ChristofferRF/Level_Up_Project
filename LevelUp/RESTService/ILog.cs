@@ -17,7 +17,7 @@ namespace RESTService
         [WebInvoke(Method = "POST", 
             ResponseFormat = WebMessageFormat.Json, 
             BodyStyle = WebMessageBodyStyle.Wrapped,
-            UriTemplate = "entry/add")]
+            UriTemplate = "add")]
         LogEntry AddEntry(string Distance, string LogEntryId, string Hours, string Minutes, string Seconds, string TypeOfExcercise);
 
     }
