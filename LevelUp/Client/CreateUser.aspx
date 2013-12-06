@@ -22,10 +22,10 @@
             <asp:TextBox ID="selectedUsername" runat="server" CssClass="form-control" placeholder="Vælg dit brugernavn"></asp:TextBox><br />
 
             Kodeord:
-            <asp:TextBox ID="selectedPassword" runat="server" CssClass="form-control" placeholder="Vælg et kodeord"></asp:TextBox><br />
+            <asp:TextBox ID="selectedPassword" runat="server" CssClass="form-control" placeholder="Vælg et kodeord" type="password"></asp:TextBox><br />
 
             Kodeord:
-            <asp:TextBox ID="confirmPassword" runat="server" CssClass="form-control" placeholder="Bekræft dit kodeord"></asp:TextBox>
+            <asp:TextBox ID="confirmPassword" runat="server" CssClass="form-control" placeholder="Bekræft dit kodeord" type="password"></asp:TextBox>
             <br />
 
 
@@ -38,7 +38,8 @@
             <asp:TextBox ID="userHeight" runat="server" CssClass="form-control" placeholder="Indtast din højde i cm, f.eks. 175"></asp:TextBox><br />
             Vægt:<br />
             <asp:TextBox ID="userWeight" runat="server" CssClass="form-control" placeholder="Indtast din vægt i kg f.eks. 82"></asp:TextBox><br />
-            <asp:Button ID="createUserButton" runat="server" CssClass="btn btn-success" Text="Opret bruger" />
+
+            <asp:Button OnClick="CreateUser_Click" ID="createUserButton" runat="server" CssClass="btn btn-success" Text="Opret bruger" />
         </div>
 
 
