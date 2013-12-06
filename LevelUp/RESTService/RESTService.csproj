@@ -81,6 +81,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IAchieve.cs" />
     <Compile Include="IUser.cs" />
     <Compile Include="LevelService.svc.cs">
       <DependentUpon>LevelService.svc</DependentUpon>

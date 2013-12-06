@@ -31,6 +31,19 @@ namespace DataAccess
         [DataMember]
         public double Height { get; set; }
 
+        [DataMember]
+        public int Level { get; set; }
+
+        [DataMember]
+        public long Xp { get; set; }
+
+        [DataMember]
         public virtual List<LogEntry> Logs { get; set; }
+
+        [DataMember]
+        public virtual List<Achievement> Achievements { get; set; }
+
+        [DataMember]
+        public virtual List<Title> Titles { get; set; }
     }
 }
