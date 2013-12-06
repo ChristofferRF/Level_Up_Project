@@ -18,27 +18,26 @@
         <div class="createUserBox">
 
             <h4>Oprettelse af ny bruger</h4>
-            <br />
-            Vælg dit brugernavn:
-            <asp:TextBox ID="selectedUsername" runat="server" CssClass="form-control"></asp:TextBox><br />
+            Brugernavn:
+            <asp:TextBox ID="selectedUsername" runat="server" CssClass="form-control" placeholder="Vælg dit brugernavn"></asp:TextBox><br />
 
-            Vælg et password:
-            <asp:TextBox ID="selectedPassword" runat="server" CssClass="form-control"></asp:TextBox>
+            Kodeord:
+            <asp:TextBox ID="selectedPassword" runat="server" CssClass="form-control" placeholder="Vælg et kodeord"></asp:TextBox><br />
 
-            Bekræft dit password:
-            <asp:TextBox ID="confirmPassword" runat="server" CssClass="form-control"></asp:TextBox>
+            Kodeord:
+            <asp:TextBox ID="confirmPassword" runat="server" CssClass="form-control" placeholder="Bekræft dit kodeord"></asp:TextBox>
             <br />
 
 
             <b>Indtast venligst dine oplysninger:</b><br />
             Navn:
-            <asp:TextBox ID="userName" runat="server" CssClass="form-control"></asp:TextBox><br />
+            <asp:TextBox ID="userName" runat="server" CssClass="form-control" placeholder="Indtast dit navn"></asp:TextBox><br />
             Alder:
-            <asp:TextBox ID="userAge" runat="server" CssClass="form-control"></asp:TextBox><br />
+            <asp:TextBox ID="userAge" runat="server" CssClass="form-control" placeholder="Indtast din alder"></asp:TextBox><br />
             Højde:<br />
-            <asp:TextBox ID="userHeight" runat="server" CssClass="form-control" placeholder="Cm"></asp:TextBox><br />
+            <asp:TextBox ID="userHeight" runat="server" CssClass="form-control" placeholder="Indtast din højde i cm, f.eks. 175"></asp:TextBox><br />
             Vægt:<br />
-            <asp:TextBox ID="userWeight" runat="server" CssClass="form-control" placeholder="Kg"></asp:TextBox><br />
+            <asp:TextBox ID="userWeight" runat="server" CssClass="form-control" placeholder="Indtast din vægt i kg f.eks. 82"></asp:TextBox><br />
             <asp:Button ID="createUserButton" runat="server" CssClass="btn btn-success" Text="Opret bruger" />
         </div>
 
