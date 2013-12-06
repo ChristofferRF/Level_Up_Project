@@ -16,10 +16,10 @@ namespace UnitTest
 
             string username = "derp";
             string password = "1234";
-            string name = "Finn Allan";
+            string name = "Thorstein";
             int age = 17;
-            int weight = 80;
-            int height = 175;
+            double weight = 80;
+            double height = 175;
 
             demoUser = userCtr.AddUserToDb(username, password, name, age, weight, height);
 
