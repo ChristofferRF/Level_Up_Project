@@ -41,6 +41,15 @@ namespace Controller
             else
                 return demoUser;
         }
+        public User GetUser(string username, string password)
+        {
+            using (var db = new DataAccessContext())
+            {
+                User newUser = db.Users.Find("Kielgasten", "meh");
 
+                //newUser.Achievements = db.Achievements.Find(newUser);
+            }
+            return null;
+        }
     }
 }

@@ -12,5 +12,9 @@ namespace DataAccess
         public DbSet<LogEntry> LogEntries { get; set; }
 
         public DbSet<User> Users { get; set; }
+
+        public DbSet<Achievement> Achievements { get; set; }
+
+        public DbSet<Title> Titles { get; set; }
     }
 }
