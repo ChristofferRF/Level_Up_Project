@@ -45,8 +45,14 @@ namespace RESTService
         /// <returns></returns>
         public User AddUser(string age, string height, string name, string password, string userId, string userName, string weight)
         {
-            return userCon.AddUserToDb(userName, password, name, Convert.ToInt32(age), Convert.ToInt32(weight), Convert.ToInt32(height));
+            return userCon.AddUserToDb(userName, password, name, Convert.ToInt32(age), Convert.ToDouble(weight), Convert.ToDouble(height));
         }
 
+
+        public User GetUser(string userName, string password)
+        {
+            //return  userCon.GetUser(userName, password);
+            return null;
+        }
     }
 }

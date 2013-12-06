@@ -19,5 +19,12 @@ namespace RESTService
             BodyStyle = WebMessageBodyStyle.Wrapped,
             UriTemplate = "add")]
         User AddUser(string Age, string Height, string Name, string Password, string UserId, string Username, string Weight);
+
+        [OperationContract]
+        [WebInvoke(Method = "GET",
+            ResponseFormat = WebMessageFormat.Json,
+            BodyStyle = WebMessageBodyStyle.Wrapped,
+            UriTemplate = "get")]
+        User GetUser(string UserName, string Password);
     }
 }
