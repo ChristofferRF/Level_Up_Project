@@ -28,6 +28,7 @@ namespace Client
             {
                 User user = new User();
                 user.Username = selectedUsername.Text;
+                user.Password = selectedPassword.Text;
                 user.Name = userName.Text;
                 user.Age = Convert.ToInt32(userAge.Text);
                 user.Height = Convert.ToDouble(userHeight.Text);
