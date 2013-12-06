@@ -70,12 +70,14 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="WebClient.aspx" />
+    <Content Include="CreateUser.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Code\JSONhelper.cs" />
     <Compile Include="App_Code\EntryCalls.cs" />
     <Compile Include="LoginClient.aspx.cs">
       <DependentUpon>LoginClient.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="LoginClient.aspx.designer.cs">
       <DependentUpon>LoginClient.aspx</DependentUpon>
@@ -88,6 +90,13 @@
     </Compile>
     <Compile Include="WebClient.aspx.designer.cs">
       <DependentUpon>WebClient.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CreateUser.aspx.cs">
+      <DependentUpon>CreateUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CreateUser.aspx.designer.cs">
+      <DependentUpon>CreateUser.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
