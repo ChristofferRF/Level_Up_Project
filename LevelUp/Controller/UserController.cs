@@ -15,7 +15,7 @@ namespace Controller
 
         }
 
-        public User AddUserToDb(string username, string password, string name, int age, double weight, double height)
+        public User AddUserToDb(string username, string password, string name, int age, double weight, double height, long xp, int level)
         {
             User demoUser = new User();
             int result = -1;
@@ -30,6 +30,8 @@ namespace Controller
                     Age = age,
                     Weight = weight,
                     Height = height,
+                    Xp = xp,
+                    Level = level
                 };
 
                 db.Users.Add(user);

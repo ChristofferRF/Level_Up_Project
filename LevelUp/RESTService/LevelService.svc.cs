@@ -43,9 +43,9 @@ namespace RESTService
         /// <param name="weight"></param>
         /// <param name="height"></param>
         /// <returns></returns>
-        public User AddUser(string age, string height, string name, string password, string userId, string userName, string weight)
+        public User AddUser(string age, string height, string name, string password, string userId, string userName, string weight, string xp, string level)
         {
-            return userCon.AddUserToDb(userName, password, name, Convert.ToInt32(age), Convert.ToDouble(weight), Convert.ToDouble(height));
+            return userCon.AddUserToDb(userName, password, name, Convert.ToInt32(age), Convert.ToDouble(weight), Convert.ToDouble(height), Convert.ToInt64(xp), Convert.ToInt32(level));
         }
 
 

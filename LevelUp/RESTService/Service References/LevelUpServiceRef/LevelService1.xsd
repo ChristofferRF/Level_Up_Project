@@ -30,6 +30,8 @@
         <xs:element minOccurs="0" name="UserId" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="Username" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="Weight" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="XP" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Level" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -37,6 +39,21 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/DataAccess" minOccurs="0" name="AddUserResult" nillable="true" type="q2:User" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/DataAccess" minOccurs="0" name="GetUserResult" nillable="true" type="q3:User" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
