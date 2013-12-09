@@ -15,8 +15,22 @@ namespace Client
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            ShowText();
         }
+
+        private void ShowText()
+        {
+            lblSelectedUsername.Text = StringValues.LBL_SELECTED_USERNAME;
+            lblSelectedPassword.Text = StringValues.LBL_SELECTED_PASSWORD;
+            lblConfirmPassword.Text = StringValues.LBL_CONFIRM_PASSWORD;
+            // - lower part of form -
+            lblUsername.Text = StringValues.LBL_USERNAME_CREATE;
+            lblUserage.Text = StringValues.LBL_USERAGE_CREATE;
+            lblUserheight.Text = StringValues.LBL_USERHEIGHT_CREATE;
+            lblUserweight.Text = StringValues.LBL_USERWEIGHT_CREATE;
+            createUserButton.Text = StringValues.BTN_USER_CREATE;
+        }
+
 
         protected void CreateUser_Click(object sender, EventArgs e)
         {

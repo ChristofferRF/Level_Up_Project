@@ -14,9 +14,20 @@ namespace Client
         public const string CREATE_LOG_BUTTON = "Opret aktivitet";
 
         // Login Client
-        public const string LBL_USERNAME = "Brugernavn:";
-        public const string LBL_PASSWORD = "Kodeord:";
+        public const string LBL_USERNAME = "Brugernavn";
+        public const string LBL_PASSWORD = "Kodeord";
         public const string BTN_CREATE_USER = "Opret bruger";
         public const string BTN_LOGIN = "Log ind";
+
+        // Create User Client
+        public const string LBL_SELECTED_USERNAME = "Brugernavn";
+        public const string LBL_SELECTED_PASSWORD = "Kodeord";
+        public const string LBL_CONFIRM_PASSWORD = "Kodeord";
+        // - lower part of form -
+        public const string LBL_USERNAME_CREATE = "Brugernavn";
+        public const string LBL_USERAGE_CREATE = "Alder";
+        public const string LBL_USERHEIGHT_CREATE = "Højde";
+        public const string LBL_USERWEIGHT_CREATE = "Vægt";
+        public const string BTN_USER_CREATE = "Opret bruger";
     }
 }

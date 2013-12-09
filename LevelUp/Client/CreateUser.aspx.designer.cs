@@ -22,6 +22,15 @@ namespace Client {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
+        /// lblSelectedUsername control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblSelectedUsername;
+        
+        /// <summary>
         /// selectedUsername control.
         /// </summary>
         /// <remarks>
@@ -29,6 +38,15 @@ namespace Client {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox selectedUsername;
+        
+        /// <summary>
+        /// lblSelectedPassword control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblSelectedPassword;
         
         /// <summary>
         /// selectedPassword control.
@@ -40,6 +58,15 @@ namespace Client {
         protected global::System.Web.UI.WebControls.TextBox selectedPassword;
         
         /// <summary>
+        /// lblConfirmPassword control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblConfirmPassword;
+        
+        /// <summary>
         /// confirmPassword control.
         /// </summary>
         /// <remarks>
@@ -47,6 +74,15 @@ namespace Client {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox confirmPassword;
+        
+        /// <summary>
+        /// lblUsername control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblUsername;
         
         /// <summary>
         /// userName control.
@@ -58,6 +94,15 @@ namespace Client {
         protected global::System.Web.UI.WebControls.TextBox userName;
         
         /// <summary>
+        /// lblUserage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblUserage;
+        
+        /// <summary>
         /// userAge control.
         /// </summary>
         /// <remarks>
@@ -67,6 +112,15 @@ namespace Client {
         protected global::System.Web.UI.WebControls.TextBox userAge;
         
         /// <summary>
+        /// lblUserheight control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblUserheight;
+        
+        /// <summary>
         /// userHeight control.
         /// </summary>
         /// <remarks>
@@ -74,6 +128,15 @@ namespace Client {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox userHeight;
+        
+        /// <summary>
+        /// lblUserweight control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblUserweight;
         
         /// <summary>
         /// userWeight control.
