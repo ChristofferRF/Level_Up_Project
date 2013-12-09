@@ -43,11 +43,48 @@ namespace Controller
         }
         public User GetUser(string username, string password)
         {
+            User newUser = new User();
             using (var db = new DataAccessContext())
             {
-                User newUser = db.Users.Find("Kielgasten", "meh");
+                User theUser = (from user in db.Users
+                               where user.Username == username & user.Password == password
+                               select user).First<User>();
 
-                //newUser.Achievements = db.Achievements.Find(newUser);
+                //theUser.Achievements = GetUsersAchievements(theUser.UserId);
+                //theUser.Titles = GetUsersTitles(theUser.UserId);
+
+                newUser = theUser;
+            }
+
+            newUser.Achievements = GetUsersAchievements(newUser.UserId);
+
+            newUser.Titles = GetUsersTitles(newUser.UserId);
+
+            return newUser;
+        }
+
+        public List<Achievement> GetUsersAchievements(int userId)
+        {
+            List<Achievement> achList = new List<Achievement>();
+            using (var db = new DataAccessContext())
+            {
+                List<Achievement> achievements = (from ach in db.Achievements
+                                                  where ach.UserId == userId
+                                                  select ach).ToList();
+                achList = achievements;
+            }
+            return achList;
+        }
+
+        public List<Title> GetUsersTitles(int userId)
+        {
+            List<Title> titList = new List<Title>();
+            using (var db = new DataAccessContext())
+            {
+                List<Title> titles = (from tit in db.Titles
+                                      where tit.UserId == userId
+                                      select tit).ToList();
+                titList = titles;
             }
             return null;
         }

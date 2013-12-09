@@ -66,6 +66,10 @@
     <Compile Include="Migrations\201312060851089_Added Achievements and Titles.Designer.cs">
       <DependentUpon>201312060851089_Added Achievements and Titles.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201312090838086_test UserId på ach og title.cs" />
+    <Compile Include="Migrations\201312090838086_test UserId på ach og title.Designer.cs">
+      <DependentUpon>201312090838086_test UserId på ach og title.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Title.cs" />
@@ -87,6 +91,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201312060851089_Added Achievements and Titles.resx">
       <DependentUpon>201312060851089_Added Achievements and Titles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201312090838086_test UserId på ach og title.resx">
+      <DependentUpon>201312090838086_test UserId på ach og title.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

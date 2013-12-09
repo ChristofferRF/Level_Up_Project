@@ -24,5 +24,8 @@ namespace DataAccess
 
         [DataMember]
         public DateTime DateAchieved { get; set; }
+
+        [DataMember]
+        public int UserId { get; set; }
     }
 }

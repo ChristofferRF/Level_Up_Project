@@ -2,6 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using DataAccess;
 using Controller;
+using System.Diagnostics;
 
 namespace UnitTest
 {
@@ -36,25 +37,26 @@ namespace UnitTest
             UserController userCtr = new UserController();
             string username = "kielgasten";
             string password = "meh";
-            string name = "Ronnie";
-            int age = 31;
-            double weight = 85;
-            double height = 170;
-            int level = 0;
-            long xp = 0;
-            string achievementName = "Collector";
-            string Title = "Supreme Grand Master";
+            //string name = "Ronnie";
+            //int age = 31;
+            //double weight = 85;
+            //double height = 170;
+            //int level = 0;
+            //long xp = 0;
+            //string achievementName = "Collector";
+            //string Title = "Supreme Grand Master";
 
             User demoUser = new User();
 
             demoUser = userCtr.GetUser(username, password);
-
+            Debug.WriteLine("username" + demoUser.Username.ToString() + "\n");
+            
             if (demoUser.Username == username && demoUser.Password == password)
             {
-                Console.WriteLine("succes");
-                Console.WriteLine("username" + demoUser.Username.ToString() + "\n");
-                Console.WriteLine("Achievement" + demoUser.Achievements[0].Name + "\n");
-                Console.WriteLine("Title" + demoUser.Titles[0].Name);
+                Debug.WriteLine("succes");
+                Debug.WriteLine("username" + demoUser.Username.ToString() + "\n");
+                //Console.WriteLine("Achievement" + demoUser.Achievements[0].Name + "\n");
+                //Console.WriteLine("Title" + demoUser.Titles[0].Name);
             }
 
             
