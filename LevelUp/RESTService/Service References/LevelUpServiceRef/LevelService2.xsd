@@ -13,14 +13,56 @@
   <xs:element name="LogEntry" nillable="true" type="tns:LogEntry" />
   <xs:complexType name="User">
     <xs:sequence>
+      <xs:element minOccurs="0" name="Achievements" nillable="true" type="tns:ArrayOfAchievement" />
       <xs:element minOccurs="0" name="Age" type="xs:int" />
       <xs:element minOccurs="0" name="Height" type="xs:double" />
+      <xs:element minOccurs="0" name="Level" type="xs:int" />
+      <xs:element minOccurs="0" name="Logs" nillable="true" type="tns:ArrayOfLogEntry" />
       <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Titles" nillable="true" type="tns:ArrayOfTitle" />
       <xs:element minOccurs="0" name="UserId" type="xs:int" />
       <xs:element minOccurs="0" name="Username" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Weight" type="xs:double" />
+      <xs:element minOccurs="0" name="Xp" type="xs:long" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="User" nillable="true" type="tns:User" />
+  <xs:complexType name="ArrayOfAchievement">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Achievement" nillable="true" type="tns:Achievement" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAchievement" nillable="true" type="tns:ArrayOfAchievement" />
+  <xs:complexType name="Achievement">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AchievementId" type="xs:int" />
+      <xs:element minOccurs="0" name="DateAchieved" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Value" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Achievement" nillable="true" type="tns:Achievement" />
+  <xs:complexType name="ArrayOfLogEntry">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LogEntry" nillable="true" type="tns:LogEntry" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLogEntry" nillable="true" type="tns:ArrayOfLogEntry" />
+  <xs:complexType name="ArrayOfTitle">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Title" nillable="true" type="tns:Title" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTitle" nillable="true" type="tns:ArrayOfTitle" />
+  <xs:complexType name="Title">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DateAchieved" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TitleId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Title" nillable="true" type="tns:Title" />
 </xs:schema>

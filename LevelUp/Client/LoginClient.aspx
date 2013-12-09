@@ -13,14 +13,14 @@
 <body class="body">
     <form id="form1" runat="server">
         <div id="logincontainer" class="container" style="width: 300px">
-            <asp:Label ID="lblUsername" runat="server" Text="Username:"></asp:Label>
+            <asp:Label ID="lblUsername" runat="server" Text="Brugernavn:"></asp:Label>
             <asp:TextBox ID="txtBoxUsername" runat="server" class="form-control" placeholder="Indtast brugernavn"></asp:TextBox>
             <br />
-            <asp:Label ID="lblPassword" runat="server" Text="Password:"></asp:Label>
+            <asp:Label ID="lblPassword" runat="server" Text="Kodeord:"></asp:Label>
             <asp:TextBox ID="txtBoxPassword" runat="server" class="form-control" placeholder="Indtast kodeord" type="password"></asp:TextBox>
             <br />
-            <asp:Button ID="btnCreateUser" runat="server" Text="SignUp" class="btn btn-primary" />
-            <asp:Button ID="btnLogin" runat="server" Text="Login" OnClick="btnLogin_Click" class="btn btn-primary" />
+            <asp:Button ID="btnCreateUser" runat="server" Text="Opret bruger" class="btn btn-primary" />
+            <asp:Button ID="btnLogin" runat="server" Text="Log ind" OnClick="btnLogin_Click" class="btn btn-primary" />
         </div>
     </form>
 </body>

@@ -28,10 +28,13 @@ namespace Client
             {
                 User user = new User();
                 user.Username = selectedUsername.Text;
+                user.Password = selectedPassword.Text;
                 user.Name = userName.Text;
                 user.Age = Convert.ToInt32(userAge.Text);
                 user.Height = Convert.ToDouble(userHeight.Text);
                 user.Weight = Convert.ToDouble(userWeight.Text);
+                user.Xp = 0;
+                user.Level = 1;
 
                 user = UserCalls.AddUser(user);
                 Debug.WriteLine("User has sucessfully been created in the database");

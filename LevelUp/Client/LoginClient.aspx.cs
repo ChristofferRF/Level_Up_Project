@@ -14,7 +14,16 @@ namespace Client
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            ShowText();
+        }
 
+ 
+        private void ShowText()
+        {
+            lblUsername.Text = StringValues.LBL_USERNAME;
+            lblPassword.Text = StringValues.LBL_PASSWORD;
+            btnCreateUser.Text = StringValues.BTN_CREATE_USER;
+            btnLogin.Text = StringValues.BTN_LOGIN;
         }
 
         protected void btnLogin_Click(object sender, EventArgs e)
@@ -26,7 +35,7 @@ namespace Client
                 user.Password = "meh";
                 user.Username = "Kielgasten";
                 user.Weight = 85;
-                user.Height = 170;
+                user.Height = 170;  
 
                 user = UserCalls.AddUser(user);
                 txtBoxUsername.Text = user.Name;

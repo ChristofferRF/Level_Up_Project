@@ -63,10 +63,16 @@ namespace RESTService.LevelUpServiceRef {
     public interface IUser {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUser/AddUser", ReplyAction="http://tempuri.org/IUser/AddUserResponse")]
-        DataAccess.User AddUser(string Age, string Height, string Name, string Password, string UserId, string Username, string Weight);
+        DataAccess.User AddUser(string Age, string Height, string Name, string Password, string UserId, string Username, string Weight, string XP, string Level);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUser/AddUser", ReplyAction="http://tempuri.org/IUser/AddUserResponse")]
-        System.Threading.Tasks.Task<DataAccess.User> AddUserAsync(string Age, string Height, string Name, string Password, string UserId, string Username, string Weight);
+        System.Threading.Tasks.Task<DataAccess.User> AddUserAsync(string Age, string Height, string Name, string Password, string UserId, string Username, string Weight, string XP, string Level);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUser/GetUser", ReplyAction="http://tempuri.org/IUser/GetUserResponse")]
+        DataAccess.User GetUser(string UserName, string Password);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUser/GetUser", ReplyAction="http://tempuri.org/IUser/GetUserResponse")]
+        System.Threading.Tasks.Task<DataAccess.User> GetUserAsync(string UserName, string Password);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -96,12 +102,20 @@ namespace RESTService.LevelUpServiceRef {
                 base(binding, remoteAddress) {
         }
         
-        public DataAccess.User AddUser(string Age, string Height, string Name, string Password, string UserId, string Username, string Weight) {
-            return base.Channel.AddUser(Age, Height, Name, Password, UserId, Username, Weight);
+        public DataAccess.User AddUser(string Age, string Height, string Name, string Password, string UserId, string Username, string Weight, string XP, string Level) {
+            return base.Channel.AddUser(Age, Height, Name, Password, UserId, Username, Weight, XP, Level);
         }
         
-        public System.Threading.Tasks.Task<DataAccess.User> AddUserAsync(string Age, string Height, string Name, string Password, string UserId, string Username, string Weight) {
-            return base.Channel.AddUserAsync(Age, Height, Name, Password, UserId, Username, Weight);
+        public System.Threading.Tasks.Task<DataAccess.User> AddUserAsync(string Age, string Height, string Name, string Password, string UserId, string Username, string Weight, string XP, string Level) {
+            return base.Channel.AddUserAsync(Age, Height, Name, Password, UserId, Username, Weight, XP, Level);
+        }
+        
+        public DataAccess.User GetUser(string UserName, string Password) {
+            return base.Channel.GetUser(UserName, Password);
+        }
+        
+        public System.Threading.Tasks.Task<DataAccess.User> GetUserAsync(string UserName, string Password) {
+            return base.Channel.GetUserAsync(UserName, Password);
         }
     }
 }

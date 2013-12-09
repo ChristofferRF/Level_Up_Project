@@ -18,10 +18,10 @@ namespace RESTService
             ResponseFormat = WebMessageFormat.Json,
             BodyStyle = WebMessageBodyStyle.Wrapped,
             UriTemplate = "add")]
-        User AddUser(string Age, string Height, string Name, string Password, string UserId, string Username, string Weight);
+        User AddUser(string Age, string Height, string Name, string Password, string UserId, string Username, string Weight, string XP, string Level);
 
         [OperationContract]
-        [WebInvoke(Method = "GET",
+        [WebInvoke(Method = "POST",
             ResponseFormat = WebMessageFormat.Json,
             BodyStyle = WebMessageBodyStyle.Wrapped,
             UriTemplate = "get")]
