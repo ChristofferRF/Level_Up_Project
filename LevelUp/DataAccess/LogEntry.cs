@@ -22,5 +22,7 @@ namespace DataAccess
         public int Minutes { get; set; }
         [DataMember]
         public int Seconds { get; set; }
+        [DataMember]
+        public int UserId { get; set; }
     }
 }

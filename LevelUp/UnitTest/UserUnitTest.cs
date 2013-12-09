@@ -21,8 +21,10 @@ namespace UnitTest
             int age = 17;
             double weight = 80;
             double height = 175;
+            long xp = 5;
+            int level = 0;
 
-            demoUser = userCtr.AddUserToDb(username, password, name, age, weight, height);
+            demoUser = userCtr.AddUserToDb(username, password, name, age, weight, height, xp, level);
 
             if (demoUser.Username == username && demoUser.Password == password && demoUser.Name == name && demoUser.Age == age
                 && demoUser.Weight == weight && demoUser.Height == height)
@@ -37,14 +39,14 @@ namespace UnitTest
             UserController userCtr = new UserController();
             string username = "kielgasten";
             string password = "meh";
-            //string name = "Ronnie";
-            //int age = 31;
-            //double weight = 85;
-            //double height = 170;
-            //int level = 0;
-            //long xp = 0;
-            //string achievementName = "Collector";
-            //string Title = "Supreme Grand Master";
+            string name = "Ronnie";
+            int age = 31;
+            double weight = 85;
+            double height = 170;
+            int level = 0;
+            long xp = 0;
+            string achievementName = "Collector";
+            string Title = "Supreme Grand Master";
 
             User demoUser = new User();
 

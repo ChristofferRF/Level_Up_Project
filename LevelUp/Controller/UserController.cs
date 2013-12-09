@@ -49,46 +49,30 @@ namespace Controller
             using (var db = new DataAccessContext())
             {
                 User theUser = (from user in db.Users
-                               where user.Username == username & user.Password == password
-                               select user).First<User>();
+                                    .Include("Achievements")
+                                    .Include("Titles")
+                                    .Include("Logs")
+                                where user.Username == username & user.Password == password
+                                select user).FirstOrDefault();
 
-                //theUser.Achievements = GetUsersAchievements(theUser.UserId);
-                //theUser.Titles = GetUsersTitles(theUser.UserId);
+                List<Achievement> achievements = (from ach in db.Achievements
+                                                  where ach.UserId == theUser.UserId
+                                                  select ach).ToList();
 
+                List<Title> titles = (from tit in db.Titles
+                                      where tit.UserId == theUser.UserId
+                                      select tit).ToList();
+
+                List<LogEntry> logs = (from log in db.LogEntries
+                                       where log.UserId == theUser.UserId
+                                       select log).ToList();
+                theUser.Achievements = achievements;
+                theUser.Titles = titles;
+                theUser.Logs = logs;
                 newUser = theUser;
             }
 
-            newUser.Achievements = GetUsersAchievements(newUser.UserId);
-
-            newUser.Titles = GetUsersTitles(newUser.UserId);
-
             return newUser;
-        }
-
-        public List<Achievement> GetUsersAchievements(int userId)
-        {
-            List<Achievement> achList = new List<Achievement>();
-            using (var db = new DataAccessContext())
-            {
-                List<Achievement> achievements = (from ach in db.Achievements
-                                                  where ach.UserId == userId
-                                                  select ach).ToList();
-                achList = achievements;
-            }
-            return achList;
-        }
-
-        public List<Title> GetUsersTitles(int userId)
-        {
-            List<Title> titList = new List<Title>();
-            using (var db = new DataAccessContext())
-            {
-                List<Title> titles = (from tit in db.Titles
-                                      where tit.UserId == userId
-                                      select tit).ToList();
-                titList = titles;
-            }
-            return null;
         }
     }
 }
