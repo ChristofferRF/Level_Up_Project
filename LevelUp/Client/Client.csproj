@@ -71,6 +71,7 @@
     </Content>
     <Content Include="WebClient.aspx" />
     <Content Include="CreateUser.aspx" />
+    <Content Include="ProgressTab.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Code\JSONhelper.cs" />
@@ -98,6 +99,13 @@
     </Compile>
     <Compile Include="CreateUser.aspx.designer.cs">
       <DependentUpon>CreateUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProgressTab.aspx.cs">
+      <DependentUpon>ProgressTab.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProgressTab.aspx.designer.cs">
+      <DependentUpon>ProgressTab.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

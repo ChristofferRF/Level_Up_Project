@@ -73,3 +73,88 @@
     margin-right: auto;
     margin-top: 10px;
 }
+
+.progressTab {
+    background-color: white;
+    width: 800px;
+    height: 500px;
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+}
+
+.sidebar {
+    
+    float: left;
+    width: 30%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.userImg {
+    width: 100%;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.userInfo {
+    width: 100%;
+    padding: 10px;
+    
+}
+
+.pgRightPanel {
+    background-color: #ff8800;
+    float: right;
+    width: 70%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.header {
+    background-color: #fff;
+    border-top-right-radius: 10px;
+    padding-top: 5px;
+}
+
+.mainWindow {
+    background-color: #92bbaa;
+    
+}
+
+.overview {
+    background-color: #b6ff00;
+}
+
+.overviewLeft {
+    width: 15%;
+    background-color: #ff0000;
+    float: left;
+    padding: 10px;
+}
+
+.overviewRight {
+    width: 85%;
+    background-color: #ff5500;
+    float: left;
+    padding: 10px;
+}
+
+.latest {
+    background-color: #b6dd44;
+    
+}
+
+.latestEntry {
+    background-color: #991919;
+    width: 200px;
+    float: left;
+}
+
+.latestAch {
+    background-color: #997919;
+    width: 200px;
+    float: right;
+}
