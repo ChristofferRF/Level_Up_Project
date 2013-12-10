@@ -55,20 +55,20 @@ namespace Controller
                                 where user.Username == username & user.Password == password
                                 select user).FirstOrDefault();
 
-                List<Achievement> achievements = (from ach in db.Achievements
-                                                  where ach.UserId == theUser.UserId
-                                                  select ach).ToList();
+                //List<Achievement> achievements = (from ach in db.Achievements
+                //                                  where ach.UserId == theUser.UserId
+                //                                  select ach).ToList();
 
-                List<Title> titles = (from tit in db.Titles
-                                      where tit.UserId == theUser.UserId
-                                      select tit).ToList();
+                //List<Title> titles = (from tit in db.Titles
+                //                      where tit.UserId == theUser.UserId
+                //                      select tit).ToList();
 
-                List<LogEntry> logs = (from log in db.LogEntries
-                                       where log.UserId == theUser.UserId
-                                       select log).ToList();
-                theUser.Achievements = achievements;
-                theUser.Titles = titles;
-                theUser.Logs = logs;
+                //List<LogEntry> logs = (from log in db.LogEntries
+                //                       where log.UserId == theUser.UserId
+                //                       select log).ToList();
+                //theUser.Achievements = achievements;
+                //theUser.Titles = titles;
+                //theUser.Logs = logs;
                 newUser = theUser;
             }
 

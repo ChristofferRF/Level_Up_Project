@@ -51,8 +51,7 @@ namespace RESTService
 
         public User GetUser(string userName, string password)
         {
-            //return  userCon.GetUser(userName, password);
-            return null;
+            return  userCon.GetUser(userName, password);
         }
     }
 }
