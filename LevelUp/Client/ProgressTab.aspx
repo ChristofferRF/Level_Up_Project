@@ -51,17 +51,45 @@
                             <h3>Title:</h3>
                         </div>
                         <div class="overviewRight">
-                            <h3>input</h3>
-                            <h3>input</h3>
+                            <h3>18</h3>
+                            <h3>Adept</h3>
                         </div>
+                    </div>
+
+                    <div class="filler">
+                        
                     </div>
 
                     <div class="latest">
                         <div class="latestEntry">
-                            Latest entry
+                            <div class="latestHeader">
+                                <h3 class="latestHeadline">Seneste Indslag</h3>
+                            </div>
+                            <div class="latestContent">
+                                <div class="logEntryContent">
+                                    <p><b>Running, 5km in 31 minutes</b> <i>14/4/13</i></p>
+                                </div>
+                                <div class="logEntryContent">
+                                    <p><b>Running, 5km in 36 minutes</b> <i>12/4/13</i></p>
+                                </div>
+                                <div class="logEntryContent">
+                                    <p><b>Running, 5km in 39 minutes</b> <i>10/4/13</i></p>
+                                </div>
+                            </div>
                         </div>
+
                         <div class="latestAch">
-                            Latest Achievement
+                            <div class="latestHeader">
+                                <h3 class="latestHeadline">Seneste Bedrift</h3>
+                            </div>
+                            <div class="latestContentAch">
+                                <b>Sheep Humper</b>
+                                <div class="achImgContent">
+                                    <img src="http://i.imgur.com/7Tzv4ht.png" alt="..." class="img-thumbnail" />
+                                </div>
+                                <p>Hump a sheep at least four times in a week</p>
+                                <p><i>Achieved the April 4th, 2013</i></p>
+                            </div>
                         </div>
                     </div>
                 </div>
