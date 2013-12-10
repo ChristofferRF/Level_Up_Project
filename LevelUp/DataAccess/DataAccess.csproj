@@ -70,6 +70,10 @@
     <Compile Include="Migrations\201312090838086_test UserId på ach og title.Designer.cs">
       <DependentUpon>201312090838086_test UserId på ach og title.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201312091233018_UserId på Logs.cs" />
+    <Compile Include="Migrations\201312091233018_UserId på Logs.Designer.cs">
+      <DependentUpon>201312091233018_UserId på Logs.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Title.cs" />
@@ -94,6 +98,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201312090838086_test UserId på ach og title.resx">
       <DependentUpon>201312090838086_test UserId på ach og title.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201312091233018_UserId på Logs.resx">
+      <DependentUpon>201312091233018_UserId på Logs.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

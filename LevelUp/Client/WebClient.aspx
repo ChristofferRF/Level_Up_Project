@@ -20,9 +20,9 @@
                 <asp:Label ID="DistanceLabel" runat="server"></asp:Label><br />
                 <asp:TextBox ID="distanceTextBox" runat="server" class="form-control"></asp:TextBox>
                 <br />
-                <asp:Label ID="TimeLabel" Text="Tid" runat="server"></asp:Label><br />
+                <asp:Label ID="TimeLabel" runat="server"></asp:Label><br />
                 <asp:TextBox ID="HoursTextBox" runat="server" class="timeInput" placeholder="Hours"></asp:TextBox>
-                : 
+                :
             <asp:TextBox ID="MinutesTextBox" runat="server" class="timeInput" placeholder="Minutes"></asp:TextBox>
                 : 
             <asp:TextBox ID="SecondsTextBox" runat="server" class="timeInput" placeholder="Seconds"></asp:TextBox>
