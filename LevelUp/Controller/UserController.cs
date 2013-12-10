@@ -50,12 +50,14 @@ namespace Controller
             {
                 User theUser = (from user in db.Users
                                where user.Username == username & user.Password == password
-                               select user).First<User>();
+                               select user)
+                               .Include("Achievements")
+                               .Include("Titles").First<User>();
 
                 //theUser.Achievements = GetUsersAchievements(theUser.UserId);
                 //theUser.Titles = GetUsersTitles(theUser.UserId);
 
-                newUser = theUser;
+                newUser = (User) theUser;
             }
 
             newUser.Achievements = GetUsersAchievements(newUser.UserId);
