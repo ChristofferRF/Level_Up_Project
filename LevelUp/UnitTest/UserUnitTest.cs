@@ -2,6 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using DataAccess;
 using Controller;
+using System.Diagnostics;
 
 namespace UnitTest
 {
@@ -20,8 +21,10 @@ namespace UnitTest
             int age = 17;
             double weight = 80;
             double height = 175;
+            long xp = 5;
+            int level = 0;
 
-            demoUser = userCtr.AddUserToDb(username, password, name, age, weight, height);
+            demoUser = userCtr.AddUserToDb(username, password, name, age, weight, height, xp, level);
 
             if (demoUser.Username == username && demoUser.Password == password && demoUser.Name == name && demoUser.Age == age
                 && demoUser.Weight == weight && demoUser.Height == height)
@@ -48,13 +51,14 @@ namespace UnitTest
             User demoUser = new User();
 
             demoUser = userCtr.GetUser(username, password);
-
+            Debug.WriteLine("username" + demoUser.Username.ToString() + "\n");
+            
             if (demoUser.Username == username && demoUser.Password == password)
             {
-                Console.WriteLine("succes");
-                Console.WriteLine("username" + demoUser.Username.ToString() + "\n");
-                Console.WriteLine("Achievement" + demoUser.Achievements[0].Name + "\n");
-                Console.WriteLine("Title" + demoUser.Titles[0].Name);
+                Debug.WriteLine("succes");
+                Debug.WriteLine("username" + demoUser.Username.ToString() + "\n");
+                //Console.WriteLine("Achievement" + demoUser.Achievements[0].Name + "\n");
+                //Console.WriteLine("Title" + demoUser.Titles[0].Name);
             }
 
             
