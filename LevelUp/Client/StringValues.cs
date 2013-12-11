@@ -33,5 +33,21 @@ namespace Client
         public const string LBL_USERHEIGHT_CREATE = "Højde";
         public const string LBL_USERWEIGHT_CREATE = "Vægt";
         public const string BTN_USER_CREATE = "Opret bruger";
+
+        //Progress bar
+        public const string USERINFONAME_LABEL = "Navn";
+        public const string USERINFOAGE_LABEL = "Alder";
+        public const string USERINFOHEIGHT_LABEL = "Højde";
+        public const string USERINFOWEIGHT_LABEL = "Vægt";
+
+        public const string NAMEPROGRESS_LABEL = "Profil";
+        public const string ACHIEVEMENTS_LABEL = "Bedrifter";
+        public const string STATISTICS_LABEL = "Statistik";
+
+        public const string LEVEL_LABEL = "Niveau";
+        public const string TITLE_LABEL = "Titel";
+
+        public const string LATESTENTRY_LABEL = "Seneste Indslag";
+        public const string LATESTACHIEVEMENT_LABEL = "Seneste Bedrift";
     }
 }

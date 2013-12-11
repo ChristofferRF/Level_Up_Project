@@ -19,17 +19,23 @@
                     <img src="http://i.imgur.com/rzOnp.gif" alt="..." class="img-thumbnail" />
                 </div>
                 <div class="userInfo">
-                    <b>Navn:<br />
-                    </b>
-                    <i>user input</i><br />
-                    <b>Alder:<br />
-                    </b>
-                    <i>user input</i><br />
-                    <b>Højde<br />
-                    </b>
-                    <i>user input</i><br />
-                    <b>Vægt:</b><br />
-                    <i>user input</i><br />
+                    <b><asp:Label ID="userInfoName" runat="server"></asp:Label></b>
+                    <br />
+                    <i>user input</i>
+                    <br />
+                    <b><asp:Label ID="userInfoAge" runat="server"></asp:Label></b>
+                    <br />
+                    <i>user input</i>
+                    <br />
+                    <b><asp:Label ID="userInfoHeight" runat="server"></asp:Label></b>
+                    <br />
+                    
+                    <i>user input</i>
+                    <br />
+                    <b><asp:Label ID="userInfoWeight" runat="server"></asp:Label></b>
+                    <br />
+                    <i>user input</i>
+                    <br />
 
                 </div>
             </div>
@@ -37,9 +43,9 @@
             <div class="pgRightPanel">
                 <div class="header">
                     <ul class="nav nav-tabs">
-                        <li class="active"><a href="#">Progress</a></li>
-                        <li><a href="#">Achievements</a></li>
-                        <li><a href="#">Statistics</a></li>
+                        <li class="active"><a href="#"><asp:Label ID="navProgress" runat="server"></asp:Label></a></li>
+                        <li><a href="#"><asp:Label ID="navAch" runat="server"></asp:Label></a></li>
+                        <li><a href="#"><asp:Label ID="navStatistics" runat="server"></asp:Label></a></li>
                         <li><a href="#">. . .</a></li>
                     </ul>
 
@@ -47,8 +53,8 @@
                 <div class="mainWindow">
                     <div class="overview">
                         <div class="overviewLeft">
-                            <h3>Level:</h3>
-                            <h3>Title:</h3>
+                            <h3><asp:Label ID="level" runat="server"></asp:Label></h3>
+                            <h3><asp:Label ID="title" runat="server"></asp:Label></h3>
                         </div>
                         <div class="overviewRight">
                             <h3>18</h3>
@@ -63,7 +69,7 @@
                     <div class="latest">
                         <div class="latestEntry">
                             <div class="latestHeader">
-                                <h3 class="latestHeadline">Seneste Indslag</h3>
+                                <h4 class="latestHeadline"><asp:Label ID="latestEntry" runat="server"></asp:Label></h4>
                             </div>
                             <div class="latestContent">
                                 <div class="logEntryContent">
@@ -80,7 +86,7 @@
 
                         <div class="latestAch">
                             <div class="latestHeader">
-                                <h3 class="latestHeadline">Seneste Bedrift</h3>
+                                <h4 class="latestHeadline"><asp:Label ID="latestAch" runat="server"></asp:Label></h4>
                             </div>
                             <div class="latestContentAch">
                                 <b>Sheep Humper</b>
