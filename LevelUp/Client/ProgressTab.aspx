@@ -44,6 +44,7 @@
                 <div class="header">
                     <ul class="nav nav-tabs">
                         <li class="active"><a href="#"><asp:Label ID="navProgress" runat="server"></asp:Label></a></li>
+                        <li><a href="#"><asp:Label ID="navEntry" runat="server"></asp:Label></a></li>
                         <li><a href="#"><asp:Label ID="navAch" runat="server"></asp:Label></a></li>
                         <li><a href="#"><asp:Label ID="navStatistics" runat="server"></asp:Label></a></li>
                         <li><a href="#">. . .</a></li>

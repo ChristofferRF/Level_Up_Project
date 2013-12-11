@@ -18,6 +18,7 @@ namespace Client
         }
 
  
+
         private void ShowText()
         {
             lblUsername.Text = StringValues.LBL_USERNAME;
@@ -39,6 +40,8 @@ namespace Client
 
                 user = UserCalls.AddUser(user);
                 txtBoxUsername.Text = user.Name;
+
+                Response.Redirect("ProgressTab.aspx");
             }
             else
             {
@@ -57,6 +60,11 @@ namespace Client
         {
             string emailPattern = @"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$";
             return Regex.IsMatch(emailString, emailPattern);
+        }
+
+        protected void btnCreateUser_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("CreateUser.aspx");
         }
     }
 }

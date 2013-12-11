@@ -23,6 +23,7 @@ namespace Client
             userInfoWeight.Text = StringValues.USERINFOWEIGHT_LABEL;
 
             navProgress.Text = StringValues.NAMEPROGRESS_LABEL;
+            navEntry.Text = StringValues.ENTRIES_LABEL;
             navAch.Text = StringValues.ACHIEVEMENTS_LABEL;
             navStatistics.Text = StringValues.STATISTICS_LABEL;
 
