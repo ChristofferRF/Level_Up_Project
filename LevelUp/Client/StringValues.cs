@@ -37,6 +37,7 @@ namespace Client
         public const string USERINFOWEIGHT_LABEL = "Vægt";
 
         public const string NAMEPROGRESS_LABEL = "Profil";
+        public const string ENTRIES_LABEL = "Logs";
         public const string ACHIEVEMENTS_LABEL = "Bedrifter";
         public const string STATISTICS_LABEL = "Statistik";
 
