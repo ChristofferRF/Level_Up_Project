@@ -12,6 +12,10 @@ namespace Client
         public const string DISTANCE_LABEL = "Distance";
         public const string TIME_LABEL = "Tid";
         public const string CREATE_LOG_BUTTON = "Opret aktivitet";
+        public const string REWARDS_LABEL = "Belønninger";
+        public const string REWARDS_TITLE = "Du har opnået";
+        public const string ACHIEVEMENT_TITLE = "Du har opnået en Bedrift";
+        public const string LOGS_LABEL = "tidligere træninger";
 
         // Login Client
         public const string LBL_USERNAME = "Brugernavn";
@@ -29,5 +33,22 @@ namespace Client
         public const string LBL_USERHEIGHT_CREATE = "Højde";
         public const string LBL_USERWEIGHT_CREATE = "Vægt";
         public const string BTN_USER_CREATE = "Opret bruger";
+
+        //Progress bar
+        public const string USERINFONAME_LABEL = "Navn";
+        public const string USERINFOAGE_LABEL = "Alder";
+        public const string USERINFOHEIGHT_LABEL = "Højde";
+        public const string USERINFOWEIGHT_LABEL = "Vægt";
+
+        public const string NAMEPROGRESS_LABEL = "Profil";
+        public const string ENTRIES_LABEL = "Logs";
+        public const string ACHIEVEMENTS_LABEL = "Bedrifter";
+        public const string STATISTICS_LABEL = "Statistik";
+
+        public const string LEVEL_LABEL = "Niveau";
+        public const string TITLE_LABEL = "Titel";
+
+        public const string LATESTENTRY_LABEL = "Seneste Indslag";
+        public const string LATESTACHIEVEMENT_LABEL = "Seneste Bedrift";
     }
 }

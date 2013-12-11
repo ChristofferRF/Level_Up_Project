@@ -19,7 +19,9 @@
             <asp:Label ID="lblPassword" runat="server"></asp:Label>
             <asp:TextBox ID="txtBoxPassword" runat="server" class="form-control" placeholder="Indtast kodeord" type="password"></asp:TextBox>
             <br />
-            <asp:Button ID="btnCreateUser" runat="server" class="btn btn-primary" />
+
+            <asp:Button ID="btnCreateUser" runat="server" class="btn btn-primary" OnClick="btnCreateUser_Click"/>
+
             <asp:Button ID="btnLogin" runat="server" Text="Log ind" OnClick="btnLogin_Click" class="btn btn-primary" />
         </div>
     </form>

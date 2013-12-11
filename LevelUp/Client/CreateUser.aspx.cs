@@ -52,6 +52,7 @@ namespace Client
 
                 user = UserCalls.AddUser(user);
                 Debug.WriteLine("User has sucessfully been created in the database");
+                Response.Redirect("ProgressTab.aspx");
             }
             else
             {
