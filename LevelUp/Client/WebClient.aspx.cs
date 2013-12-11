@@ -25,6 +25,8 @@ namespace Client
             DistanceLabel.Text = StringValues.DISTANCE_LABEL;
             TimeLabel.Text = StringValues.TIME_LABEL;
             CreateLogButton.Text = StringValues.CREATE_LOG_BUTTON;
+            RewardsLabel.Text = StringValues.REWARDS_LABEL;
+            LogsLabel.Text = StringValues.LOGS_LABEL;
         }
 
         protected void CreateLog_Click(object sender, EventArgs e)
@@ -45,6 +47,7 @@ namespace Client
 
                 log = EntryCalls.AddLogEntry(log);
                 UpdateFields(log);
+                TestRewardsOutput();
                 Debug.WriteLine("succes you pushed the button");
             }
             else
@@ -91,6 +94,27 @@ namespace Client
         {
             string activityPattern = @"^[a-zæøåA-ZÆØÅ ]*$";
             return Regex.IsMatch(activityString, activityPattern);
+        }
+
+        public void TestRewardsOutput()
+        {
+            
+            string xp = "100 Xp";
+            string cal = "350 Kcal";
+            string achievementName = "Collector";
+            string achFlavourText = "Bedrift for at oprette din første træning";
+
+            RewardOutput.Text += StringValues.REWARDS_TITLE;
+            RewardOutput.Text += "\n";
+            RewardOutput.Text += "  - "+xp;
+            RewardOutput.Text += "\n";
+            RewardOutput.Text += "  - " + cal;
+            RewardOutput.Text += "\n";
+            RewardOutput.Text += StringValues.ACHIEVEMENT_TITLE;
+            RewardOutput.Text += "\n";
+            RewardOutput.Text += "  - " + achievementName;
+            RewardOutput.Text += "\n";
+            RewardOutput.Text += "  - " + achFlavourText;
         }
     }
 }
