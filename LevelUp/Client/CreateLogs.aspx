@@ -43,7 +43,13 @@
             <div class="logHistory">
                 <asp:Label ID="LogsLabel" runat="server"></asp:Label>
                 <br />
-                <asp:ListView ID="LogsListView" runat="server"></asp:ListView>
+                <table class="table-bordered">
+                    <
+                    <tr id="Tablerow1">
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
             </div>
         </div>
     </form>

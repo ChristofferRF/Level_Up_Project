@@ -120,8 +120,8 @@ namespace Client
 
         public void ShowLogEntries()
         {
-            //Listview
-            //This method should load all the users logs when 
+            //This method should load all the users logs when
+            
         }
 
         public void ShowNewLogInList()
@@ -134,8 +134,7 @@ namespace Client
             log.Minutes = 50;
             log.Seconds = 0;
 
-            //ListViewItem item = new ListViewItem();
-            //LogsListView.Items.
+            //LogsListView.Items.Add(new ListItem(
                 
         }
     }
