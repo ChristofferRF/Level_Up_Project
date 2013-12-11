@@ -1,11 +1,11 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebClient.aspx.cs" Inherits="Client.WebClient" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CreateLogs.aspx.cs" Inherits="Client.CreateLogs" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Training Log</title>
-    <link rel="stylesheet" type="text/css" href="css.css">
+    <link rel="stylesheet" type="text/css" href="css.css"/>
 
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" rel="stylesheet" />
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
@@ -30,15 +30,20 @@
                 <br />
 
                 <asp:Button OnClick="CreateLog_Click" ID="CreateLogButton" runat="server" class="btn btn-primary" />
-                <%--<asp:Button ID Text--%>
+                <!--<asp:Button ID Text-->
             </div>
 
+            <!--The Rewards Box -->
             <div class="rewardBox">
-                Rewards
+                <asp:Label ID="RewardsLabel" runat="server"></asp:Label>
+                <br />
+                <asp:TextBox ID="RewardOutput" Textmode="MultiLine" Width="100%" Height="100%" runat="server"></asp:TextBox>
             </div>
-
+           
             <div class="logHistory">
-                Testing
+                <asp:Label ID="LogsLabel" runat="server"></asp:Label>
+                <br />-
+                <asp:ListView ID="LogsListView" runat="server"></asp:ListView>
             </div>
         </div>
     </form>

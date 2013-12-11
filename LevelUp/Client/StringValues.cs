@@ -12,6 +12,10 @@ namespace Client
         public const string DISTANCE_LABEL = "Distance";
         public const string TIME_LABEL = "Tid";
         public const string CREATE_LOG_BUTTON = "Opret aktivitet";
+        public const string REWARDS_LABEL = "Belønninger";
+        public const string REWARDS_TITLE = "Du har opnået";
+        public const string ACHIEVEMENT_TITLE = "Du har opnået en Bedrift";
+        public const string LOGS_LABEL = "tidligere træninger";
 
         // Login Client
         public const string LBL_USERNAME = "Brugernavn";
