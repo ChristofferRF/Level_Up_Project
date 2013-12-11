@@ -48,7 +48,7 @@ namespace Client
 
                 log = EntryCalls.AddLogEntry(log);
                 UpdateFields(log);
-                TestRewardsOutput();
+                ShowRewardsOutput();
                 Debug.WriteLine("succes you pushed the button");
             }
             else
@@ -97,7 +97,7 @@ namespace Client
             return Regex.IsMatch(activityString, activityPattern);
         }
 
-        public void TestRewardsOutput()
+        public void ShowRewardsOutput()
         {
             
             string xp = "100 Xp";
@@ -116,6 +116,27 @@ namespace Client
             RewardOutput.Text += "  - " + achievementName;
             RewardOutput.Text += "\n";
             RewardOutput.Text += "  - " + achFlavourText;
+        }
+
+        public void ShowLogEntries()
+        {
+            //Listview
+            //This method should load all the users logs when 
+        }
+
+        public void ShowNewLogInList()
+        {
+            //default data for testpurposes
+            LogEntry log = new LogEntry();
+            log.TypeOfExcercise = "bike";
+            log.Distance = "50km";
+            log.Hours = 0;
+            log.Minutes = 50;
+            log.Seconds = 0;
+
+            //ListViewItem item = new ListViewItem();
+            //LogsListView.Items.
+                
         }
     }
 }

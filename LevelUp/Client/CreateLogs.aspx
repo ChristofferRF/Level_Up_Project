@@ -42,7 +42,7 @@
            
             <div class="logHistory">
                 <asp:Label ID="LogsLabel" runat="server"></asp:Label>
-                <br />-
+                <br />
                 <asp:ListView ID="LogsListView" runat="server"></asp:ListView>
             </div>
         </div>
