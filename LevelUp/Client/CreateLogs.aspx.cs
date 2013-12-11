@@ -11,7 +11,7 @@ using System.Text.RegularExpressions;
 
 namespace Client
 {
-    public partial class WebClient : System.Web.UI.Page
+    public partial class CreateLogs : System.Web.UI.Page
     {
 
         protected void Page_Load(object sender, EventArgs e)
@@ -21,6 +21,7 @@ namespace Client
 
         private void ShowText()
         {
+            
             ExcerciseLabel.Text = StringValues.EXCERCISE_LABEL;
             DistanceLabel.Text = StringValues.DISTANCE_LABEL;
             TimeLabel.Text = StringValues.TIME_LABEL;

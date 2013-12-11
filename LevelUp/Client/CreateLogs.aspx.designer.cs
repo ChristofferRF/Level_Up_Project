@@ -10,7 +10,7 @@
 namespace Client {
     
     
-    public partial class WebClient {
+    public partial class CreateLogs {
         
         /// <summary>
         /// form1 control.

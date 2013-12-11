@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebClient.aspx.cs" Inherits="Client.WebClient" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CreateLogs.aspx.cs" Inherits="Client.CreateLogs" %>
 
 <!DOCTYPE html>
 
