@@ -16,14 +16,14 @@ namespace RESTService
         [OperationContract]
         [WebInvoke(Method = "POST",
             ResponseFormat = WebMessageFormat.Json,
-            BodyStyle = WebMessageBodyStyle.Wrapped,
+            BodyStyle = WebMessageBodyStyle.WrappedRequest,
             UriTemplate = "add")]
         User AddUser(string Age, string Height, string Name, string Password, string UserId, string Username, string Weight, string XP, string Level);
 
         [OperationContract]
         [WebInvoke(Method = "POST",
             ResponseFormat = WebMessageFormat.Json,
-            BodyStyle = WebMessageBodyStyle.Wrapped,
+            BodyStyle = WebMessageBodyStyle.WrappedRequest,
             UriTemplate = "get")]
         User GetUser(string UserName, string Password);
     }
