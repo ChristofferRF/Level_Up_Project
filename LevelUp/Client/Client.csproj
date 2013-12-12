@@ -72,6 +72,7 @@
     <Content Include="CreateLogs.aspx" />
     <Content Include="CreateUser.aspx" />
     <Content Include="ProgressTab.aspx" />
+    <Content Include="ProfileAdmin.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Code\JSONhelper.cs" />
@@ -106,6 +107,13 @@
     </Compile>
     <Compile Include="ProgressTab.aspx.designer.cs">
       <DependentUpon>ProgressTab.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProfileAdmin.aspx.cs">
+      <DependentUpon>ProfileAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProfileAdmin.aspx.designer.cs">
+      <DependentUpon>ProfileAdmin.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
