@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using DataAccess;
+using Client.App_Code;
 
 
 namespace Client
@@ -13,6 +15,7 @@ namespace Client
         protected void Page_Load(object sender, EventArgs e)
         {
             ShowText();
+            DisplayUserData();
         }
 
         private void ShowText()
@@ -34,5 +37,20 @@ namespace Client
             latestAch.Text = StringValues.LATESTACHIEVEMENT_LABEL;
         }
 
+        private void DisplayUserData()
+        {
+            User user = GetDemoUser();
+            restUserName.Text = user.Name;
+            restUserAge.Text = user.Age.ToString();
+            restUserHeight.Text = user.Height.ToString();
+            restUserWeight.Text = user.Weight.ToString();
+        }
+
+        private User GetDemoUser()
+        {
+            User demoUser = new User();
+            demoUser = UserCalls.GetUser("Ronnie", "meh");
+            return demoUser;
+        }
     }
 }
