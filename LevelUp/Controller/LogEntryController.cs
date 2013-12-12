@@ -28,21 +28,36 @@ namespace Controller
                     Hours = hours,
                     Minutes = minutes,
                     Seconds = seconds,
+                    UserId = 6,
+                    // DateCreated = DateTime.Now.ToShortDateString(),
                 };
 
                 db.LogEntries.Add(log);
                 result = db.SaveChanges();
             }
 
-            if (result != -1)
+            if (result != 1)
             {
                 return demoLog;
             }
             else
             {
-                return demoLog;  
+                return demoLog;
+            }
+        }
+
+        public LogEntry GetEntryFromDB(int entryId, int userId)
+        {
+            LogEntry entry = new LogEntry();
+            using (var db = new DataAccessContext()) {
+
+                LogEntry theEntry = (from log in db.LogEntries
+                                     where log.LogEntryId == entryId & log.UserId == userId
+                                     select log).Single();
+                entry = theEntry;
             }
 
+            return entry;
         }
     }
 }
