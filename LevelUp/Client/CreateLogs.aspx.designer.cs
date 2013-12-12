@@ -10,7 +10,7 @@
 namespace Client {
     
     
-    public partial class ProgressTab {
+    public partial class CreateLogs {
         
         /// <summary>
         /// form1 control.
@@ -31,15 +31,6 @@ namespace Client {
         protected global::System.Web.UI.WebControls.Label userInfoName;
         
         /// <summary>
-        /// restUserName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label restUserName;
-        
-        /// <summary>
         /// userInfoAge control.
         /// </summary>
         /// <remarks>
@@ -47,15 +38,6 @@ namespace Client {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label userInfoAge;
-        
-        /// <summary>
-        /// restUserAge control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label restUserAge;
         
         /// <summary>
         /// userInfoHeight control.
@@ -67,15 +49,6 @@ namespace Client {
         protected global::System.Web.UI.WebControls.Label userInfoHeight;
         
         /// <summary>
-        /// restUserHeight control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label restUserHeight;
-        
-        /// <summary>
         /// userInfoWeight control.
         /// </summary>
         /// <remarks>
@@ -83,15 +56,6 @@ namespace Client {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label userInfoWeight;
-        
-        /// <summary>
-        /// restUserWeight control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label restUserWeight;
         
         /// <summary>
         /// navProgress control.
@@ -130,39 +94,147 @@ namespace Client {
         protected global::System.Web.UI.WebControls.Label navStatistics;
         
         /// <summary>
-        /// level control.
+        /// ExcerciseLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label level;
+        protected global::System.Web.UI.WebControls.Label ExcerciseLabel;
         
         /// <summary>
-        /// title control.
+        /// excerciseTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label title;
+        protected global::System.Web.UI.WebControls.TextBox excerciseTextBox;
         
         /// <summary>
-        /// latestEntry control.
+        /// DistanceLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label latestEntry;
+        protected global::System.Web.UI.WebControls.Label DistanceLabel;
         
         /// <summary>
-        /// latestAch control.
+        /// distanceTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label latestAch;
+        protected global::System.Web.UI.WebControls.TextBox distanceTextBox;
+        
+        /// <summary>
+        /// TimeLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label TimeLabel;
+        
+        /// <summary>
+        /// HoursTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox HoursTextBox;
+        
+        /// <summary>
+        /// MinutesTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox MinutesTextBox;
+        
+        /// <summary>
+        /// SecondsTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox SecondsTextBox;
+        
+        /// <summary>
+        /// CreateLogButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button CreateLogButton;
+        
+        /// <summary>
+        /// RewardsLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label RewardsLabel;
+        
+        /// <summary>
+        /// RewardOutput control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox RewardOutput;
+        
+        /// <summary>
+        /// LogsLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LogsLabel;
+        
+        /// <summary>
+        /// tableDate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label tableDate;
+        
+        /// <summary>
+        /// tableActivity control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label tableActivity;
+        
+        /// <summary>
+        /// tableDistance control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label tableDistance;
+        
+        /// <summary>
+        /// tableTime control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label tableTime;
     }
 }

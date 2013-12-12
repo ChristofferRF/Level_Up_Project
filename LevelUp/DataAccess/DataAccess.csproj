@@ -74,13 +74,19 @@
     <Compile Include="Migrations\201312101135081_UserId på Logs.Designer.cs">
       <DependentUpon>201312101135081_UserId på Logs.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201312120904576_added DateCreated Logs.cs" />
+    <Compile Include="Migrations\201312120904576_added DateCreated Logs.Designer.cs">
+      <DependentUpon>201312120904576_added DateCreated Logs.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Title.cs" />
     <Compile Include="User.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -101,6 +107,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201312101135081_UserId på Logs.resx">
       <DependentUpon>201312101135081_UserId på Logs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201312120904576_added DateCreated Logs.resx">
+      <DependentUpon>201312120904576_added DateCreated Logs.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

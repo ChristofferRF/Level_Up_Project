@@ -9,6 +9,12 @@ namespace DataAccess
 {
     public class DataAccessContext : DbContext
     {
+        public DataAccessContext()
+        {
+            //forhindrer at EF laver proxyklasser. vi er pænt fucked i konverteringen hvis den får lov til det.
+            base.Configuration.ProxyCreationEnabled = false;
+        }
+
         public DbSet<LogEntry> LogEntries { get; set; }
 
         public DbSet<User> Users { get; set; }

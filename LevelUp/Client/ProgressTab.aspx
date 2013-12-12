@@ -21,20 +21,19 @@
                 <div class="userInfo">
                     <b><asp:Label ID="userInfoName" runat="server"></asp:Label></b>
                     <br />
-                    <i>user input</i>
+                    <i><asp:Label ID="restUserName" runat="server"></asp:Label></i>
                     <br />
                     <b><asp:Label ID="userInfoAge" runat="server"></asp:Label></b>
                     <br />
-                    <i>user input</i>
+                    <i><asp:Label ID="restUserAge" runat="server"/></i>
                     <br />
                     <b><asp:Label ID="userInfoHeight" runat="server"></asp:Label></b>
                     <br />
-                    
-                    <i>user input</i>
+                    <i><asp:Label ID="restUserHeight" runat="server" /></i>
                     <br />
                     <b><asp:Label ID="userInfoWeight" runat="server"></asp:Label></b>
                     <br />
-                    <i>user input</i>
+                    <i><asp:Label ID="restUserWeight" runat="server" /></i>
                     <br />
 
                 </div>
@@ -44,6 +43,7 @@
                 <div class="header">
                     <ul class="nav nav-tabs">
                         <li class="active"><a href="#"><asp:Label ID="navProgress" runat="server"></asp:Label></a></li>
+                        <li><a href="CreateLogs.aspx"><asp:Label ID="navEntry" runat="server"></asp:Label></a></li>
                         <li><a href="#"><asp:Label ID="navAch" runat="server"></asp:Label></a></li>
                         <li><a href="#"><asp:Label ID="navStatistics" runat="server"></asp:Label></a></li>
                         <li><a href="#">. . .</a></li>

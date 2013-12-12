@@ -11,7 +11,7 @@ using System.Text.RegularExpressions;
 
 namespace Client
 {
-    public partial class WebClient : System.Web.UI.Page
+    public partial class CreateLogs : System.Web.UI.Page
     {
 
         protected void Page_Load(object sender, EventArgs e)
@@ -21,10 +21,28 @@ namespace Client
 
         private void ShowText()
         {
+            userInfoName.Text = StringValues.USERINFONAME_LABEL;
+            userInfoAge.Text = StringValues.USERINFOAGE_LABEL;
+            userInfoHeight.Text = StringValues.USERINFOHEIGHT_LABEL;
+            userInfoWeight.Text = StringValues.USERINFOWEIGHT_LABEL;
+
+            navProgress.Text = StringValues.NAMEPROGRESS_LABEL;
+            navEntry.Text = StringValues.ENTRIES_LABEL;
+            navAch.Text = StringValues.ACHIEVEMENTS_LABEL;
+            navStatistics.Text = StringValues.STATISTICS_LABEL;
+
             ExcerciseLabel.Text = StringValues.EXCERCISE_LABEL;
             DistanceLabel.Text = StringValues.DISTANCE_LABEL;
             TimeLabel.Text = StringValues.TIME_LABEL;
             CreateLogButton.Text = StringValues.CREATE_LOG_BUTTON;
+            RewardsLabel.Text = StringValues.REWARDS_LABEL;
+            LogsLabel.Text = StringValues.LOGS_LABEL;
+
+            tableDate.Text = StringValues.TABLEDATE_LABEL;
+            tableActivity.Text = StringValues.TABLEACTIVITY_LABEL;
+            tableDistance.Text = StringValues.TABLEDISTANCE_LABEL;
+            tableTime.Text = StringValues.TABLETIME_LABEL;
+            
         }
 
         protected void CreateLog_Click(object sender, EventArgs e)
@@ -45,6 +63,7 @@ namespace Client
 
                 log = EntryCalls.AddLogEntry(log);
                 UpdateFields(log);
+                ShowRewardsOutput();
                 Debug.WriteLine("succes you pushed the button");
             }
             else
@@ -91,6 +110,48 @@ namespace Client
         {
             string activityPattern = @"^[a-zæøåA-ZÆØÅ ]*$";
             return Regex.IsMatch(activityString, activityPattern);
+        }
+
+        public void ShowRewardsOutput()
+        {
+            
+            string xp = "100 Xp";
+            string cal = "350 Kcal";
+            string achievementName = "Collector";
+            string achFlavourText = "Bedrift for at oprette din første træning";
+
+            RewardOutput.Text += StringValues.REWARDS_TITLE;
+            RewardOutput.Text += "\n";
+            RewardOutput.Text += "  - "+xp;
+            RewardOutput.Text += "\n";
+            RewardOutput.Text += "  - " + cal;
+            RewardOutput.Text += "\n";
+            RewardOutput.Text += StringValues.ACHIEVEMENT_TITLE;
+            RewardOutput.Text += "\n";
+            RewardOutput.Text += "  - " + achievementName;
+            RewardOutput.Text += "\n";
+            RewardOutput.Text += "  - " + achFlavourText;
+        }
+
+        public void ShowLogEntries()
+        {
+            //Listview
+            //This method should load all the users logs when 
+        }
+
+        public void ShowNewLogInList()
+        {
+            //default data for testpurposes
+            LogEntry log = new LogEntry();
+            log.TypeOfExcercise = "bike";
+            log.Distance = "50km";
+            log.Hours = 0;
+            log.Minutes = 50;
+            log.Seconds = 0;
+
+            //ListViewItem item = new ListViewItem();
+            //LogsListView.Items.
+                
         }
     }
 }

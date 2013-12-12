@@ -7,6 +7,9 @@ using System.Runtime.Serialization;
 
 namespace DataAccess
 {
+    [KnownType(typeof(List<LogEntry>))]
+    [KnownType(typeof(List<Achievement>))]
+    [KnownType(typeof(List<Title>))]
     [DataContract]
     public class User
     {

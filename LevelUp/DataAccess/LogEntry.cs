@@ -23,6 +23,8 @@ namespace DataAccess
         [DataMember]
         public int Seconds { get; set; }
         [DataMember]
+        public DateTime DateCreated { get; set; }
+        [DataMember]
         public int UserId { get; set; }
     }
 }
