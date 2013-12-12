@@ -15,7 +15,7 @@ namespace Client
         public const string REWARDS_LABEL = "Belønninger";
         public const string REWARDS_TITLE = "Du har opnået";
         public const string ACHIEVEMENT_TITLE = "Du har opnået en Bedrift";
-        public const string LOGS_LABEL = "tidligere træninger";
+        public const string LOGS_LABEL = "Tidligere logs";
 
         // Login Client
         public const string LBL_USERNAME = "Brugernavn";
@@ -50,5 +50,11 @@ namespace Client
 
         public const string LATESTENTRY_LABEL = "Seneste Indslag";
         public const string LATESTACHIEVEMENT_LABEL = "Seneste Bedrift";
+
+        //Create Log
+        public const string TABLEDATE_LABEL = "Dato";
+        public const string TABLEACTIVITY_LABEL = "Aktivitet";
+        public const string TABLEDISTANCE_LABEL = "Distance";
+        public const string TABLETIME_LABEL = "Tid";
     }
 }
