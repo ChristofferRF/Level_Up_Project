@@ -44,12 +44,15 @@ namespace Client
             restUserAge.Text = user.Age.ToString();
             restUserHeight.Text = user.Height.ToString();
             restUserWeight.Text = user.Weight.ToString();
+            restUserTitle.Text = user.Titles[0].Name;
+            restUserLevel.Text = user.Level.ToString();
+
         }
 
         private User GetDemoUser()
         {
             User demoUser = new User();
-            demoUser = UserCalls.GetUser("Ronnie", "meh");
+            demoUser = UserCalls.GetUser("kielgasten", "meh");
             return demoUser;
         }
     }

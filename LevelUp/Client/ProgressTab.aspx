@@ -57,8 +57,8 @@
                             <h3><asp:Label ID="title" runat="server"></asp:Label></h3>
                         </div>
                         <div class="overviewRight">
-                            <h3>18</h3>
-                            <h3>Adept</h3>
+                            <h3><asp:Label ID="restUserLevel" runat="server" /></h3>
+                            <h3><asp:Label ID="restUserTitle" runat="server" /></h3>
                         </div>
                     </div>
 

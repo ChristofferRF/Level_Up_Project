@@ -52,7 +52,7 @@ namespace Client.App_Code
         {
             User returnUser = new User();
 
-            string jsonString = "{\"Username\"" + ":" + "\"" + userName + "\"" + "}";
+            string jsonString = "{\"UserName\":" + "\"" + userName + "\", " + "\"Password\":" + "\"" + password +  "\"" + "}";
             Debug.WriteLine(jsonString);
             
             HttpWebRequest webReq = (HttpWebRequest)WebRequest.Create("http://localhost:3369/LevelService.svc/users/get");
