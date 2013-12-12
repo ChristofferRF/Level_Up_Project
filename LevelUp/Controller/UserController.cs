@@ -109,5 +109,32 @@ namespace Controller
                 db.SaveChanges();
             }
         }
+
+
+        public void updateUserProfile(string userName, string passWord, string name, int age, double weight, double height, long xp, int level)
+        {
+            User newUser = new User();
+
+            using (var db = new DataAccessContext())
+            {
+                User theUser = (from user in db.Users
+                                where user.Username == name
+                                select user).FirstOrDefault();
+
+                // Update user
+                theUser.Username = userName;
+                theUser.Password = passWord;
+                theUser.Name = name;
+                theUser.Age = age;
+                theUser.Weight = weight;
+                theUser.Height = height;
+                theUser.Xp = xp;
+                theUser.Level = level;
+
+                newUser = theUser;
+
+                db.SaveChanges();
+            }
+        }
     }
 }
