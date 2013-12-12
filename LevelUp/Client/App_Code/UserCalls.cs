@@ -83,5 +83,41 @@ namespace Client.App_Code
 
             return returnUser;
         }
+
+        public static User UpdateUser(User u)
+        {
+            User returnUser = new User();
+
+            string jsonString = JSONhelper.JSONSerializer<User>(u);
+            Debug.WriteLine(jsonString);
+
+            HttpWebRequest webReq = (HttpWebRequest)WebRequest.Create("http://localhost:3369/LevelService.svc/users/update");
+            webReq.Method = "POST";                                     //Set metodetypen. Default er POST, men vi skriver det ALTID alligevel.
+            webReq.ContentType = "application/json; charset=utf-8";     //Sæt contenttypen, i.e Sæt til JSON
+            webReq.ContentLength = jsonString.Length;                     //Længden på strengen
+            Debug.WriteLine(webReq.ContentLength.ToString() + jsonString.Length.ToString());
+
+            using (StreamWriter sw = new StreamWriter(webReq.GetRequestStream()))   //Opret en streamwriter med vores request som parameter (aner ikke hvad requeststream er, slå det selv op)
+            {
+                sw.Write(jsonString); //Skyder requesten afsted.
+            }
+
+            try
+            {
+                HttpWebResponse response = (HttpWebResponse)webReq.GetResponse();           //Opret et objekt der kan modtage svar på vores request
+                using (StreamReader sr = new StreamReader(response.GetResponseStream()))    //Opret et objekt der kan læse svaret
+                {
+                    string text = sr.ReadToEnd();                           //Læs svaret igennem og gem det i en streng. Det er JSON streng svaret kommer i.
+
+                    returnUser = JSONhelper.JsonDeserialize<User>(text);    //kør json-strengen igennem deserialiseringen, med PersonModel som type objekt
+                }
+            }
+            catch (Exception e)
+            {
+                Debug.WriteLine(e);
+            }
+
+            return returnUser;
+        }
     }
 }

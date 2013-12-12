@@ -118,6 +118,9 @@
                                 <option>None</option>
                             </select>
                         </div>
+                        <div>
+                            <asp:Button ID="btnSave" runat="server" Text="Save" OnClick="btnSave_Click" />
+                        </div>
                     </div>
                     <br />
                     Change email<br />

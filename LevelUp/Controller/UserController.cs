@@ -111,7 +111,7 @@ namespace Controller
         }
 
 
-        public void updateUserProfile(string userName, string passWord, string name, int age, double weight, double height, long xp, int level)
+        public User updateUserProfile(string userName, string passWord, string name, int age, double weight, double height, long xp, int level)
         {
             User newUser = new User();
 
@@ -135,6 +135,8 @@ namespace Controller
 
                 db.SaveChanges();
             }
+
+            return newUser;
         }
     }
 }
