@@ -21,20 +21,19 @@
                 <div class="userInfo">
                     <b><asp:Label ID="userInfoName" runat="server"></asp:Label></b>
                     <br />
-                    <i>user input</i>
+                    <i><asp:Label ID="restUserName" runat="server"></asp:Label></i>
                     <br />
                     <b><asp:Label ID="userInfoAge" runat="server"></asp:Label></b>
                     <br />
-                    <i>user input</i>
+                    <i><asp:Label ID="restUserAge" runat="server"/></i>
                     <br />
                     <b><asp:Label ID="userInfoHeight" runat="server"></asp:Label></b>
                     <br />
-                    
-                    <i>user input</i>
+                    <i><asp:Label ID="restUserHeight" runat="server" /></i>
                     <br />
                     <b><asp:Label ID="userInfoWeight" runat="server"></asp:Label></b>
                     <br />
-                    <i>user input</i>
+                    <i><asp:Label ID="restUserWeight" runat="server" /></i>
                     <br />
 
                 </div>
@@ -58,8 +57,8 @@
                             <h3><asp:Label ID="title" runat="server"></asp:Label></h3>
                         </div>
                         <div class="overviewRight">
-                            <h3>18</h3>
-                            <h3>Adept</h3>
+                            <h3><asp:Label ID="restUserLevel" runat="server" /></h3>
+                            <h3><asp:Label ID="restUserTitle" runat="server" /></h3>
                         </div>
                     </div>
 
