@@ -88,9 +88,27 @@
                     </div>
 
                     <div class="logHistory">
-                        <asp:Label ID="LogsLabel" runat="server"></asp:Label>
-                        <br />
-                        <asp:ListView ID="LogsListView" runat="server"></asp:ListView>
+                        <b><asp:Label ID="LogsLabel" runat="server"></asp:Label></b>
+                        <table class="table table-hover">
+                            <tr>
+                                <td><b><asp:Label ID="tableDate" runat="server"></asp:Label></b></td>
+                                <td><b><asp:Label ID="tableActivity" runat="server"></asp:Label></b></td>
+                                <td><b><asp:Label ID="tableDistance" runat="server"></asp:Label></b></td>
+                                <td><b><asp:Label ID="tableTime" runat="server"></asp:Label></b></td>
+                            </tr>
+                            <tr>
+                                <td>14/4</td>
+                                <td>Went running</td>
+                                <td>4 km</td>
+                                <td>30 minutes</td>
+                            </tr>
+                            <tr>
+                                <td>12/4</td>
+                                <td>Went running</td>
+                                <td>4 km</td>
+                                <td>32 minutes</td>
+                            </tr>
+                        </table>
                     </div>
                 </div>
             </div>
