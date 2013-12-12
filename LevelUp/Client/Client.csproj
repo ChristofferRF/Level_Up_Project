@@ -46,6 +46,7 @@
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -66,12 +67,15 @@
   <ItemGroup>
     <Content Include="css.css" />
     <Content Include="LoginClient.aspx" />
+    <Content Include="Properties\DataSources\DataAccess.LogEntry.datasource" />
+    <Content Include="Properties\DataSources\DataAccess.User.datasource" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
     <Content Include="CreateLogs.aspx" />
     <Content Include="CreateUser.aspx" />
     <Content Include="ProgressTab.aspx" />
+    <Content Include="ProfileAdmin.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Code\JSONhelper.cs" />
@@ -106,6 +110,13 @@
     </Compile>
     <Compile Include="ProgressTab.aspx.designer.cs">
       <DependentUpon>ProgressTab.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProfileAdmin.aspx.cs">
+      <DependentUpon>ProfileAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProfileAdmin.aspx.designer.cs">
+      <DependentUpon>ProfileAdmin.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

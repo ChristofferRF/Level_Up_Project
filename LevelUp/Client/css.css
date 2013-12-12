@@ -119,7 +119,8 @@
 }
 
 .mainWindow {
-
+    overflow-y: scroll;
+    overflow-x: hidden;
     height: 90%;
 }
 
@@ -203,4 +204,19 @@
     width: 25%;
     height: 25%;
     float: right;
+}
+
+.adminHeadline {
+    margin-left: 10px;
+}
+.selectTitle {
+    border-bottom: 1px solid #eee;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 5px;
+}
+
+.selectVisibility {
+    border-bottom: 1px solid #eee;
+    margin-bottom: 5px;
 }

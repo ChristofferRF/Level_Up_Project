@@ -53,5 +53,24 @@ namespace RESTService
         {
             return  userCon.GetUser(userName, password);
         }
+
+        /// <summary>
+        /// Kalder updateUser controlleren
+        /// </summary>
+        /// <param name="age"></param>
+        /// <param name="height"></param>
+        /// <param name="name"></param>
+        /// <param name="password"></param>
+        /// <param name="userId"></param>
+        /// <param name="userName"></param>
+        /// <param name="weight"></param>
+        /// <param name="xp"></param>
+        /// <param name="level"></param>
+        /// <returns></returns>
+        public User UpdateUser(string userName, string passWord, string name, int age, double weight, double height, long xp, int level)
+        {
+            // string userName, string passWord, string name, int age, double weight, double height, long xp, int level
+            return userCon.updateUserProfile(userName, passWord, name, age, weight, height, xp, level);
+        }
     }
 }
