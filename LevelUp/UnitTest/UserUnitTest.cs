@@ -12,33 +12,11 @@ namespace UnitTest
         [TestMethod]
         public void TestCreateUser()
         {
-            /*
-            User demoUser = new User();
-            UserController userCtr = new UserController();
-
-            string username = "derp";
-            string password = "1234";
-            string name = "Thorstein";
-            int age = 17;
-            double weight = 80;
-            double height = 175;
-            long xp = 5;
-            int level = 0;
-
-            demoUser = userCtr.AddUserToDb(username, password, name, age, weight, height, xp, level);
-
-            if (demoUser.Username == username && demoUser.Password == password && demoUser.Name == name && demoUser.Age == age
-                && demoUser.Weight == weight && demoUser.Height == height)
-            {
-                Console.WriteLine("The user object is for real!");
-            }
-            */
-
             /* create a user | check that he can be found in db | compare */
             string UserNameExpected = "MrArnold";
             string PassWordExpected = "Wuaa";
             string NameExpected = "Schwarz";
-            int AgeExpected = 23;
+            int AgeExpected = 22;
             double WeightExpected = 92;
             double HeightExpected = 185;
             long XpExpected = 1292; 
@@ -77,33 +55,6 @@ namespace UnitTest
         [TestMethod]
         public void TestGetUser()
         {
-            /*
-            UserController userCtr = new UserController();  
-            string username = "kielgasten";
-            string password = "meh";
-            string name = "Ronnie";
-            int age = 31;
-            double weight = 85;
-            double height = 170;
-            int level = 0;
-            long xp = 0;
-            string achievementName = "Collector";
-            string Title = "Supreme Grand Master";
-
-            User demoUser = new User();
-
-            demoUser = userCtr.GetUser(username, password);
-            Debug.WriteLine("username" + demoUser.Username.ToString() + "\n");
-            
-            if (demoUser.Username == username && demoUser.Password == password)
-            {
-                Debug.WriteLine("succes");
-                Debug.WriteLine("username" + demoUser.Username.ToString() + "\n");
-                //Console.WriteLine("Achievement" + demoUser.Achievements[0].Name + "\n");
-                //Console.WriteLine("Title" + demoUser.Titles[0].Name);
-            }
-            */
-
             /* define user stats | find user on those stats | see if test can get the equivalent data in db */
             /* EXPECTED */
             int UserIdExpected = 6;
@@ -114,7 +65,7 @@ namespace UnitTest
             int WeightExpected = 85;
             int HeightExpected = 170;
             long LevelExpected = 3;
-            int XpExpected = 2792;
+            int XpExpected = 2794;
              
 
             /* GET THE USER */
