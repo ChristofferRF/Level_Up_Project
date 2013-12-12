@@ -61,74 +61,98 @@
 
                 </div>
                 <div class="mainWindow">
-                    <h3>Administrer profil</h3>
-                    <br />
-
-
-                    <div class="form-group">
-                        <label for="inputEmail3" class="col-sm-3 control-label">Select title</label>
-                        <div class="col-sm-4">
-                            <select class="form-control">
-                                <option>Brute</option>
-                                <option>Athlete</option>
-                                <option>Meat Planet</option>
-                            </select><br />
-                        </div>
-                    </div>
-
-                    Select visibility
-                <div class="form-group">
-                    <label for="inputEmail3" class="col-sm-3 control-label">Name</label>
-                    <div class="col-sm-4">
-                        <select class="form-control">
-                            <option>Everyone</option>
-                            <option>Only friends</option>
-                            <option>None</option>
-                        </select>
-                    </div>
-                </div>
-
-                    <div class="form-group">
-                        <label for="inputEmail3" class="col-sm-3 control-label">Age</label>
-                        <div class="col-sm-4">
-                            <select class="form-control">
-                                <option>Everyone</option>
-                                <option>Only friends</option>
-                                <option>None</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="inputEmail3" class="col-sm-3 control-label">Height</label>
-                        <div class="col-sm-4">
-                            <select class="form-control">
-                                <option>Everyone</option>
-                                <option>Only friends</option>
-                                <option>None</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="inputEmail3" class="col-sm-3 control-label">Weight</label>
-                        <div class="col-sm-4">
-                            <select class="form-control">
-                                <option>Everyone</option>
-                                <option>Only friends</option>
-                                <option>None</option>
-                            </select>
-                        </div>
+                    <div class="adminHeadline">
+                        <h4>Administrer profil</h4>
                     </div>
                     <br />
-                    Change email<br />
-                    confirm new email<br />
+
+                    <div class="selectTitle">
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-3 control-label">Select title</label>
+                            <div class="col-sm-4">
+                                <select class="form-control">
+                                    <option>Brute</option>
+                                    <option>Athlete</option>
+                                    <option>Meat Planet</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="selectVisibility">
+                       <br /><b>Select visibility of your information</b><br /><br />
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-3 control-label">Name</label>
+                            <div class="col-sm-4">
+                                <select class="form-control">
+                                    <option>Everyone</option>
+                                    <option>Only friends</option>
+                                    <option>None</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-3 control-label">Age</label>
+                            <div class="col-sm-4">
+                                <select class="form-control">
+                                    <option>Everyone</option>
+                                    <option>Only friends</option>
+                                    <option>None</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-3 control-label">Height</label>
+                            <div class="col-sm-4">
+                                <select class="form-control">
+                                    <option>Everyone</option>
+                                    <option>Only friends</option>
+                                    <option>None</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-3 control-label">Weight</label>
+                            <div class="col-sm-4">
+                                <select class="form-control">
+                                    <option>Everyone</option>
+                                    <option>Only friends</option>
+                                    <option>None</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
                     <br />
-                    change password<br />
-                    confirm password<br />
-                    
-                    Save
-                    Reset account   
-                    Delete account
+
+                    <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-3 control-label">Change e-mail</label>
+                        <div class="col-sm-4">
+                            <input class="form-control" placeholder="Enter new email" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-3 control-label">Change password</label>
+                        <div class="col-sm-4">
+                            <input type="password" class="form-control" placeholder="Enter password" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-3 control-label">Repeat password</label>
+                        <div class="col-sm-4">
+                            <input type="password" class="form-control" placeholder="Repeat password" />
+                        </div>
+                    </div>
+                    <br />
+
+                    <button type="button" class="btn btn-primary">Save changes</button>
+
+                    <button type="button" class="btn btn-danger">Reset account</button>
+
+                    <button type="button" class="btn btn-danger">Delete account</button>
                 </div>
             </div>
         </div>
