@@ -11,6 +11,21 @@ namespace Client
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            // Pseudo object
+            string userName = "Kielgasten";
+            string password = "meh";
+            string name = "Ronnie";
+            int age = 0;
+            double weight = 85.0;
+            double height = 170.0;
+            long xp = 2795;
+            int level = 4;
+            // --> send on button click to controller.updateUser();
+
+            /*
+             string username, string password, string name, int age, double weight, double height, long xp, int level
+             */
+
             ShowText();
         }
 
