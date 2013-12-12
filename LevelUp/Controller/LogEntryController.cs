@@ -17,6 +17,9 @@ namespace Controller
 
         public LogEntry AddEntryToDb(string typeOfExcercise, string distance, int hours, int minutes, int seconds)
         {
+            // Log entry bør altid opdatere en user
+            // kald metoder der opdaterer user i usercontroller
+
             LogEntry demoLog = new LogEntry();
             int result = -1;
             using (var db = new DataAccessContext())
@@ -28,21 +31,35 @@ namespace Controller
                     Hours = hours,
                     Minutes = minutes,
                     Seconds = seconds,
+                    UserId = 6,
                 };
 
                 db.LogEntries.Add(log);
                 result = db.SaveChanges();
             }
 
-            if (result != -1)
+            if (result != 1)
             {
                 return demoLog;
             }
             else
             {
-                return demoLog;  
+                return demoLog;
+            }
+        }
+
+        public LogEntry GetEntryFromDB(int entryId, int userId)
+        {
+            LogEntry entry = new LogEntry();
+            using (var db = new DataAccessContext()) {
+
+                LogEntry theEntry = (from log in db.LogEntries
+                                     where log.LogEntryId == entryId & log.UserId == userId
+                                     select log).Single();
+                entry = theEntry;
             }
 
+            return entry;
         }
     }
 }

@@ -71,8 +71,43 @@ namespace Controller
                 theUser.Logs = logs;
                 newUser = theUser;
             }
-
+            
             return newUser;
+        }
+
+        public void updateUserXP(string username, long earnedxp)
+        {
+            User newUser = new User();
+            int userid = 6;
+            long achievedxp = earnedxp;
+            long oldxp;
+
+            using (var db = new DataAccessContext())
+            {
+                User theUser = (from user in db.Users
+                                where user.UserId == userid
+                                select user).FirstOrDefault();
+
+                // Get the old xp for user before accumulating
+                oldxp = theUser.Xp;
+
+                // Accumulate new xp
+                theUser.Xp += achievedxp;
+ 
+                // Check for LevelUp
+                long newxp = theUser.Xp;
+
+                // Check if User should be levelled up
+                if ((newxp) > (oldxp * 1.1))
+                {
+                    // Increment user level
+                    theUser.Level += 1;
+                }
+                
+                newUser = theUser;
+
+                db.SaveChanges();
+            }
         }
     }
 }
