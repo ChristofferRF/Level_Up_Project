@@ -21,13 +21,28 @@ namespace Client
 
         private void ShowText()
         {
-            
+            userInfoName.Text = StringValues.USERINFONAME_LABEL;
+            userInfoAge.Text = StringValues.USERINFOAGE_LABEL;
+            userInfoHeight.Text = StringValues.USERINFOHEIGHT_LABEL;
+            userInfoWeight.Text = StringValues.USERINFOWEIGHT_LABEL;
+
+            navProgress.Text = StringValues.NAMEPROGRESS_LABEL;
+            navEntry.Text = StringValues.ENTRIES_LABEL;
+            navAch.Text = StringValues.ACHIEVEMENTS_LABEL;
+            navStatistics.Text = StringValues.STATISTICS_LABEL;
+
             ExcerciseLabel.Text = StringValues.EXCERCISE_LABEL;
             DistanceLabel.Text = StringValues.DISTANCE_LABEL;
             TimeLabel.Text = StringValues.TIME_LABEL;
             CreateLogButton.Text = StringValues.CREATE_LOG_BUTTON;
             RewardsLabel.Text = StringValues.REWARDS_LABEL;
             LogsLabel.Text = StringValues.LOGS_LABEL;
+
+            tableDate.Text = StringValues.TABLEDATE_LABEL;
+            tableActivity.Text = StringValues.TABLEACTIVITY_LABEL;
+            tableDistance.Text = StringValues.TABLEDISTANCE_LABEL;
+            tableTime.Text = StringValues.TABLETIME_LABEL;
+            
         }
 
         protected void CreateLog_Click(object sender, EventArgs e)
