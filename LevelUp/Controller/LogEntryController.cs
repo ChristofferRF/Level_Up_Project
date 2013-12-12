@@ -15,7 +15,7 @@ namespace Controller
             
         }
 
-        public LogEntry AddEntryToDb(string typeOfExcercise, string distance, int hours, int minutes, int seconds)
+        public LogEntry AddEntryToDb(string typeOfExcercise, string distance, int hours, int minutes, int seconds, DateTime createdDate)
         {
             LogEntry demoLog = new LogEntry();
             int result = -1;
@@ -29,9 +29,9 @@ namespace Controller
                     Minutes = minutes,
                     Seconds = seconds,
                     UserId = 6,
-                    DateCreated = DateTime.Today,
+                    DateCreated = createdDate,
                 };
-
+                demoLog = log;
                 db.LogEntries.Add(log);
                 result = db.SaveChanges();
             }
@@ -42,7 +42,7 @@ namespace Controller
             }
             else
             {
-                return demoLog;
+                return null;
             }
         }
 

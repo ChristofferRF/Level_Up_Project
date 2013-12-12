@@ -78,6 +78,10 @@
     <Compile Include="Migrations\201312120904576_added DateCreated Logs.Designer.cs">
       <DependentUpon>201312120904576_added DateCreated Logs.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201312121200387_kcal property added to logentry.cs" />
+    <Compile Include="Migrations\201312121200387_kcal property added to logentry.Designer.cs">
+      <DependentUpon>201312121200387_kcal property added to logentry.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Title.cs" />
@@ -110,6 +114,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201312120904576_added DateCreated Logs.resx">
       <DependentUpon>201312120904576_added DateCreated Logs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201312121200387_kcal property added to logentry.resx">
+      <DependentUpon>201312121200387_kcal property added to logentry.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

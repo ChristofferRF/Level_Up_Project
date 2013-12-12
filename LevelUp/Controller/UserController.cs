@@ -75,30 +75,28 @@ namespace Controller
             return newUser;
         }
 
-        public void updateUserXP(string username, long earnedxp)
+        public void UpdateUserXP(string userName, long earnedXp)
         {
             User newUser = new User();
-            int userid = 6;
-            long achievedxp = earnedxp;
-            long oldxp;
+            long oldXp;
 
             using (var db = new DataAccessContext())
             {
                 User theUser = (from user in db.Users
-                                where user.UserId == userid
+                                where user.Username == userName
                                 select user).FirstOrDefault();
 
                 // Get the old xp for user before accumulating
-                oldxp = theUser.Xp;
+                oldXp = theUser.Xp;
 
                 // Accumulate new xp
-                theUser.Xp += achievedxp;
+                theUser.Xp += earnedXp;
  
                 // Check for LevelUp
-                long newxp = theUser.Xp;
+                long newXp = theUser.Xp;
 
                 // Check if User should be levelled up
-                if ((newxp) > (oldxp * 1.1))
+                if ((newXp) > (oldXp * 1.1))
                 {
                     // Increment user level
                     theUser.Level += 1;

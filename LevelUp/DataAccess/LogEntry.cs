@@ -25,6 +25,9 @@ namespace DataAccess
         [DataMember]
         public DateTime DateCreated { get; set; }
         [DataMember]
+        public long Kcal { get; set; }
+        [DataMember]
         public int UserId { get; set; }
+
     }
 }
