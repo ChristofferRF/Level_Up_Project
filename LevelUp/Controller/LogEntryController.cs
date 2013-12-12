@@ -29,7 +29,7 @@ namespace Controller
                     Minutes = minutes,
                     Seconds = seconds,
                     UserId = 6,
-                    // DateCreated = DateTime.Now.ToShortDateString(),
+                    DateCreated = DateTime.Today,
                 };
 
                 db.LogEntries.Add(log);
