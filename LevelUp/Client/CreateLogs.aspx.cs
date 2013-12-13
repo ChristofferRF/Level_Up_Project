@@ -61,6 +61,10 @@ namespace Client
                 log.Hours = Convert.ToInt32(HoursTextBox.Text);
                 log.Minutes = Convert.ToInt32(MinutesTextBox.Text);
                 log.Seconds = Convert.ToInt32(SecondsTextBox.Text);
+                log.DateCreated = DateTime.Today;
+
+                int minutes = CalculateMinutes(Convert.ToInt32(HoursTextBox.Text), Convert.ToInt32(MinutesTextBox.Text), Convert.ToInt32(SecondsTextBox.Text));
+                //log.Kcal = CalculateKcal()
 
                 log = EntryCalls.AddLogEntry(log);
                 UpdateFields(log);
@@ -170,6 +174,37 @@ namespace Client
                 list.Add(log5);
                 this.gvLogs.DataSource = list;
                 this.gvLogs.DataBind();
+
+        private int CalculateMinutes(int hours, int minuttes, int seconds)
+        {
+            int allTheMinutes = 0;
+            allTheMinutes += hours * 60;
+            allTheMinutes += minuttes;
+            allTheMinutes += seconds / 60;
+            return allTheMinutes;
+        }
+
+        public double CalculateKcal(string typeOfExercise, int minutes, double bodyWeight)
+        {
+            double burnRunning = 0.82;
+            double burnBike = 0.38;
+            double activeBurn = 0;
+            double burnedBabyBurned = 0;
+            if (typeOfExercise == "Running")
+            {
+                activeBurn = burnRunning;
+            }
+            else if (typeOfExercise == "Bike")
+            {
+                activeBurn = burnBike;
+            }
+            else
+            {
+                activeBurn = 0.10;
+            }
+
+            burnedBabyBurned = activeBurn * bodyWeight * minutes;
+            return burnedBabyBurned;
         }
     }
 }

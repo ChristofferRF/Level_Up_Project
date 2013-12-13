@@ -117,7 +117,7 @@ namespace UnitTest
 
             /* THE UPDATE */
             // Update the user with username with amount of xp
-            userCtr.updateUserXP(userName, xp);
+            userCtr.UpdateUserXP(userName, xp);
             
 
             /* ACTUAL */
