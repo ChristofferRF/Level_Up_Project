@@ -40,5 +40,6 @@ namespace RESTService
             BodyStyle = WebMessageBodyStyle.WrappedRequest,
             UriTemplate = "get/logs")]
         List<LogEntry> GetFiveLatestLogs(string UserId);
+        User UpdateUser(string userName, string passWord, string name, string age, string weight, string height, string xp, string level);
     }
 }
