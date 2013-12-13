@@ -55,6 +55,9 @@
                             <asp:Label ID="navAch" runat="server"></asp:Label></a></li>
                         <li><a href="#">
                             <asp:Label ID="navStatistics" runat="server"></asp:Label></a></li>
+                        <li><a href="ProfileAdmin.aspx">
+                            <span class="glyphicon glyphicon-cog"></span></a>
+                        </li>
                         <li><a href="#">. . .</a></li>
                     </ul>
 
@@ -88,11 +91,11 @@
                     </div>
 
                     <div class="logHistory">
-                        <b><asp:Label ID="LogsLabel" runat="server"></asp:Label></b>
+                        <b>
+                            <asp:Label ID="LogsLabel" runat="server"></asp:Label></b>
                         <asp:GridView ID="gvLogs" runat="server" AutoGenerateColumns="false">
-
                         </asp:GridView>
-                        
+
                         <%--<table class="table table-hover">
                             <tr>
                                 <td><b><asp:Label ID="tableDate" runat="server"></asp:Label></b></td>

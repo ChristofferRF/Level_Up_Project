@@ -104,35 +104,32 @@
 }
 
 .pgRightPanel {
-
     float: right;
     width: 70%;
     height: 100%;
     border-radius: 10px;
+    padding-bottom: 10px;
 }
 
 .header {
-
     border-top-right-radius: 10px;
     padding-top: 5px;
     height: 10%;
 }
 
 .mainWindow {
-    overflow-y: scroll;
+    overflow-y: scroll hidden;
     overflow-x: hidden;
     height: 90%;
 }
 
 .overview {
-
     height: 25%;
 }
 
 .overviewLeft {
     width: 15%;
     height: 100%;
-
     float: left;
     padding: 10px;
 }
@@ -140,38 +137,34 @@
 .overviewRight {
     width: 85%;
     height: 100%;
-
     float: left;
     padding: 10px;
 }
 
 .filler {
-    height: 25%;
+    height: 24%;
     width: 100%;
     float: left;
 }
 
 .latest {
-
     height: 50%;
     width: 100%;
     float: left;
 }
 
 .latestEntry {
-
     width: 230px;
     height: 100%;
     float: left;
     margin-left: 20px;
 }
 
-.logEntryContent{
+.logEntryContent {
     border-bottom: 1px solid #bbbbbb;
 }
 
 .latestAch {
-
     width: 230px;
     height: 100%;
     float: left;
@@ -180,7 +173,6 @@
 
 .latestHeader {
     border-bottom: 1px solid #bbbbbb;
-    
 }
 
 .latestHeadline {
@@ -200,6 +192,7 @@
 .achTitle {
     font-size: 12px;
 }
+
 .achImgContent {
     width: 25%;
     height: 25%;
@@ -209,14 +202,9 @@
 .adminHeadline {
     margin-left: 10px;
 }
-.selectTitle {
-    border-bottom: 1px solid #eee;
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-bottom: 5px;
-}
 
-.selectVisibility {
+.adminBox {
     border-bottom: 1px solid #eee;
-    margin-bottom: 5px;
+    margin: 15px;
+
 }

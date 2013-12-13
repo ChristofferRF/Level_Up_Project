@@ -19,21 +19,29 @@
                     <img src="http://i.imgur.com/rzOnp.gif" alt="..." class="img-thumbnail" />
                 </div>
                 <div class="userInfo">
-                    <b><asp:Label ID="userInfoName" runat="server"></asp:Label></b>
+                    <b>
+                        <asp:Label ID="userInfoName" runat="server"></asp:Label></b>
                     <br />
-                    <i><asp:Label ID="restUserName" runat="server"></asp:Label></i>
+                    <i>
+                        <asp:Label ID="restUserName" runat="server"></asp:Label></i>
                     <br />
-                    <b><asp:Label ID="userInfoAge" runat="server"></asp:Label></b>
+                    <b>
+                        <asp:Label ID="userInfoAge" runat="server"></asp:Label></b>
                     <br />
-                    <i><asp:Label ID="restUserAge" runat="server"/></i>
+                    <i>
+                        <asp:Label ID="restUserAge" runat="server" /></i>
                     <br />
-                    <b><asp:Label ID="userInfoHeight" runat="server"></asp:Label></b>
+                    <b>
+                        <asp:Label ID="userInfoHeight" runat="server"></asp:Label></b>
                     <br />
-                    <i><asp:Label ID="restUserHeight" runat="server" /></i>
+                    <i>
+                        <asp:Label ID="restUserHeight" runat="server" /></i>
                     <br />
-                    <b><asp:Label ID="userInfoWeight" runat="server"></asp:Label></b>
+                    <b>
+                        <asp:Label ID="userInfoWeight" runat="server"></asp:Label></b>
                     <br />
-                    <i><asp:Label ID="restUserWeight" runat="server" /></i>
+                    <i>
+                        <asp:Label ID="restUserWeight" runat="server" /></i>
                     <br />
 
                 </div>
@@ -42,10 +50,17 @@
             <div class="pgRightPanel">
                 <div class="header">
                     <ul class="nav nav-tabs">
-                        <li class="active"><a href="#"><asp:Label ID="navProgress" runat="server"></asp:Label></a></li>
-                        <li><a href="CreateLogs.aspx"><asp:Label ID="navEntry" runat="server"></asp:Label></a></li>
-                        <li><a href="#"><asp:Label ID="navAch" runat="server"></asp:Label></a></li>
-                        <li><a href="#"><asp:Label ID="navStatistics" runat="server"></asp:Label></a></li>
+                        <li class="active"><a href="#">
+                            <asp:Label ID="navProgress" runat="server"></asp:Label></a></li>
+                        <li><a href="CreateLogs.aspx">
+                            <asp:Label ID="navEntry" runat="server"></asp:Label></a></li>
+                        <li><a href="#">
+                            <asp:Label ID="navAch" runat="server"></asp:Label></a></li>
+                        <li><a href="#">
+                            <asp:Label ID="navStatistics" runat="server"></asp:Label></a></li>
+                        <li><a href="ProfileAdmin.aspx">
+                            <span class="glyphicon glyphicon-cog"></span></a>
+                        </li>
                         <li><a href="#">. . .</a></li>
                     </ul>
 
@@ -53,23 +68,27 @@
                 <div class="mainWindow">
                     <div class="overview">
                         <div class="overviewLeft">
-                            <h3><asp:Label ID="level" runat="server"></asp:Label></h3>
-                            <h3><asp:Label ID="title" runat="server"></asp:Label></h3>
+                            <h3>
+                                <asp:Label ID="level" runat="server"></asp:Label></h3>
+                            <h3>
+                                <asp:Label ID="title" runat="server"></asp:Label></h3>
                         </div>
                         <div class="overviewRight">
-                            <h3><asp:Label ID="restUserLevel" runat="server" /></h3>
-                            <h3><asp:Label ID="restUserTitle" runat="server" /></h3>
+                            <h3>
+                                <asp:Label ID="restUserLevel" runat="server" /></h3>
+                            <h3>
+                                <asp:Label ID="restUserTitle" runat="server" /></h3>
                         </div>
                     </div>
 
                     <div class="filler">
-                        
                     </div>
 
                     <div class="latest">
                         <div class="latestEntry">
                             <div class="latestHeader">
-                                <h4 class="latestHeadline"><asp:Label ID="latestEntry" runat="server"></asp:Label></h4>
+                                <h4 class="latestHeadline">
+                                    <asp:Label ID="latestEntry" runat="server"></asp:Label></h4>
                             </div>
                             <div class="latestContent">
                                 <div class="logEntryContent">
@@ -86,7 +105,8 @@
 
                         <div class="latestAch">
                             <div class="latestHeader">
-                                <h4 class="latestHeadline"><asp:Label ID="latestAch" runat="server"></asp:Label></h4>
+                                <h4 class="latestHeadline">
+                                    <asp:Label ID="latestAch" runat="server"></asp:Label></h4>
                             </div>
                             <div class="latestContentAch">
                                 <b>Sheep Humper</b>

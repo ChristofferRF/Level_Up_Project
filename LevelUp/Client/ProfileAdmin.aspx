@@ -56,7 +56,9 @@
                             <asp:Label ID="navAch" runat="server"></asp:Label></a></li>
                         <li><a href="#">
                             <asp:Label ID="navStatistics" runat="server"></asp:Label></a></li>
-                        <li class="active"><a href="#"><span class="glyphicon glyphicon-wrench"></span></a></li>
+                        <li class="active"><a href="#">
+                            <span class="glyphicon glyphicon-cog"></span></a>
+                        </li>
                     </ul>
 
                 </div>
@@ -64,12 +66,12 @@
                     <div class="adminHeadline">
                         <h4>Administrer profil</h4>
                     </div>
-                    <br />
 
-                    <div class="selectTitle">
+
+                    <div class="adminBox">
                         <div class="form-group">
-                            <label for="inputEmail3" class="col-sm-3 control-label">Select title</label>
-                            <div class="col-sm-4">
+                            <label for="inputEmail3" class="col-sm-4 control-label">Select title</label>
+                            <div class="col-sm-5">
                                 <select class="form-control">
                                     <option>Brute</option>
                                     <option>Athlete</option>
@@ -79,11 +81,13 @@
                         </div>
                     </div>
 
-                    <div class="selectVisibility">
-                       <br /><b>Select visibility of your information</b><br /><br />
+                    <div class="adminBox">
+                        <br />
+                        <b>Select visibility of your information</b><br />
+                        <br />
                         <div class="form-group">
-                            <label for="inputEmail3" class="col-sm-3 control-label">Name</label>
-                            <div class="col-sm-4">
+                            <label for="inputEmail3" class="col-sm-4 control-label">Name</label>
+                            <div class="col-sm-5">
                                 <select class="form-control">
                                     <option>Everyone</option>
                                     <option>Only friends</option>
@@ -93,8 +97,8 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="inputEmail3" class="col-sm-3 control-label">Age</label>
-                            <div class="col-sm-4">
+                            <label for="inputEmail3" class="col-sm-4 control-label">Age</label>
+                            <div class="col-sm-5">
                                 <select class="form-control">
                                     <option>Everyone</option>
                                     <option>Only friends</option>
@@ -104,8 +108,8 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="inputEmail3" class="col-sm-3 control-label">Height</label>
-                            <div class="col-sm-4">
+                            <label for="inputEmail3" class="col-sm-4 control-label">Height</label>
+                            <div class="col-sm-5">
                                 <select class="form-control">
                                     <option>Everyone</option>
                                     <option>Only friends</option>
@@ -115,8 +119,8 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="inputEmail3" class="col-sm-3 control-label">Weight</label>
-                            <div class="col-sm-4">
+                            <label for="inputEmail3" class="col-sm-4 control-label">Weight</label>
+                            <div class="col-sm-5">
                                 <select class="form-control">
                                     <option>Everyone</option>
                                     <option>Only friends</option>
@@ -127,36 +131,48 @@
                     </div>
                     <br />
 
-                    <div class="form-group">
-                        <label for="inputEmail3" class="col-sm-3 control-label">Change e-mail</label>
-                        <div class="col-sm-4">
-                            <input class="form-control" placeholder="Enter new email" />
-                        </div>
-                    </div>
 
-                    <div class="form-group">
-                        <label for="inputEmail3" class="col-sm-3 control-label">Change password</label>
-                        <div class="col-sm-4">
-                            <input type="password" class="form-control" placeholder="Enter password" />
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="inputEmail3" class="col-sm-3 control-label">Repeat password</label>
-                        <div class="col-sm-4">
-                            <input type="password" class="form-control" placeholder="Repeat password" />
-                        </div>
-                        <div>
-                            <asp:Button ID="btnSave" runat="server" Text="Save" OnClick="btnSave_Click" />
+                    <b>Change e-mail</b><br />
+                    <div class="adminBox">
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-4 control-label">Change e-mail</label>
+                            <div class="col-sm-5">
+                                <input class="form-control" placeholder="Enter new email" />
+                            </div>
                         </div>
                     </div>
                     <br />
 
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <b>Change password</b><br />
+                    <div class="adminBox">
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-4 control-label">Current password</label>
+                            <div class="col-sm-5">
+                                <input type="password" class="form-control" placeholder="Enter password" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-4 control-label">Change password</label>
+                            <div class="col-sm-5">
+                                <input type="password" class="form-control" placeholder="Enter new password" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-4 control-label">Repeat password</label>
+                            <div class="col-sm-5">
+                                <input type="password" class="form-control" placeholder="Repeat new password" />
+                            </div>
+                        </div>
+                        <br />
+                    </div>
+                    <div class="adminBox">
+                        <asp:Button ID="Button1" runat="server" Text="Save all changes" OnClick="btnSave_Click" class="btn btn-primary" />
 
-                    <button type="button" class="btn btn-danger">Reset account</button>
+                        <button type="button" class="btn btn-danger">Reset account</button>
 
-                    <button type="button" class="btn btn-danger">Delete account</button>
-                </div>
+                        <button type="button" class="btn btn-danger">Delete account</button>
+                        <br /><br />
+                    </div>
             </div>
         </div>
 
