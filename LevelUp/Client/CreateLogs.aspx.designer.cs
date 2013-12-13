@@ -202,39 +202,12 @@ namespace Client {
         protected global::System.Web.UI.WebControls.Label LogsLabel;
         
         /// <summary>
-        /// tableDate control.
+        /// gvLogs control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tableDate;
-        
-        /// <summary>
-        /// tableActivity control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tableActivity;
-        
-        /// <summary>
-        /// tableDistance control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tableDistance;
-        
-        /// <summary>
-        /// tableTime control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label tableTime;
+        protected global::System.Web.UI.WebControls.GridView gvLogs;
     }
 }

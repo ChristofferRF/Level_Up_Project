@@ -89,7 +89,11 @@
 
                     <div class="logHistory">
                         <b><asp:Label ID="LogsLabel" runat="server"></asp:Label></b>
-                        <table class="table table-hover">
+                        <asp:GridView ID="gvLogs" runat="server" AutoGenerateColumns="false">
+
+                        </asp:GridView>
+                        
+                        <%--<table class="table table-hover">
                             <tr>
                                 <td><b><asp:Label ID="tableDate" runat="server"></asp:Label></b></td>
                                 <td><b><asp:Label ID="tableActivity" runat="server"></asp:Label></b></td>
@@ -108,7 +112,7 @@
                                 <td>4 km</td>
                                 <td>32 minutes</td>
                             </tr>
-                        </table>
+                        </table>--%>
                     </div>
                 </div>
             </div>

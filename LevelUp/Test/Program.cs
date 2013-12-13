@@ -12,11 +12,15 @@ namespace Test
     {
         static void Main(string[] args)
         {
+            TestGetUser();
+        }
+        public static void TestGetUser()
+        {
             User demoUser = new User();
             UserController userCtr = new UserController();
             string username = "kielgasten";
             string password = "meh";
-            
+
 
             demoUser = userCtr.GetUser(username, password);
 

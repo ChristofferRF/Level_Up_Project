@@ -97,5 +97,11 @@ namespace UnitTest
             Assert.AreEqual(dateExpected,dateActual);
             // DONE
         }
+
+        [TestMethod]
+        public void TestGetLastFiveLogs()
+        {
+            //Coll
+        }
     }
 }
