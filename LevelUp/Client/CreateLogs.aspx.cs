@@ -162,18 +162,19 @@ namespace Client
         public void BindGrid()
         {
             List<string> list = new List<string>();
-                string log1 = "træning 1";
-                string log2 = "træning 2";
-                string log3 = "træning 3";
-                string log4 = "træning 4";
-                string log5 = "træning 5";
-                list.Add(log1);
-                list.Add(log2);
-                list.Add(log3);
-                list.Add(log4);
-                list.Add(log5);
-                this.gvLogs.DataSource = list;
-                this.gvLogs.DataBind();
+            string log1 = "træning 1";
+            string log2 = "træning 2";
+            string log3 = "træning 3";
+            string log4 = "træning 4";
+            string log5 = "træning 5";
+            list.Add(log1);
+            list.Add(log2);
+            list.Add(log3);
+            list.Add(log4);
+            list.Add(log5);
+            this.gvLogs.DataSource = list;
+            this.gvLogs.DataBind();
+        }
 
         private int CalculateMinutes(int hours, int minuttes, int seconds)
         {

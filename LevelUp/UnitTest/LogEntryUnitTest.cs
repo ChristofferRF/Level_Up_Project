@@ -28,6 +28,8 @@ namespace UnitTest
             /* create a Log | check that Log can be found in db | compare */
             // Add the Expected LogEntry to DB
             LogEntryController leCtr = new LogEntryController();
+            //leCtr.AddEntryToDb(typeOfExcerciseExpected, distanceExpected, hoursExpected, minutesExpected, secondsExpected);
+
             leCtr.AddEntryToDb(typeOfExcerciseExpected, distanceExpected, hoursExpected, minutesExpected, secondsExpected, DateExpected);
 
             // Get the actual LogEntry from Entry Id

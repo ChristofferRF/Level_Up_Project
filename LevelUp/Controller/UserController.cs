@@ -136,5 +136,19 @@ namespace Controller
 
             return newUser;
         }
+
+        public List<LogEntry> GetFiveLatestLogs()
+        {
+            List<LogEntry> lastFiveLogs = new List<LogEntry>();
+            using (var db = new DataAccessContext())
+            {
+                List<LogEntry> dbList = (from logs in db.LogEntries
+                                         where logs.UserId == 6
+                                         orderby logs.LogEntryId descending
+                                         select logs).Take(5).ToList();
+                lastFiveLogs = dbList;
+            }
+            return lastFiveLogs;
+        }
     }
 }
