@@ -83,7 +83,7 @@ namespace Test
                     Console.WriteLine("Hours: " + log.Hours + "\n");
                     Console.WriteLine("Minutes: " + log.Minutes + "\n");
                     Console.WriteLine("Seconds: " + log.Seconds + "\n");
-                    Console.WriteLine("Date created: " + log.DateCreated.ToShortDateString() + "\n");
+                    Console.WriteLine("Date created: " + log.DateCreated + "\n");
                     Console.WriteLine("Cal: " + log.Kcal + "\n");
                 }
             }

@@ -32,7 +32,7 @@ namespace RESTService
             ResponseFormat = WebMessageFormat.Json,
             BodyStyle = WebMessageBodyStyle.WrappedRequest,
             UriTemplate = "update")]
-        User UpdateUser(string userName, string passWord, string name, int age, double weight, double height, long xp, int level);
+        User UpdateUser(string userName, string passWord, string name, string age, string weight, string height, string xp, string level);
 
         [OperationContract]
         [WebInvoke(Method = "POST",
@@ -40,8 +40,12 @@ namespace RESTService
             BodyStyle = WebMessageBodyStyle.WrappedRequest,
             UriTemplate = "get/logs")]
         List<LogEntry> GetFiveLatestLogs(string UserId);
+
+        [OperationContract]
+        [WebInvoke(Method = "POST",
+            ResponseFormat = WebMessageFormat.Json,
+            BodyStyle = WebMessageBodyStyle.WrappedRequest,
             UriTemplate = "update/xp")]
         void UpdateUserXp(string userName, string earnedXp);
-        User UpdateUser(string userName, string passWord, string name, string age, string weight, string height, string xp, string level);
     }
 }
