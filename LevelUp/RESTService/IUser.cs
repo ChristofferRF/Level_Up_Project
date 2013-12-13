@@ -32,6 +32,6 @@ namespace RESTService
             ResponseFormat = WebMessageFormat.Json,
             BodyStyle = WebMessageBodyStyle.WrappedRequest,
             UriTemplate = "update")]
-        User UpdateUser(string userName, string passWord, string name, int age, double weight, double height, long xp, int level);
+        User UpdateUser(string userName, string passWord, string name, string age, string weight, string height, string xp, string level);
     }
 }

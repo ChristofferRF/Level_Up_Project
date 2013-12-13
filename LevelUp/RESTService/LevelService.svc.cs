@@ -67,10 +67,9 @@ namespace RESTService
         /// <param name="xp"></param>
         /// <param name="level"></param>
         /// <returns></returns>
-        public User UpdateUser(string userName, string passWord, string name, int age, double weight, double height, long xp, int level)
+        public User UpdateUser(string userName, string passWord, string name, string age, string weight, string height, string xp, string level)
         {
-            // string userName, string passWord, string name, int age, double weight, double height, long xp, int level
-            return userCon.updateUserProfile(userName, passWord, name, age, weight, height, xp, level);
+            return userCon.updateUserProfile(userName, passWord, name, Convert.ToInt32(age), Convert.ToDouble(weight), Convert.ToDouble(height), Convert.ToInt64(xp), Convert.ToInt32(level));
         }
     }
 }
