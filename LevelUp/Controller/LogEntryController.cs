@@ -31,7 +31,7 @@ namespace Controller
                     Minutes = minutes,
                     Seconds = seconds,
                     UserId = 6,
-                    DateCreated = createdDate,
+                    Date = createdDate,
                 };
                 demoLog = log;
                 db.LogEntries.Add(log);

@@ -23,7 +23,7 @@ namespace DataAccess
         [DataMember]
         public int Seconds { get; set; }
         [DataMember]
-        public string DateCreated { get; set; }
+        public string Date { get; set; }
         [DataMember]
         public long Kcal { get; set; }
         [DataMember]

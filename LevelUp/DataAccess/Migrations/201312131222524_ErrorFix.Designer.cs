@@ -7,13 +7,13 @@ namespace DataAccess.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.0.1-21010")]
-    public sealed partial class DateCreatedernuenstring : IMigrationMetadata
+    public sealed partial class ErrorFix : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(DateCreatedernuenstring));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(ErrorFix));
         
         string IMigrationMetadata.Id
         {
-            get { return "201312130954108_DateCreated er nu en string"; }
+            get { return "201312131222524_ErrorFix"; }
         }
         
         string IMigrationMetadata.Source

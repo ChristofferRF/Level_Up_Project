@@ -82,13 +82,13 @@
     <Compile Include="Migrations\201312121200387_kcal property added to logentry.Designer.cs">
       <DependentUpon>201312121200387_kcal property added to logentry.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201312130954108_DateCreated er nu en string.cs" />
-    <Compile Include="Migrations\201312130954108_DateCreated er nu en string.Designer.cs">
-      <DependentUpon>201312130954108_DateCreated er nu en string.cs</DependentUpon>
-    </Compile>  
     <Compile Include="Migrations\201312131015139_added attributes User.cs" />
     <Compile Include="Migrations\201312131015139_added attributes User.Designer.cs">
       <DependentUpon>201312131015139_added attributes User.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201312131222524_ErrorFix.cs" />
+    <Compile Include="Migrations\201312131222524_ErrorFix.Designer.cs">
+      <DependentUpon>201312131222524_ErrorFix.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -126,11 +126,11 @@
     <EmbeddedResource Include="Migrations\201312121200387_kcal property added to logentry.resx">
       <DependentUpon>201312121200387_kcal property added to logentry.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201312130954108_DateCreated er nu en string.resx">
-      <DependentUpon>201312130954108_DateCreated er nu en string.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201312131015139_added attributes User.resx">
       <DependentUpon>201312131015139_added attributes User.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201312131222524_ErrorFix.resx">
+      <DependentUpon>201312131222524_ErrorFix.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

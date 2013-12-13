@@ -89,7 +89,7 @@ namespace UnitTest
             int secondsActual = actualLogEntry.Seconds;
             int userIdActual = actualLogEntry.UserId;
             int logEntryIdActual = actualLogEntry.LogEntryId;
-            String dateActual = actualLogEntry.DateCreated;
+            String dateActual = actualLogEntry.Date;
 
             Assert.AreEqual(typeOfExcerciseExpected,typeOfExerciseActual);
             Assert.AreEqual(distanceExpected,distanceActual);
