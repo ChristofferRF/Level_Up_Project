@@ -128,6 +128,16 @@ namespace Client.App_Code
             Debug.WriteLine(jsonString);
 
             HttpWebRequest webReq = (HttpWebRequest)WebRequest.Create("http://localhost:3369/LevelService.svc/users/get/logs");
+
+
+        public static void UpdateUserXP(string userName, long earnedXp)
+        {
+            User returnUser = new User();
+
+            string jsonString = "{\"UserName\":" + "\"" + userName + "\", " + "\"EarnedXp\":" + "\"" + earnedXp.ToString() + "\"" + "}";
+            Debug.WriteLine(jsonString);
+
+            HttpWebRequest webReq = (HttpWebRequest)WebRequest.Create("http://localhost:3369/LevelService.svc/users/update/xp");
             webReq.Method = "POST";                                     //Set metodetypen. Default er POST, men vi skriver det ALTID alligevel.
             webReq.ContentType = "application/json; charset=utf-8";     //Sæt contenttypen, i.e Sæt til JSON
             webReq.ContentLength = jsonString.Length;                     //Længden på strengen
@@ -147,6 +157,8 @@ namespace Client.App_Code
 
                     latestLogs = JSONhelper.JsonDeserialize<List<LogEntry>>(text);    //kør json-strengen igennem deserialiseringen, med PersonModel som type objekt
                 }
+                HttpWebResponse response = (HttpWebResponse)webReq.GetResponse();          //Skyder requesten afsted.
+
             }
             catch (Exception e)
             {
@@ -155,5 +167,7 @@ namespace Client.App_Code
 
             return latestLogs;
         }
+        }
+            
     }
 }

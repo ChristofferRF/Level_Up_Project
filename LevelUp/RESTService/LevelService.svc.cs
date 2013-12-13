@@ -29,7 +29,7 @@ namespace RESTService
         /// <returns></returns>
         public LogEntry AddEntry(string distance, string logEntryId, string hours, string minutes, string seconds, string typeOfExcercise, string createdDate)
         {
-            return logCon.AddEntryToDb(typeOfExcercise, distance, Convert.ToInt32(hours), Convert.ToInt32(minutes), Convert.ToInt32(seconds), Convert.ToDateTime(createdDate));
+            return logCon.AddEntryToDb(typeOfExcercise, distance, Convert.ToInt32(hours), Convert.ToInt32(minutes), Convert.ToInt32(seconds), createdDate);
         }
 
         /// <summary>
@@ -73,6 +73,7 @@ namespace RESTService
         }
 
         /// <summary>
+<<<<<<< HEAD
         /// kalder metode på UserControlleren som henter brugerens seneste 5 logs ud fra UserId
         /// </summary>
         /// <param name="userId"></param>
@@ -80,6 +81,15 @@ namespace RESTService
         public List<LogEntry> GetFiveLatestLogs(string userId)
         {
             return userCon.GetFiveLatestLogs(Convert.ToInt32(userId));
+=======
+        /// Indsæt optjent xp på brugeren.
+        /// </summary>
+        /// <param name="userName"></param>
+        /// <param name="earnedXp"></param>
+        public void UpdateUserXp(string userName, string earnedXp)
+        {
+            userCon.UpdateUserXP(userName, Convert.ToInt64(earnedXp));
+>>>>>>> 530998d2072e88997f6ba1efee8a3c7912118f97
         }
     }
 }

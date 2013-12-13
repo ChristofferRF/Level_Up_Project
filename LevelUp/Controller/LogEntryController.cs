@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DataAccess;
 using System.Data.Entity;
+using System.Diagnostics;
 
 namespace Controller
 {
@@ -15,8 +16,9 @@ namespace Controller
             
         }
 
-        public LogEntry AddEntryToDb(string typeOfExcercise, string distance, int hours, int minutes, int seconds, DateTime createdDate)
+        public LogEntry AddEntryToDb(string typeOfExcercise, string distance, int hours, int minutes, int seconds, string createdDate)
         {
+            Debug.WriteLine(createdDate);
             LogEntry demoLog = new LogEntry();
             int result = -1;
             using (var db = new DataAccessContext())

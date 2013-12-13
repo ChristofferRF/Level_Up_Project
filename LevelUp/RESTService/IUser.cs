@@ -38,8 +38,13 @@ namespace RESTService
         [WebInvoke(Method = "POST",
             ResponseFormat = WebMessageFormat.Json,
             BodyStyle = WebMessageBodyStyle.WrappedRequest,
+<<<<<<< HEAD
             UriTemplate = "get/logs")]
         List<LogEntry> GetFiveLatestLogs(string UserId);
+=======
+            UriTemplate = "update/xp")]
+        void UpdateUserXp(string userName, string earnedXp);
+>>>>>>> 530998d2072e88997f6ba1efee8a3c7912118f97
         User UpdateUser(string userName, string passWord, string name, string age, string weight, string height, string xp, string level);
     }
 }
