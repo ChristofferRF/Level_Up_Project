@@ -80,7 +80,6 @@ namespace RESTService
         public List<LogEntry> GetFiveLatestLogs(string userId)
         {
             return userCon.GetFiveLatestLogs(Convert.ToInt32(userId));
-        }
         /// Indsæt optjent xp på brugeren.
         /// </summary>
         /// <param name="userName"></param>

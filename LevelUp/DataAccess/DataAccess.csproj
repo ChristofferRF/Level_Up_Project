@@ -85,7 +85,6 @@
     <Compile Include="Migrations\201312130954108_DateCreated er nu en string.cs" />
     <Compile Include="Migrations\201312130954108_DateCreated er nu en string.Designer.cs">
       <DependentUpon>201312130954108_DateCreated er nu en string.cs</DependentUpon>
-    </Compile>  
     <Compile Include="Migrations\201312131015139_added attributes User.cs" />
     <Compile Include="Migrations\201312131015139_added attributes User.Designer.cs">
       <DependentUpon>201312131015139_added attributes User.cs</DependentUpon>
@@ -128,9 +127,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201312130954108_DateCreated er nu en string.resx">
       <DependentUpon>201312130954108_DateCreated er nu en string.cs</DependentUpon>
-    </EmbeddedResource>
+=======
     <EmbeddedResource Include="Migrations\201312131015139_added attributes User.resx">
       <DependentUpon>201312131015139_added attributes User.cs</DependentUpon>
+>>>>>>> ee280132ab85d67f5b037b7053d949a29084bd44
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
