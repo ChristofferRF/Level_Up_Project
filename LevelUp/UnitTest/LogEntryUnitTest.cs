@@ -20,14 +20,14 @@ namespace UnitTest
             int secondsExpected = 54;
             int userIdExpected = 6;
             int logEntryIdExpected = 43;
-            //string dateExpected = "2013-12-11"; // Datetime Issues
+            string dateExpected = "2013-12-11"; // Datetime Issues
             //Debug.WriteLine("Expected : " + dateExpected);
 
 
             /* create a Log | check that Log can be found in db | compare */
             // Add the Expected LogEntry to DB
             LogEntryController leCtr = new LogEntryController();
-            leCtr.AddEntryToDb(typeOfExcerciseExpected, distanceExpected, hoursExpected, minutesExpected, secondsExpected);
+            leCtr.AddEntryToDb(typeOfExcerciseExpected, distanceExpected, hoursExpected, minutesExpected, secondsExpected, dateExpected);
 
 
             // Get the actual LogEntry from Entry Id
@@ -85,7 +85,7 @@ namespace UnitTest
             int secondsActual = actualLogEntry.Seconds;
             int userIdActual = actualLogEntry.UserId;
             int logEntryIdActual = actualLogEntry.LogEntryId;
-            DateTime dateActual = actualLogEntry.DateCreated;
+            String dateActual = actualLogEntry.DateCreated;
 
             Assert.AreEqual(typeOfExcerciseExpected,typeOfExerciseActual);
             Assert.AreEqual(distanceExpected,distanceActual);

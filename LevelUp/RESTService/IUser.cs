@@ -33,5 +33,12 @@ namespace RESTService
             BodyStyle = WebMessageBodyStyle.WrappedRequest,
             UriTemplate = "update")]
         User UpdateUser(string userName, string passWord, string name, int age, double weight, double height, long xp, int level);
+
+        [OperationContract]
+        [WebInvoke(Method = "POST",
+            ResponseFormat = WebMessageFormat.Json,
+            BodyStyle = WebMessageBodyStyle.WrappedRequest,
+            UriTemplate = "update/xp")]
+        void UpdateUserXp(string userName, string earnedXp);
     }
 }

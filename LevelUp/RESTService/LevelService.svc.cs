@@ -29,7 +29,7 @@ namespace RESTService
         /// <returns></returns>
         public LogEntry AddEntry(string distance, string logEntryId, string hours, string minutes, string seconds, string typeOfExcercise, string createdDate)
         {
-            return logCon.AddEntryToDb(typeOfExcercise, distance, Convert.ToInt32(hours), Convert.ToInt32(minutes), Convert.ToInt32(seconds), Convert.ToDateTime(createdDate));
+            return logCon.AddEntryToDb(typeOfExcercise, distance, Convert.ToInt32(hours), Convert.ToInt32(minutes), Convert.ToInt32(seconds), createdDate);
         }
 
         /// <summary>
@@ -71,6 +71,16 @@ namespace RESTService
         {
             // string userName, string passWord, string name, int age, double weight, double height, long xp, int level
             return userCon.updateUserProfile(userName, passWord, name, age, weight, height, xp, level);
+        }
+
+        /// <summary>
+        /// Indsæt optjent xp på brugeren.
+        /// </summary>
+        /// <param name="userName"></param>
+        /// <param name="earnedXp"></param>
+        public void UpdateUserXp(string userName, string earnedXp)
+        {
+            userCon.UpdateUserXP(userName, Convert.ToInt64(earnedXp));
         }
     }
 }

@@ -42,5 +42,6 @@ namespace Client.App_Code
             T obj = (T)ser.ReadObject(ms);
             return obj;
         }
+
     }
 }

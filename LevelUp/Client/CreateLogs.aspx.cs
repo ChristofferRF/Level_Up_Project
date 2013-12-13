@@ -61,15 +61,21 @@ namespace Client
                 log.Hours = Convert.ToInt32(HoursTextBox.Text);
                 log.Minutes = Convert.ToInt32(MinutesTextBox.Text);
                 log.Seconds = Convert.ToInt32(SecondsTextBox.Text);
-                log.DateCreated = DateTime.Today;
+                log.DateCreated = DateTime.Today.ToShortDateString();
 
                 int minutes = CalculateMinutes(Convert.ToInt32(HoursTextBox.Text), Convert.ToInt32(MinutesTextBox.Text), Convert.ToInt32(SecondsTextBox.Text));
-                //log.Kcal = CalculateKcal()
+                log.Kcal = CalculateKcal(excerciseTextBox.Text, minutes, 100); 
 
                 log = EntryCalls.AddLogEntry(log);
+
+                User u = UserCalls.GetUser("Kielgasten", "meh");
+
+                UserCalls.UpdateUserXP(u.Username, log.Kcal);
+                u = UserCalls.GetUser(u.Username, u.Password);
+
                 UpdateFields(log);
-                ShowRewardsOutput();
-                Debug.WriteLine("succes you pushed the button");
+                ShowRewardsOutput(u, log);
+                
             }
             else
             {
@@ -117,19 +123,17 @@ namespace Client
             return Regex.IsMatch(activityString, activityPattern);
         }
 
-        public void ShowRewardsOutput()
+        public void ShowRewardsOutput(User u, LogEntry log)
         {
             
-            string xp = "100 Xp";
-            string cal = "350 Kcal";
             string achievementName = "Collector";
             string achFlavourText = "Bedrift for at oprette din første træning";
 
             RewardOutput.Text += StringValues.REWARDS_TITLE;
             RewardOutput.Text += "\n";
-            RewardOutput.Text += "  - "+xp;
+            RewardOutput.Text += "  - "+ u.Xp;
             RewardOutput.Text += "\n";
-            RewardOutput.Text += "  - " + cal;
+            RewardOutput.Text += "  - " + log.Kcal;
             RewardOutput.Text += "\n";
             RewardOutput.Text += StringValues.ACHIEVEMENT_TITLE;
             RewardOutput.Text += "\n";
@@ -162,18 +166,19 @@ namespace Client
         public void BindGrid()
         {
             List<string> list = new List<string>();
-                string log1 = "træning 1";
-                string log2 = "træning 2";
-                string log3 = "træning 3";
-                string log4 = "træning 4";
-                string log5 = "træning 5";
-                list.Add(log1);
-                list.Add(log2);
-                list.Add(log3);
-                list.Add(log4);
-                list.Add(log5);
-                this.gvLogs.DataSource = list;
-                this.gvLogs.DataBind();
+            string log1 = "træning 1";
+            string log2 = "træning 2";
+            string log3 = "træning 3";
+            string log4 = "træning 4";
+            string log5 = "træning 5";
+            list.Add(log1);
+            list.Add(log2);
+            list.Add(log3);
+            list.Add(log4);
+            list.Add(log5);
+            this.gvLogs.DataSource = list;
+            this.gvLogs.DataBind();
+        }
 
         private int CalculateMinutes(int hours, int minuttes, int seconds)
         {
@@ -184,7 +189,7 @@ namespace Client
             return allTheMinutes;
         }
 
-        public double CalculateKcal(string typeOfExercise, int minutes, double bodyWeight)
+        public long CalculateKcal(string typeOfExercise, int minutes, double bodyWeight)
         {
             double burnRunning = 0.82;
             double burnBike = 0.38;
@@ -204,7 +209,7 @@ namespace Client
             }
 
             burnedBabyBurned = activeBurn * bodyWeight * minutes;
-            return burnedBabyBurned;
+            return Convert.ToInt64(burnedBabyBurned);
         }
     }
 }
