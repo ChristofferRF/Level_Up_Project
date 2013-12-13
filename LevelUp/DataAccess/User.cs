@@ -48,5 +48,18 @@ namespace DataAccess
 
         [DataMember]
         public virtual List<Title> Titles { get; set; }
+
+        //Privacy attributes
+        [DataMember]
+        public enum privacyName {Everyone, Friends, None}
+
+        [DataMember]
+        public enum privacyAge {Everyone, Friends, None}
+
+        [DataMember]
+        public enum privacyWeight {Everyone, Friends, None} 
+
+        [DataMember]
+        public enum privacyHeight {Everyone, Friends, None}
     }
 }
