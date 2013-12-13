@@ -51,15 +51,15 @@ namespace DataAccess
 
         //Privacy attributes
         [DataMember]
-        public enum privacyName {Everyone, Friends, None}
+        public string privacyName { get; set; }
 
         [DataMember]
-        public enum privacyAge {Everyone, Friends, None}
+        public string privacyAge { get; set; }
 
         [DataMember]
-        public enum privacyWeight {Everyone, Friends, None} 
+        public string privacyWeight { get; set; } 
 
         [DataMember]
-        public enum privacyHeight {Everyone, Friends, None}
+        public string privacyHeight { get; set; }
     }
 }

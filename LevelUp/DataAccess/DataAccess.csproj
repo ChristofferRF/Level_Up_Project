@@ -82,6 +82,10 @@
     <Compile Include="Migrations\201312121200387_kcal property added to logentry.Designer.cs">
       <DependentUpon>201312121200387_kcal property added to logentry.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201312131015139_added attributes User.cs" />
+    <Compile Include="Migrations\201312131015139_added attributes User.Designer.cs">
+      <DependentUpon>201312131015139_added attributes User.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Title.cs" />
@@ -117,6 +121,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201312121200387_kcal property added to logentry.resx">
       <DependentUpon>201312121200387_kcal property added to logentry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201312131015139_added attributes User.resx">
+      <DependentUpon>201312131015139_added attributes User.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
