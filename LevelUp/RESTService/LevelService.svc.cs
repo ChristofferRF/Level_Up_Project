@@ -72,5 +72,15 @@ namespace RESTService
             // string userName, string passWord, string name, int age, double weight, double height, long xp, int level
             return userCon.updateUserProfile(userName, passWord, name, age, weight, height, xp, level);
         }
+
+        /// <summary>
+        /// kalder metode på UserControlleren som henter brugerens seneste 5 logs ud fra UserId
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <returns></returns>
+        public List<LogEntry> GetFiveLatestLogs(string userId)
+        {
+            return userCon.GetFiveLatestLogs(Convert.ToInt32(userId));
+        }
     }
 }

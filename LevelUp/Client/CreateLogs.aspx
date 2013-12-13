@@ -94,28 +94,11 @@
                         <b>
                             <asp:Label ID="LogsLabel" runat="server"></asp:Label></b>
                         <asp:GridView ID="gvLogs" runat="server" AutoGenerateColumns="false">
+                            <Columns>
+                                <asp:BoundField HeaderText="ID" DataField="LogEntryId" />
+                                <asp:BoundField HeaderText="Træning" DataField="TypeOfExcercise" />
+                            </Columns>
                         </asp:GridView>
-
-                        <%--<table class="table table-hover">
-                            <tr>
-                                <td><b><asp:Label ID="tableDate" runat="server"></asp:Label></b></td>
-                                <td><b><asp:Label ID="tableActivity" runat="server"></asp:Label></b></td>
-                                <td><b><asp:Label ID="tableDistance" runat="server"></asp:Label></b></td>
-                                <td><b><asp:Label ID="tableTime" runat="server"></asp:Label></b></td>
-                            </tr>
-                            <tr>
-                                <td>14/4</td>
-                                <td>Went running</td>
-                                <td>4 km</td>
-                                <td>30 minutes</td>
-                            </tr>
-                            <tr>
-                                <td>12/4</td>
-                                <td>Went running</td>
-                                <td>4 km</td>
-                                <td>32 minutes</td>
-                            </tr>
-                        </table>--%>
                     </div>
                 </div>
             </div>

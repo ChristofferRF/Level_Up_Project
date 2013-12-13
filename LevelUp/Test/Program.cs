@@ -71,7 +71,7 @@ namespace Test
             UserController userCtr = new UserController();
             List<LogEntry> listTest = new List<LogEntry>();
 
-            listTest = userCtr.GetFiveLatestLogs();
+            listTest = userCtr.GetFiveLatestLogs(6);
 
             if (listTest != null)
             {
