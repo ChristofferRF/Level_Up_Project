@@ -12,7 +12,8 @@ namespace Test
     {
         static void Main(string[] args)
         {
-            TestGetUser();
+            TestGetUserLastFiveLogs();
+            //TestGetUser();
         }
         public static void TestGetUser()
         {
@@ -44,6 +45,7 @@ namespace Test
                 //Console.WriteLine("ach test: " + list[0].Name.ToString());
                 Console.WriteLine("Achievement: " + demoUser.Achievements[0].Name.ToString());
                 Console.WriteLine("Title: " + demoUser.Titles[0].Name.ToString());
+                Console.ReadLine();
 
                 //Console.WriteLine("Achievements: " + "\n");
                 //foreach (Achievement a in demoUser.Achievements)
@@ -62,6 +64,34 @@ namespace Test
 
                 //Console.WriteLine("user is null");
             }
+        }
+
+        public static void TestGetUserLastFiveLogs()
+        {
+            UserController userCtr = new UserController();
+            List<LogEntry> listTest = new List<LogEntry>();
+
+            listTest = userCtr.GetFiveLatestLogs();
+
+            if (listTest != null)
+            {
+                foreach (LogEntry log in listTest)
+                {
+                    Console.WriteLine("LogEntryId: " + log.LogEntryId + "\n");
+                    Console.WriteLine("Type of Excercise: " + log.TypeOfExcercise + "\n");
+                    Console.WriteLine("Distance: " + log.Distance + "\n");
+                    Console.WriteLine("Hours: " + log.Hours + "\n");
+                    Console.WriteLine("Minutes: " + log.Minutes + "\n");
+                    Console.WriteLine("Seconds: " + log.Seconds + "\n");
+                    Console.WriteLine("Date created: " + log.DateCreated.ToShortDateString() + "\n");
+                    Console.WriteLine("Cal: " + log.Kcal + "\n");
+                }
+            }
+            else
+            {
+                Console.WriteLine("the list is null");
+            }
+            Console.ReadLine();
         }
     }
 }

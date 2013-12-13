@@ -48,5 +48,18 @@ namespace DataAccess
 
         [DataMember]
         public virtual List<Title> Titles { get; set; }
+
+        //Privacy attributes
+        [DataMember]
+        public string privacyName { get; set; }
+
+        [DataMember]
+        public string privacyAge { get; set; }
+
+        [DataMember]
+        public string privacyWeight { get; set; } 
+
+        [DataMember]
+        public string privacyHeight { get; set; }
     }
 }

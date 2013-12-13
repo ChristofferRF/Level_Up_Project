@@ -40,5 +40,6 @@ namespace RESTService
             BodyStyle = WebMessageBodyStyle.WrappedRequest,
             UriTemplate = "update/xp")]
         void UpdateUserXp(string userName, string earnedXp);
+        User UpdateUser(string userName, string passWord, string name, string age, string weight, string height, string xp, string level);
     }
 }
