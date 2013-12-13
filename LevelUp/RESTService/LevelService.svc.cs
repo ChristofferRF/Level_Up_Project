@@ -73,6 +73,7 @@ namespace RESTService
         }
 
         /// <summary>
+<<<<<<< HEAD
         /// kalder metode på UserControlleren som henter brugerens seneste 5 logs ud fra UserId
         /// </summary>
         /// <param name="userId"></param>
@@ -80,6 +81,7 @@ namespace RESTService
         public List<LogEntry> GetFiveLatestLogs(string userId)
         {
             return userCon.GetFiveLatestLogs(Convert.ToInt32(userId));
+=======
         /// Indsæt optjent xp på brugeren.
         /// </summary>
         /// <param name="userName"></param>
@@ -87,6 +89,7 @@ namespace RESTService
         public void UpdateUserXp(string userName, string earnedXp)
         {
             userCon.UpdateUserXP(userName, Convert.ToInt64(earnedXp));
+>>>>>>> 530998d2072e88997f6ba1efee8a3c7912118f97
         }
     }
 }
