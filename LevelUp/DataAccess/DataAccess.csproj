@@ -90,6 +90,10 @@
     <Compile Include="Migrations\201312131222524_ErrorFix.Designer.cs">
       <DependentUpon>201312131222524_ErrorFix.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201312131226172_tilbage til DateCreated.cs" />
+    <Compile Include="Migrations\201312131226172_tilbage til DateCreated.Designer.cs">
+      <DependentUpon>201312131226172_tilbage til DateCreated.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Title.cs" />
@@ -131,6 +135,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201312131222524_ErrorFix.resx">
       <DependentUpon>201312131222524_ErrorFix.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201312131226172_tilbage til DateCreated.resx">
+      <DependentUpon>201312131226172_tilbage til DateCreated.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -61,7 +61,7 @@ namespace Client
                 log.Hours = Convert.ToInt32(HoursTextBox.Text);
                 log.Minutes = Convert.ToInt32(MinutesTextBox.Text);
                 log.Seconds = Convert.ToInt32(SecondsTextBox.Text);
-                log.Date = DateTime.Today.ToShortDateString();
+                log.DateCreated = DateTime.Today.ToShortDateString();
 
                 int minutes = CalculateMinutes(Convert.ToInt32(HoursTextBox.Text), Convert.ToInt32(MinutesTextBox.Text), Convert.ToInt32(SecondsTextBox.Text));
                 log.Kcal = CalculateKcal(excerciseTextBox.Text, minutes, 100); 
