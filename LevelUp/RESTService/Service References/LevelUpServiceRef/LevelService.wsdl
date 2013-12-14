@@ -25,6 +25,24 @@
   <wsdl:message name="IUser_GetUser_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetUserResponse" />
   </wsdl:message>
+  <wsdl:message name="IUser_UpdateUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUser" />
+  </wsdl:message>
+  <wsdl:message name="IUser_UpdateUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUser_GetFiveLatestLogs_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFiveLatestLogs" />
+  </wsdl:message>
+  <wsdl:message name="IUser_GetFiveLatestLogs_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFiveLatestLogsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUser_UpdateUserXp_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUserXp" />
+  </wsdl:message>
+  <wsdl:message name="IUser_UpdateUserXp_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUserXpResponse" />
+  </wsdl:message>
   <wsdl:portType name="ILog">
     <wsdl:operation name="AddEntry">
       <wsdl:input wsaw:Action="http://tempuri.org/ILog/AddEntry" message="tns:ILog_AddEntry_InputMessage" />
@@ -39,6 +57,18 @@
     <wsdl:operation name="GetUser">
       <wsdl:input wsaw:Action="http://tempuri.org/IUser/GetUser" message="tns:IUser_GetUser_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IUser/GetUserResponse" message="tns:IUser_GetUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUser/UpdateUser" message="tns:IUser_UpdateUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUser/UpdateUserResponse" message="tns:IUser_UpdateUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFiveLatestLogs">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUser/GetFiveLatestLogs" message="tns:IUser_GetFiveLatestLogs_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUser/GetFiveLatestLogsResponse" message="tns:IUser_GetFiveLatestLogs_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserXp">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUser/UpdateUserXp" message="tns:IUser_UpdateUserXp_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUser/UpdateUserXpResponse" message="tns:IUser_UpdateUserXp_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:service name="LevelService" />

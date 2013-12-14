@@ -51,15 +51,15 @@ namespace DataAccess
 
         //Privacy attributes
         [DataMember]
-        public string privacyName { get; set; }
+        public string PrivacyName { get; set; }
 
         [DataMember]
-        public string privacyAge { get; set; }
+        public string PrivacyAge { get; set; }
 
         [DataMember]
-        public string privacyWeight { get; set; } 
+        public string PrivacyWeight { get; set; } 
 
         [DataMember]
-        public string privacyHeight { get; set; }
+        public string PrivacyHeight { get; set; }
     }
 }

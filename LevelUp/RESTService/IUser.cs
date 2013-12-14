@@ -46,6 +46,6 @@ namespace RESTService
             ResponseFormat = WebMessageFormat.Json,
             BodyStyle = WebMessageBodyStyle.WrappedRequest,
             UriTemplate = "update/xp")]
-        void UpdateUserXp(string userName, string earnedXp);
+        void UpdateUserXp(string UserName, string EarnedXp);
     }
 }

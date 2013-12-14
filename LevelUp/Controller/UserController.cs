@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DataAccess;
 using System.Data.Entity;
+using System.Diagnostics;
 
 namespace Controller
 {
@@ -77,6 +78,7 @@ namespace Controller
 
         public void UpdateUserXP(string userName, long earnedXp)
         {
+            Debug.WriteLine(userName + " - " + earnedXp.ToString());   
             User newUser = new User();
             long oldXp;
 

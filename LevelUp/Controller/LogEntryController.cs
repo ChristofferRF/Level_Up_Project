@@ -16,9 +16,9 @@ namespace Controller
             
         }
 
-        public LogEntry AddEntryToDb(string typeOfExcercise, string distance, int hours, int minutes, int seconds, string createdDate)
+        public LogEntry AddEntryToDb(string typeOfExcercise, string distance, int hours, int minutes, int seconds, string dateCreated, long kcal)
         {
-            Debug.WriteLine(createdDate);
+            Debug.WriteLine(dateCreated);
             LogEntry demoLog = new LogEntry();
             int result = -1;
             using (var db = new DataAccessContext())
@@ -31,7 +31,8 @@ namespace Controller
                     Minutes = minutes,
                     Seconds = seconds,
                     UserId = 6,
-                    DateCreated = createdDate,
+                    DateCreated = dateCreated,
+                    Kcal = kcal,
                 };
                 demoLog = log;
                 db.LogEntries.Add(log);
