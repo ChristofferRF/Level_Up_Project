@@ -32,7 +32,7 @@ namespace RESTService
             ResponseFormat = WebMessageFormat.Json,
             BodyStyle = WebMessageBodyStyle.WrappedRequest,
             UriTemplate = "update")]
-        User UpdateUser(string userName, string passWord, string name, string age, string weight, string height, string xp, string level);
+        User UpdateUser(string userName, string passWord, string name, string age, string weight, string height, string xp, string level); //Virker ikke pga. lowercase. Det skal matche property-navnet 100%
 
         [OperationContract]
         [WebInvoke(Method = "POST",

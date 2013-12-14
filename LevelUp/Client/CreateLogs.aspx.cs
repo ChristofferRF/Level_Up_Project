@@ -131,9 +131,9 @@ namespace Client
 
             RewardOutput.Text += StringValues.REWARDS_TITLE;
             RewardOutput.Text += "\n";
-            RewardOutput.Text += "  - "+ u.Xp;
+            RewardOutput.Text += " Du har i alt "+ u.Xp + " XP";
             RewardOutput.Text += "\n";
-            RewardOutput.Text += "  - " + log.Kcal;
+            RewardOutput.Text += " Du har forbrændt " + log.Kcal + " KCAL på denne træning";
             RewardOutput.Text += "\n";
             RewardOutput.Text += StringValues.ACHIEVEMENT_TITLE;
             RewardOutput.Text += "\n";
@@ -203,6 +203,7 @@ namespace Client
             }
 
             burnedBabyBurned = activeBurn * bodyWeight * minutes;
+            
             return Convert.ToInt64(burnedBabyBurned);
         }
     }

@@ -39,7 +39,7 @@ namespace Controller
                 result = db.SaveChanges();
             }
 
-            if (result != 1)
+            if (result != -1)
             {
                 return demoLog;
             }
