@@ -75,7 +75,7 @@ namespace Client
 
                 UpdateFields(log);
                 ShowRewardsOutput(u, log);
-                
+                BindGrid(); // bind the gridView again after log is added to DB
             }
             else
             {

@@ -95,8 +95,13 @@
                             <asp:Label ID="LogsLabel" runat="server"></asp:Label></b>
                         <asp:GridView ID="gvLogs" runat="server" AutoGenerateColumns="false">
                             <Columns>
-                                <asp:BoundField HeaderText="ID" DataField="LogEntryId" />
-                                <asp:BoundField HeaderText="Træning" DataField="TypeOfExcercise" />
+                                <asp:BoundField HeaderText="Dato" DataField="DateCreated" ItemStyle-Width="100" />
+                                <asp:BoundField HeaderText="Aktivitet" DataField="TypeOfExcercise" ItemStyle-Width="100" />
+                                <asp:BoundField HeaderText="Distance" DataField="Distance" ItemStyle-Width="80" />
+                                <asp:BoundField HeaderText="Timer" DataField="Hours" ItemStyle-Width="80" />
+                                <asp:BoundField HeaderText="Minuter" DataField="Minutes" ItemStyle-Width="80" />
+                                <asp:BoundField HeaderText="Sekunder" DataField="Seconds" ItemStyle-Width="80" />
+                                <asp:BoundField HeaderText="Kcal" DataField="Kcal" ItemStyle-Width="60" />
                             </Columns>
                         </asp:GridView>
                     </div>

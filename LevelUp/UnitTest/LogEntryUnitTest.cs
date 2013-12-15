@@ -21,7 +21,8 @@ namespace UnitTest
             int userIdExpected = 6;
             int logEntryIdExpected = 43;
             string dateExpected = "2013-12-11"; // Datetime Issues
-            DateTime DateExpected = new DateTime(2013,12,12);
+            long kcal = 354;
+            //DateTime DateExpected = new DateTime(2013,12,12);
             //string dateExpected = "2013-12-11"; // Datetime Issues
             //Debug.WriteLine("Expected : " + dateExpected);
 
@@ -29,7 +30,7 @@ namespace UnitTest
             /* create a Log | check that Log can be found in db | compare */
             // Add the Expected LogEntry to DB
             LogEntryController leCtr = new LogEntryController();
-            leCtr.AddEntryToDb(typeOfExcerciseExpected, distanceExpected, hoursExpected, minutesExpected, secondsExpected, dateExpected);
+            leCtr.AddEntryToDb(typeOfExcerciseExpected, distanceExpected, hoursExpected, minutesExpected, secondsExpected, dateExpected, kcal);
             //leCtr.AddEntryToDb(typeOfExcerciseExpected, distanceExpected, hoursExpected, minutesExpected, secondsExpected);
 
             //leCtr.AddEntryToDb(typeOfExcerciseExpected, distanceExpected, hoursExpected, minutesExpected, secondsExpected, DateExpected);
