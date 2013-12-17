@@ -27,6 +27,12 @@ namespace Client
             userInfoHeight.Text = StringValues.USERINFOHEIGHT_LABEL;
             userInfoWeight.Text = StringValues.USERINFOWEIGHT_LABEL;
 
+            User u = (User)Session["UserItem"];
+            NameLbl.Text = u.Name;
+            AgeLbl.Text = u.Age.ToString();
+            HeightLbl.Text = u.Height.ToString();
+            WeightLbl.Text = u.Weight.ToString();
+
             navProgress.Text = StringValues.NAMEPROGRESS_LABEL;
             navEntry.Text = StringValues.ENTRIES_LABEL;
             navAch.Text = StringValues.ACHIEVEMENTS_LABEL;
@@ -166,8 +172,9 @@ namespace Client
         public void BindGrid()
         {
             List<LogEntry> list = new List<LogEntry>();
-            int userId = 6;
-            list = UserCalls.GetFiveLatestLogs(userId);
+            //int userId = 6;
+            User u = (User)Session["UserItem"];
+            list = UserCalls.GetFiveLatestLogs(u.UserId);
 
 
             this.gvLogs.DataSource = list;
