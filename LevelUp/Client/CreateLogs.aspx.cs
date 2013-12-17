@@ -55,16 +55,17 @@ namespace Client
             }
             else
             {
-                User u = (User)Session["UserItem"];
-                NameLbl.Text = u.Name;
-                AgeLbl.Text = u.Age.ToString();
-                HeightLbl.Text = u.Height.ToString();
-                WeightLbl.Text = u.Weight.ToString();
+                NameLbl.Text = user.Name;
+                AgeLbl.Text = user.Age.ToString();
+                HeightLbl.Text = user.Height.ToString();
+                WeightLbl.Text = user.Weight.ToString();
             }
         }
 
         protected void CreateLog_Click(object sender, EventArgs e)
         {
+            User user = (User)Session["UserItem"];
+
             if (IsValidActitity(excerciseTextBox.Text) &&
                 IsValidDistance(distanceTextBox.Text) &&
                 IsvalidTime(HoursTextBox.Text) &&
@@ -79,19 +80,19 @@ namespace Client
                 log.Minutes = Convert.ToInt32(MinutesTextBox.Text);
                 log.Seconds = Convert.ToInt32(SecondsTextBox.Text);
                 log.DateCreated = DateTime.Today.ToShortDateString();
+                log.UserId = user.UserId;
 
                 int minutes = CalculateMinutes(Convert.ToInt32(HoursTextBox.Text), Convert.ToInt32(MinutesTextBox.Text), Convert.ToInt32(SecondsTextBox.Text));
-                log.Kcal = CalculateKcal(excerciseTextBox.Text, minutes, 100); 
+                log.Kcal = CalculateKcal(excerciseTextBox.Text, minutes, user.Weight); 
 
                 log = EntryCalls.AddLogEntry(log);
 
-                User u = UserCalls.GetUser("Kielgasten", "meh");
-
-                UserCalls.UpdateUserXP(u.Username, log.Kcal);
-                u = UserCalls.GetUser(u.Username, u.Password);
+                UserCalls.UpdateUserXP(user.Username, log.Kcal);
+                Session["UserItem"] = UserCalls.GetUser(user.Username, user.Password);
+                user = (User)Session["UserItem"];
 
                 UpdateFields(log);
-                ShowRewardsOutput(u, log);
+                ShowRewardsOutput(user, log);
                 BindGrid(); // bind the gridView again after log is added to DB
             }
             else
@@ -165,21 +166,6 @@ namespace Client
             //This method should load all the users logs when 
         }
 
-        public void ShowNewLogInList()
-        {
-            //default data for testpurposes
-            LogEntry log = new LogEntry();
-            log.TypeOfExcercise = "bike";
-            log.Distance = "50km";
-            log.Hours = 0;
-            log.Minutes = 50;
-            log.Seconds = 0;
-
-            //ListViewItem item = new ListViewItem();
-            //LogsListView.Items.
-                
-        }
-
         public void BindGrid()
         {
             List<LogEntry> list = new List<LogEntry>();
@@ -192,6 +178,14 @@ namespace Client
             this.gvLogs.DataBind();
         }
 
+        /// <summary>
+        /// timer, minutter og sekunder regnes om så vi kun har minutter.
+        /// det afrundes brutalt efter int-regler
+        /// </summary>
+        /// <param name="hours"></param>
+        /// <param name="minuttes"></param>
+        /// <param name="seconds"></param>
+        /// <returns></returns>
         private int CalculateMinutes(int hours, int minuttes, int seconds)
         {
             int allTheMinutes = 0;
@@ -201,6 +195,14 @@ namespace Client
             return allTheMinutes;
         }
 
+        /// <summary>
+        /// Baseret på træningstypen, og middelværdier fundet på intertuberne, samt antal minutter trænet, og brugerens vægt;
+        /// beregnes antal kalorier forbrændt.
+        /// </summary>
+        /// <param name="typeOfExercise"></param>
+        /// <param name="minutes"></param>
+        /// <param name="bodyWeight"></param>
+        /// <returns></returns>
         public long CalculateKcal(string typeOfExercise, int minutes, double bodyWeight)
         {
             double burnRunning = 0.82;

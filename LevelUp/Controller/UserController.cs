@@ -79,7 +79,6 @@ namespace Controller
         public void UpdateUserXP(string userName, long earnedXp)
         {
 
-            bool sendForAchievement = false; 
             User newUser = new User();
             long oldXp;
 
