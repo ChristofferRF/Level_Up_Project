@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using DataAccess;
 
 namespace Client
 {
@@ -12,6 +13,7 @@ namespace Client
         protected void Page_Load(object sender, EventArgs e)
         {
             ShowText();
+            DisplayUserData();
         }
 
         private void ShowText()
@@ -25,6 +27,23 @@ namespace Client
             navEntry.Text = StringValues.ENTRIES_LABEL;
             navAch.Text = StringValues.ACHIEVEMENTS_LABEL;
             navStatistics.Text = StringValues.STATISTICS_LABEL;
+        }
+
+        private void DisplayUserData()
+        {
+            User user = (User)Session["UserItem"];
+            if (user == null)
+            {
+                Response.Redirect("LoginClient.aspx");
+            }
+            else
+            {
+                User u = (User)Session["UserItem"];
+                AdmNameLbl.Text = u.Name;
+                AdmAgeLbl.Text = u.Age.ToString();
+                AdmHeightLbl.Text = u.Height.ToString();
+                AdmWeightLbl.Text = u.Weight.ToString();
+            }
         }
 
         protected void btnSave_Click(object sender, EventArgs e)

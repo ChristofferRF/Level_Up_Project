@@ -27,12 +27,6 @@ namespace Client
             userInfoHeight.Text = StringValues.USERINFOHEIGHT_LABEL;
             userInfoWeight.Text = StringValues.USERINFOWEIGHT_LABEL;
 
-            User u = (User)Session["UserItem"];
-            NameLbl.Text = u.Name;
-            AgeLbl.Text = u.Age.ToString();
-            HeightLbl.Text = u.Height.ToString();
-            WeightLbl.Text = u.Weight.ToString();
-
             navProgress.Text = StringValues.NAMEPROGRESS_LABEL;
             navEntry.Text = StringValues.ENTRIES_LABEL;
             navAch.Text = StringValues.ACHIEVEMENTS_LABEL;
@@ -50,6 +44,23 @@ namespace Client
             //tableDistance.Text = StringValues.TABLEDISTANCE_LABEL;
             //tableTime.Text = StringValues.TABLETIME_LABEL;
             
+        }
+
+        private void DisplayUser()
+        {
+            User user = (User)Session["UserItem"];
+            if (user == null)
+            {
+                Response.Redirect("LoginClient.aspx");
+            }
+            else
+            {
+                User u = (User)Session["UserItem"];
+                NameLbl.Text = u.Name;
+                AgeLbl.Text = u.Age.ToString();
+                HeightLbl.Text = u.Height.ToString();
+                WeightLbl.Text = u.Weight.ToString();
+            }
         }
 
         protected void CreateLog_Click(object sender, EventArgs e)
