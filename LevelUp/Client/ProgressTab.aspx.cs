@@ -39,14 +39,20 @@ namespace Client
 
         private void DisplayUserData()
         {
-            User user = GetDemoUser();
-            restUserName.Text = user.Name;
-            restUserAge.Text = user.Age.ToString();
-            restUserHeight.Text = user.Height.ToString();
-            restUserWeight.Text = user.Weight.ToString();
-            restUserTitle.Text = user.Titles[0].Name;
-            restUserLevel.Text = user.Level.ToString();
-
+            User user = (User)Session["UserItem"];
+            if (user == null)
+            {
+                Response.Redirect("LoginClient.aspx");
+            }
+            else
+            {
+                restUserName.Text = user.Name;
+                restUserAge.Text = user.Age.ToString();
+                restUserHeight.Text = user.Height.ToString();
+                restUserWeight.Text = user.Weight.ToString();
+                //restUserTitle.Text = user.Titles[0].Name;
+                restUserLevel.Text = user.Level.ToString();
+            }
         }
 
         private User GetDemoUser()
