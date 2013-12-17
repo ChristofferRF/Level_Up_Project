@@ -27,9 +27,9 @@ namespace RESTService
         /// <param name="minutes"></param>
         /// <param name="seconds"></param>
         /// <returns></returns>
-        public LogEntry AddEntry(string distance, string logEntryId, string hours, string minutes, string seconds, string typeOfExcercise, string dateCreated, string kcal)
+        public LogEntry AddEntry(string distance, string logEntryId, string hours, string minutes, string seconds, string typeOfExcercise, string userId, string dateCreated, string kcal)
         {
-            return logCon.AddEntryToDb(typeOfExcercise, distance, Convert.ToInt32(hours), Convert.ToInt32(minutes), Convert.ToInt32(seconds), dateCreated, Convert.ToInt64(kcal));
+            return logCon.AddEntryToDb(typeOfExcercise, distance, Convert.ToInt32(hours), Convert.ToInt32(minutes), Convert.ToInt32(seconds), Convert.ToInt32(userId), dateCreated, Convert.ToInt64(kcal));
         }
 
         /// <summary>
