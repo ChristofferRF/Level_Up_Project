@@ -78,7 +78,8 @@ namespace Controller
 
         public void UpdateUserXP(string userName, long earnedXp)
         {
-            Debug.WriteLine(userName + " - " + earnedXp.ToString());   
+
+            bool sendForAchievement = false; 
             User newUser = new User();
             long oldXp;
 
@@ -108,6 +109,10 @@ namespace Controller
 
                 db.SaveChanges();
             }
+
+             AssignAchievement(CheckForAchievement(newUser.Xp), newUser);
+
+
         }
 
 
@@ -154,9 +159,15 @@ namespace Controller
         }
 
 
-        private bool CheckForAchievement(long userXp)
+        /// <summary>
+        /// Baseret på brugerens xp, check om der er nogle achievement som kan tildeles.
+        /// 
+        /// </summary>
+        /// <param name="userXp"></param>
+        /// <returns>liste over evt. achieves som brugeren skal have</returns>
+        private List<Achievement> CheckForAchievement(long userXp)
         {
-            bool achievementAchieved = false;
+            List<Achievement> eligebleAchieves = new List<Achievement>();
             List<Achievement> allTheAchieves = new List<Achievement>();
             using (var db = new DataAccessContext())
             {
@@ -167,12 +178,33 @@ namespace Controller
                 {
                     if (userXp > ach.XpToAchieve && ach.XpToAchieve != -1)
                     {
-                        achievementAchieved = true;
+                        eligebleAchieves.Add(ach);
                     }
                 }
             
-            return achievementAchieved;
+            return eligebleAchieves;
+        }
+
+
+        /// <summary>
+        /// Tildeler de achievements til brugeren, som er fundet.
+        /// </summary>
+        /// <param name="list"></param>
+        /// <param name="currentUser"></param>
+        private void AssignAchievement(List<Achievement> list, User currentUser)
+        {
             
+            using (var db = new DataAccessContext())
+            {
+                User dbUser = (from user in db.Users
+                                where user.UserId == currentUser.UserId
+                                select user).FirstOrDefault();
+
+                dbUser.Achievements = list;
+
+                db.SaveChanges();
+            }
+
         }
     }
 }
