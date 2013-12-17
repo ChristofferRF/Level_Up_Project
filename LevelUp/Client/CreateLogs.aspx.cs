@@ -18,6 +18,7 @@ namespace Client
         {
             ShowText();
             BindGrid();
+            DisplayUser();
         }
 
         private void ShowText()
