@@ -67,9 +67,9 @@ namespace RESTService
         /// <param name="xp"></param>
         /// <param name="level"></param>
         /// <returns></returns>
-        public User UpdateUser(string userName, string passWord, string name, string age, string weight, string height, string xp, string level)
+        public User UpdateUser(string userName, string password, string name, string age, string weight, string height, string xp, string level)
         {
-            return userCon.updateUserProfile(userName, passWord, name, Convert.ToInt32(age), Convert.ToDouble(weight), Convert.ToDouble(height), Convert.ToInt64(xp), Convert.ToInt32(level));
+            return userCon.UpdateUserProfile(userName, password, name, Convert.ToInt32(age), Convert.ToDouble(weight), Convert.ToDouble(height), Convert.ToInt64(xp), Convert.ToInt32(level));
         }
 
         /// <summary>
@@ -81,6 +81,8 @@ namespace RESTService
         {
             return userCon.GetFiveLatestLogs(Convert.ToInt32(userId));
         }
+
+
         /// Indsæt optjent xp på brugeren.
         /// </summary>
         /// <param name="userName"></param>

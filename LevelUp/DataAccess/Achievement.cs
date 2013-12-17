@@ -26,6 +26,12 @@ namespace DataAccess
         public DateTime DateAchieved { get; set; }
 
         [DataMember]
-        public int UserId { get; set; }
+        public long XpToAchieve { get; set; }
+
+        [DataMember]
+        public int LvlToAchieve { get; set; }
+
+        [DataMember]
+        public List<User> Users { get; set; }
     }
 }

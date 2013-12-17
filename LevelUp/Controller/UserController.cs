@@ -111,7 +111,7 @@ namespace Controller
         }
 
 
-        public User updateUserProfile(string userName, string passWord, string name, int age, double weight, double height, long xp, int level)
+        public User UpdateUserProfile(string userName, string password, string name, int age, double weight, double height, long xp, int level)
         {
             User newUser = new User();
 
@@ -123,7 +123,7 @@ namespace Controller
 
                 // Update user
                 theUser.Username = userName;
-                theUser.Password = passWord;
+                theUser.Password = password;
                 theUser.Name = name;
                 theUser.Age = age;
                 theUser.Weight = weight;
@@ -151,6 +151,28 @@ namespace Controller
                 lastFiveLogs = dbList;
             }
             return lastFiveLogs;
+        }
+
+
+        private bool CheckForAchievement(long userXp)
+        {
+            bool achievementAchieved = false;
+            List<Achievement> allTheAchieves = new List<Achievement>();
+            using (var db = new DataAccessContext())
+            {
+                List<Achievement> dbList = (from achievements in db.Achievements select achievements).ToList();
+                allTheAchieves = dbList;
+            }
+                foreach (Achievement ach in allTheAchieves)
+                {
+                    if (userXp > ach.XpToAchieve && ach.XpToAchieve != -1)
+                    {
+                        achievementAchieved = true;
+                    }
+                }
+            
+            return achievementAchieved;
+            
         }
     }
 }
