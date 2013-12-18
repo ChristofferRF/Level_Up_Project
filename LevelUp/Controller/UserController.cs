@@ -114,7 +114,7 @@ namespace Controller
             using (var db = new DataAccessContext())
             {
                 User theUser = (from user in db.Users
-                                where user.Username == name
+                                where user.Username == userName
                                 select user).FirstOrDefault();
 
                 // Update user
@@ -126,6 +126,11 @@ namespace Controller
                 theUser.Height = height;
                 theUser.Xp = xp;
                 theUser.Level = level;
+
+                theUser.PrivacyName = "";
+                theUser.PrivacyAge = "";
+                theUser.PrivacyWeight = "";
+                theUser.PrivacyHeight = "";
 
                 newUser = theUser;
 
