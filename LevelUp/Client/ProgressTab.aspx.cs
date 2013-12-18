@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using DataAccess;
 using Client.App_Code;
+using System.Globalization;
 
 
 namespace Client
@@ -14,8 +15,11 @@ namespace Client
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            ShowText();
-            DisplayUserData();
+            if(IsPostBack == false)
+            {
+                ShowText();
+                DisplayUserData();
+            }
         }
 
         private void ShowText()
@@ -48,18 +52,11 @@ namespace Client
             {
                 restUserName.Text = user.Name;
                 restUserAge.Text = user.Age.ToString();
-                restUserHeight.Text = user.Height.ToString();
-                restUserWeight.Text = user.Weight.ToString();
+                restUserHeight.Text = Convert.ToString(user.Height, CultureInfo.CurrentCulture);
+                restUserWeight.Text = Convert.ToString(user.Weight, CultureInfo.CurrentCulture);
                 //restUserTitle.Text = user.Titles[0].Name;
                 restUserLevel.Text = user.Level.ToString();
             }
-        }
-
-        private User GetDemoUser()
-        {
-            User demoUser = new User();
-            demoUser = UserCalls.GetUser("kielgasten", "meh");
-            return demoUser;
         }
     }
 }

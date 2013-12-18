@@ -8,6 +8,7 @@ using System.Diagnostics;
 using DataAccess;
 using Client.App_Code;
 using System.Text.RegularExpressions;
+using System.Globalization;
 
 namespace Client
 {
@@ -15,7 +16,10 @@ namespace Client
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            ShowText();
+            if(IsPostBack == false)
+            {
+                ShowText();
+            }
         }
 
         private void ShowText()
@@ -33,25 +37,40 @@ namespace Client
 
         protected void CreateUser_Click(object sender, EventArgs e)
         {
+            
+
+
             if (IsValidUserName(selectedUsername.Text) &&
                 IsValidName(userName.Text) &&
                 IsValidAge(userAge.Text) &&
                 IsValidHeight(userHeight.Text) &&
                 IsValidWeight(userWeight.Text))
             {
+                Debug.WriteLine(CultureInfo.CurrentCulture.ToString());
                 User user = new User();
                 user.Username = selectedUsername.Text;
                 user.Password = selectedPassword.Text;
                 user.Name = userName.Text;
                 user.Age = Convert.ToInt32(userAge.Text);
-                user.Height = Convert.ToDouble(userHeight.Text);
-                user.Weight = Convert.ToDouble(userWeight.Text);
+                user.Height = Convert.ToDouble(userHeight.Text, CultureInfo.CurrentCulture);
+                user.Weight = Convert.ToDouble(userWeight.Text, CultureInfo.CurrentCulture);
                 user.Xp = 0;
                 user.Level = 1;
+                user.PrivacyName = "none";
+                user.PrivacyAge = "none";
+                user.PrivacyHeight = "none";
+                user.PrivacyWeight = "none";
 
                 user = UserCalls.AddUser(user);
-                Debug.WriteLine("User has sucessfully been created in the database");
-                Response.Redirect("ProgressTab.aspx");
+                if (user.Username != null)
+                { 
+                    Session["UserItem"] = user;
+                    Response.Redirect("ProgressTab.aspx");
+                }
+                else
+                {
+                    ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('Null bruger');", true);
+                }
             }
             else
             {

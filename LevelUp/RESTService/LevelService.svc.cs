@@ -7,6 +7,8 @@ using System.ServiceModel.Web;
 using System.Text;
 using DataAccess;
 using Controller;
+using System.Globalization;
+using System.Diagnostics;
 
 namespace RESTService
 {
@@ -43,9 +45,10 @@ namespace RESTService
         /// <param name="weight"></param>
         /// <param name="height"></param>
         /// <returns></returns>
-        public User AddUser(string age, string height, string name, string password, string userId, string userName, string weight, string xp, string level)
+        public User AddUser(string age, string height, string name, string password, string userId, string userName, string weight, string xp, string level, string privacyName, string privacyAge, string privacyHeight, string privacyWeight)
         {
-            return userCon.AddUserToDb(userName, password, name, Convert.ToInt32(age), Convert.ToDouble(weight), Convert.ToDouble(height), Convert.ToInt64(xp), Convert.ToInt32(level));
+            NumberFormatInfo nfi = new CultureInfo("en-US", false).NumberFormat;
+            return userCon.AddUserToDb(userName, password, name, Convert.ToInt32(age), Convert.ToDouble(weight, nfi), Convert.ToDouble(height, nfi), Convert.ToInt64(xp), Convert.ToInt32(level), privacyName, privacyAge, privacyHeight, privacyWeight);
         }
 
 
@@ -69,7 +72,7 @@ namespace RESTService
         /// <returns></returns>
         public User UpdateUser(string userName, string password, string name, string age, string weight, string height, string xp, string level)
         {
-            return userCon.UpdateUserProfile(userName, password, name, Convert.ToInt32(age), Convert.ToDouble(weight), Convert.ToDouble(height), Convert.ToInt64(xp), Convert.ToInt32(level));
+            return userCon.UpdateUserProfile(userName, password, name, Convert.ToInt32(age), Convert.ToDouble(weight, CultureInfo.CurrentCulture), Convert.ToDouble(height, CultureInfo.CurrentCulture), Convert.ToInt64(xp), Convert.ToInt32(level));
         }
 
         /// <summary>

@@ -22,6 +22,7 @@ namespace Client.App_Code
         {
             DataContractJsonSerializer ser = new DataContractJsonSerializer(typeof(T));
             MemoryStream ms = new MemoryStream();
+            ms.Position = 0;
             ser.WriteObject(ms, type);
             string jsonString = Encoding.UTF8.GetString(ms.ToArray());
             ms.Close();
@@ -39,6 +40,7 @@ namespace Client.App_Code
            
             DataContractJsonSerializer ser = new DataContractJsonSerializer(typeof(T));
             MemoryStream ms = new MemoryStream(Encoding.UTF8.GetBytes(jsonString));
+            ms.Position = 0;
             T obj = (T)ser.ReadObject(ms);
             return obj;
         }

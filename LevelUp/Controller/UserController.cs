@@ -16,7 +16,8 @@ namespace Controller
 
         }
 
-        public User AddUserToDb(string username, string password, string name, int age, double weight, double height, long xp, int level)
+        public User AddUserToDb(string username, string password, string name, int age, double weight, double height, 
+                                long xp, int level, string privacyName, string privacyAge, string privacyWeight, string privacyHeight)
         {
             User newUser = new User();
             //Check if username exist if it does, return null object
@@ -34,7 +35,11 @@ namespace Controller
                     Weight = weight,
                     Height = height,
                     Xp = xp,
-                    Level = level
+                    Level = level,
+                    PrivacyName = privacyName,
+                    PrivacyAge = privacyAge,
+                    PrivacyWeight = privacyWeight,
+                    PrivacyHeight = privacyHeight
                 };
                 db.Users.Add(user);
                 result = db.SaveChanges();

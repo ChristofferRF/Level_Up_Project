@@ -8,6 +8,7 @@ using System.Diagnostics;
 using DataAccess;
 using Client.App_Code;
 using System.Text.RegularExpressions;
+using System.Globalization;
 
 namespace Client
 {
@@ -19,6 +20,7 @@ namespace Client
             ShowText();
             BindGrid();
             DisplayUser();
+         
         }
 
         private void ShowText()
@@ -58,8 +60,8 @@ namespace Client
             {
                 NameLbl.Text = user.Name;
                 AgeLbl.Text = user.Age.ToString();
-                HeightLbl.Text = user.Height.ToString();
-                WeightLbl.Text = user.Weight.ToString();
+                HeightLbl.Text = Convert.ToString(user.Height, CultureInfo.CurrentCulture);
+                WeightLbl.Text = Convert.ToString(user.Weight, CultureInfo.CurrentCulture);
             }
         }
 
@@ -89,6 +91,7 @@ namespace Client
                 log = EntryCalls.AddLogEntry(log);
 
                 UserCalls.UpdateUserXP(user.Username, log.Kcal);
+
                 Session["UserItem"] = UserCalls.GetUser(user.Username, user.Password);
                 user = (User)Session["UserItem"];
 
@@ -170,7 +173,6 @@ namespace Client
         public void BindGrid()
         {
             List<LogEntry> list = new List<LogEntry>();
-            //int userId = 6;
             User u = (User)Session["UserItem"];
             list = UserCalls.GetFiveLatestLogs(u.UserId);
 

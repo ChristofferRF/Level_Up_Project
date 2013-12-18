@@ -12,8 +12,11 @@ namespace Client
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            ShowText();
-            DisplayUserData();
+            if(IsPostBack == false)
+            {
+                ShowText();
+                DisplayUserData();
+            }
         }
 
         private void ShowText()
