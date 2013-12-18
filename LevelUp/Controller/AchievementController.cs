@@ -16,12 +16,12 @@ namespace Controller
 
         }
 
-        /*public Achievement GetLatestAchievement(int userId)
+        public Achievement GetLatestAchievement(int userId)
         {
             //By userID, find latest achievement and send to client
             Achievement latestAch = new Achievement();
 
-            using (var db = new DataAccessContext())
+            /*using (var db = new DataAccessContext())
             {
                 Achievement dbItem = (from achievements in db.Achievements
                                       where achievements.UserId == userId
@@ -29,9 +29,9 @@ namespace Controller
                                       select achievements).LastOrDefault();
 
                 latestAch = dbItem;
-            }
+            }*/
             return latestAch;
-        }*/
+        }
 
 
     }
