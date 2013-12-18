@@ -46,8 +46,7 @@ namespace Controller
         public User GetUser(string username, string password)
         {
             User newUser = new User();
-            try
-            {
+
                 using (var db = new DataAccessContext())
                 {
                     User theUser = (from user in db.Users
@@ -59,12 +58,6 @@ namespace Controller
 
                     newUser = theUser;
                 }
-            }
-            catch (Exception e)
-            {
-                throw new Exception();
-            }
-            
             return newUser;
         }
 
