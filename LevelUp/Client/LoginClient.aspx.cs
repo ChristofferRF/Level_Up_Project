@@ -31,17 +31,22 @@ namespace Client
         {
             if ((IsValidUserName(txtBoxUsername.Text)) && (txtBoxPassword.Text != null))
             {
-                User user = new User();
-                user.Name = "Ronnie";
-                user.Password = "meh";
-                user.Username = "Kielgasten";
-                user.Weight = 85;
-                user.Height = 170;  
+                //User user = new User();
+                //user.Name = "Ronnie";
+                //user.Password = "meh";
+                //user.Username = "Kielgasten";
+                //user.Weight = 85;
+                //user.Height = 170;  
 
-                user = UserCalls.AddUser(user);
-                txtBoxUsername.Text = user.Name;
-
-                Response.Redirect("ProgressTab.aspx");
+                //user = UserCalls.AddUser(user);
+                //txtBoxUsername.Text = user.Name;
+                User u = null;
+                u = UserCalls.GetUser(txtBoxUsername.Text, txtBoxPassword.Text);
+                if (u != null)
+                {
+                    Session["UserItem"] = u;
+                    Response.Redirect("ProgressTab.aspx");
+                }
             }
             else
             {

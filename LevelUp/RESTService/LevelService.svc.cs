@@ -27,9 +27,9 @@ namespace RESTService
         /// <param name="minutes"></param>
         /// <param name="seconds"></param>
         /// <returns></returns>
-        public LogEntry AddEntry(string distance, string logEntryId, string hours, string minutes, string seconds, string typeOfExcercise, string dateCreated, string kcal)
+        public LogEntry AddEntry(string distance, string logEntryId, string hours, string minutes, string seconds, string typeOfExcercise, string userId, string dateCreated, string kcal)
         {
-            return logCon.AddEntryToDb(typeOfExcercise, distance, Convert.ToInt32(hours), Convert.ToInt32(minutes), Convert.ToInt32(seconds), dateCreated, Convert.ToInt64(kcal));
+            return logCon.AddEntryToDb(typeOfExcercise, distance, Convert.ToInt32(hours), Convert.ToInt32(minutes), Convert.ToInt32(seconds), Convert.ToInt32(userId), dateCreated, Convert.ToInt64(kcal));
         }
 
         /// <summary>
@@ -67,9 +67,9 @@ namespace RESTService
         /// <param name="xp"></param>
         /// <param name="level"></param>
         /// <returns></returns>
-        public User UpdateUser(string userName, string passWord, string name, string age, string weight, string height, string xp, string level)
+        public User UpdateUser(string userName, string password, string name, string age, string weight, string height, string xp, string level)
         {
-            return userCon.updateUserProfile(userName, passWord, name, Convert.ToInt32(age), Convert.ToDouble(weight), Convert.ToDouble(height), Convert.ToInt64(xp), Convert.ToInt32(level));
+            return userCon.UpdateUserProfile(userName, password, name, Convert.ToInt32(age), Convert.ToDouble(weight), Convert.ToDouble(height), Convert.ToInt64(xp), Convert.ToInt32(level));
         }
 
         /// <summary>
@@ -81,6 +81,8 @@ namespace RESTService
         {
             return userCon.GetFiveLatestLogs(Convert.ToInt32(userId));
         }
+
+
         /// Indsæt optjent xp på brugeren.
         /// </summary>
         /// <param name="userName"></param>

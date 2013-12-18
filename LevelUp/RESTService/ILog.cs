@@ -18,7 +18,7 @@ namespace RESTService
             ResponseFormat = WebMessageFormat.Json, 
             BodyStyle = WebMessageBodyStyle.WrappedRequest,
             UriTemplate = "add")]
-        LogEntry AddEntry(string Distance, string LogEntryId, string Hours, string Minutes, string Seconds, string TypeOfExcercise, string DateCreated, string Kcal);
+        LogEntry AddEntry(string Distance, string LogEntryId, string Hours, string Minutes, string Seconds, string TypeOfExcercise, string UserId , string DateCreated, string Kcal);
 
     }
 

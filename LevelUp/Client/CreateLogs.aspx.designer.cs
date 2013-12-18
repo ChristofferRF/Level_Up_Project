@@ -31,6 +31,15 @@ namespace Client {
         protected global::System.Web.UI.WebControls.Label userInfoName;
         
         /// <summary>
+        /// NameLbl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label NameLbl;
+        
+        /// <summary>
         /// userInfoAge control.
         /// </summary>
         /// <remarks>
@@ -38,6 +47,15 @@ namespace Client {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label userInfoAge;
+        
+        /// <summary>
+        /// AgeLbl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label AgeLbl;
         
         /// <summary>
         /// userInfoHeight control.
@@ -49,6 +67,15 @@ namespace Client {
         protected global::System.Web.UI.WebControls.Label userInfoHeight;
         
         /// <summary>
+        /// HeightLbl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label HeightLbl;
+        
+        /// <summary>
         /// userInfoWeight control.
         /// </summary>
         /// <remarks>
@@ -56,6 +83,15 @@ namespace Client {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label userInfoWeight;
+        
+        /// <summary>
+        /// WeightLbl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label WeightLbl;
         
         /// <summary>
         /// navProgress control.

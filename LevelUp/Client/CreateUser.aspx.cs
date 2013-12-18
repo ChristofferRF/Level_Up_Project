@@ -31,7 +31,6 @@ namespace Client
             createUserButton.Text = StringValues.BTN_USER_CREATE;
         }
 
-
         protected void CreateUser_Click(object sender, EventArgs e)
         {
             if (IsValidUserName(selectedUsername.Text) &&

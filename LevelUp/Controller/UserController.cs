@@ -18,31 +18,36 @@ namespace Controller
 
         public User AddUserToDb(string username, string password, string name, int age, double weight, double height, long xp, int level)
         {
-            User demoUser = new User();
-            int result = -1;
-
-            using (var db = new DataAccessContext())
+            User newUser = new User();
+            //Check if username exist if it does, return null object
+            try
             {
-                User user = new User
-                {
-                    Username = username,
-                    Password = password,
-                    Name = name,
-                    Age = age,
-                    Weight = weight,
-                    Height = height,
-                    Xp = xp,
-                    Level = level
-                };
-
-                db.Users.Add(user);
-                result = db.SaveChanges();
+                User CheckUser = GetUser(username, password);
             }
+            catch (Exception e)
+            {
+                int result = -1;
 
-            if (result != -1)
-                return demoUser;
-            else
-                return demoUser;
+                using (var db = new DataAccessContext())
+                {
+                    User user = new User
+                    {
+                        Username = username,
+                        Password = password,
+                        Name = name,
+                        Age = age,
+                        Weight = weight,
+                        Height = height,
+                        Xp = xp,
+                        Level = level
+                    };
+                    db.Users.Add(user);
+                    result = db.SaveChanges();
+                    if (result != -1)
+                        newUser = user;
+                }
+            }
+            return newUser;
         }
         public User GetUser(string username, string password)
         {
@@ -78,7 +83,7 @@ namespace Controller
 
         public void UpdateUserXP(string userName, long earnedXp)
         {
-            Debug.WriteLine(userName + " - " + earnedXp.ToString());   
+
             User newUser = new User();
             long oldXp;
 
@@ -108,10 +113,14 @@ namespace Controller
 
                 db.SaveChanges();
             }
+
+             AssignAchievement(CheckForAchievement(newUser.Xp), newUser);
+
+
         }
 
 
-        public User updateUserProfile(string userName, string passWord, string name, int age, double weight, double height, long xp, int level)
+        public User UpdateUserProfile(string userName, string password, string name, int age, double weight, double height, long xp, int level)
         {
             User newUser = new User();
 
@@ -123,7 +132,7 @@ namespace Controller
 
                 // Update user
                 theUser.Username = userName;
-                theUser.Password = passWord;
+                theUser.Password = password;
                 theUser.Name = name;
                 theUser.Age = age;
                 theUser.Weight = weight;
@@ -151,6 +160,55 @@ namespace Controller
                 lastFiveLogs = dbList;
             }
             return lastFiveLogs;
+        }
+
+
+        /// <summary>
+        /// Baseret på brugerens xp, check om der er nogle achievement som kan tildeles.
+        /// 
+        /// </summary>
+        /// <param name="userXp"></param>
+        /// <returns>liste over evt. achieves som brugeren skal have</returns>
+        private List<Achievement> CheckForAchievement(long userXp)
+        {
+            List<Achievement> eligebleAchieves = new List<Achievement>();
+            List<Achievement> allTheAchieves = new List<Achievement>();
+            using (var db = new DataAccessContext())
+            {
+                List<Achievement> dbList = (from achievements in db.Achievements select achievements).ToList();
+                allTheAchieves = dbList;
+            }
+                foreach (Achievement ach in allTheAchieves)
+                {
+                    if (userXp > ach.XpToAchieve && ach.XpToAchieve != -1)
+                    {
+                        eligebleAchieves.Add(ach);
+                    }
+                }
+            
+            return eligebleAchieves;
+        }
+
+
+        /// <summary>
+        /// Tildeler de achievements til brugeren, som er fundet.
+        /// </summary>
+        /// <param name="list"></param>
+        /// <param name="currentUser"></param>
+        private void AssignAchievement(List<Achievement> list, User currentUser)
+        {
+            
+            using (var db = new DataAccessContext())
+            {
+                User dbUser = (from user in db.Users
+                                where user.UserId == currentUser.UserId
+                                select user).FirstOrDefault();
+
+                dbUser.Achievements = list;
+
+                db.SaveChanges();
+            }
+
         }
     }
 }

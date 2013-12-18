@@ -57,15 +57,15 @@ namespace UnitTest
         {
             /* define user stats | find user on those stats | see if test can get the equivalent data in db */
             /* EXPECTED */
-            int UserIdExpected = 6;
-            string UserNameExpected = "Kielgasten";
-            string PassWordExpected = "meh";
-            string NameExpected = "Ronnie";
-            int AgeExpected = 0;
-            int WeightExpected = 85;
-            int HeightExpected = 170;
-            long LevelExpected = 3;
-            int XpExpected = 2794;
+            int UserIdExpected = 1;
+            string UserNameExpected = "derp";
+            string PassWordExpected = "1234";
+            string NameExpected = "niels";
+            int AgeExpected = 17;
+            int WeightExpected = 80;
+            int HeightExpected = 175;
+            long LevelExpected = 0;
+            int XpExpected = 0;
              
 
             /* GET THE USER */

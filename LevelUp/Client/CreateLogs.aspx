@@ -22,23 +22,31 @@
                     <b>
                         <asp:Label ID="userInfoName" runat="server"></asp:Label></b>
                     <br />
-                    <i>user input</i>
+                    <i>
+                        <asp:Label ID="NameLbl" runat="server"></asp:Label>
+                    </i>
                     <br />
                     <b>
                         <asp:Label ID="userInfoAge" runat="server"></asp:Label></b>
                     <br />
-                    <i>user input</i>
+                    <i>
+                        <asp:Label ID="AgeLbl" runat="server"></asp:Label>
+                    </i>
                     <br />
                     <b>
                         <asp:Label ID="userInfoHeight" runat="server"></asp:Label></b>
                     <br />
 
-                    <i>user input</i>
+                    <i>
+                        <asp:Label ID="HeightLbl" runat="server"></asp:Label>
+                    </i>
                     <br />
                     <b>
                         <asp:Label ID="userInfoWeight" runat="server"></asp:Label></b>
                     <br />
-                    <i>user input</i>
+                    <i>
+                        <asp:Label ID="WeightLbl" runat="server"></asp:Label>
+                    </i>
                     <br />
 
                 </div>

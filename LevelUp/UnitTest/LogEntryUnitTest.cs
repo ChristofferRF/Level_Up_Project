@@ -13,6 +13,7 @@ namespace UnitTest
         public void TestCreateLogEntry()
         {
             // Expected object properties
+            int userId = 6;
             string typeOfExcerciseExpected = "Running";
             string distanceExpected = "22km";
             int hoursExpected = 1;
@@ -30,7 +31,7 @@ namespace UnitTest
             /* create a Log | check that Log can be found in db | compare */
             // Add the Expected LogEntry to DB
             LogEntryController leCtr = new LogEntryController();
-            leCtr.AddEntryToDb(typeOfExcerciseExpected, distanceExpected, hoursExpected, minutesExpected, secondsExpected, dateExpected, kcal);
+            leCtr.AddEntryToDb(typeOfExcerciseExpected, distanceExpected, hoursExpected, minutesExpected, secondsExpected, userId, dateExpected, kcal);
             //leCtr.AddEntryToDb(typeOfExcerciseExpected, distanceExpected, hoursExpected, minutesExpected, secondsExpected);
 
             //leCtr.AddEntryToDb(typeOfExcerciseExpected, distanceExpected, hoursExpected, minutesExpected, secondsExpected, DateExpected);
