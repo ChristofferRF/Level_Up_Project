@@ -12,7 +12,7 @@ namespace RESTService
 {
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "Service1" in code, svc and config file together.
     // NOTE: In order to launch WCF Test Client for testing this service, please select Service1.svc or Service1.svc.cs at the Solution Explorer and start debugging.
-    public class LevelService : ILog, IUser
+    public class LevelService : ILog, IUser, IAchievement
     {
         public LogEntryController logCon = new LogEntryController();
         public UserController userCon = new UserController();
@@ -90,6 +90,13 @@ namespace RESTService
         public void UpdateUserXp(string userName, string earnedXp)
         {
             userCon.UpdateUserXP(userName, Convert.ToInt64(earnedXp));
+        }
+
+
+
+        public Achievement GetLatestAchievement(string userName, string password)
+        {
+            throw new NotImplementedException();
         }
     }
 }

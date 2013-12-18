@@ -64,8 +64,8 @@ namespace UnitTest
             int AgeExpected = 17;
             int WeightExpected = 80;
             int HeightExpected = 175;
-            long LevelExpected = 0;
-            int XpExpected = 0;
+            long LevelExpected = 2;
+            int XpExpected = 4178;
              
 
             /* GET THE USER */
