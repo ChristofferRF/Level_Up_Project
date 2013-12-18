@@ -130,5 +130,21 @@ namespace UnitTest
             /* COMPARE */
             Assert.AreEqual(xpbeforeupdate, xpafterupdate); // we always test for an increment of one only
         }
+
+        [TestMethod]
+        public void TestUpdateUserProfile()
+        {
+            string userName = "MrArnold";
+            string passWord = "Wuaa";
+            string name = "Schwarz";
+            int age = 22;
+            double weight = 92;
+            double height = 185;
+            int level = 3;
+            long xp = 2000;
+
+            UserController userCtr = new UserController();
+            userCtr.UpdateUserProfile(userName,passWord,name,age,weight,height,xp,level);
+        }
     }
 }
