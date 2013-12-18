@@ -16,7 +16,7 @@ namespace Controller
 
         }
 
-        public Achievement GetLatestAchievement(int userId)
+        /*public Achievement GetLatestAchievement(int userId)
         {
             //By userID, find latest achievement and send to client
             Achievement latestAch = new Achievement();
@@ -31,7 +31,7 @@ namespace Controller
                 latestAch = dbItem;                     
             }
             return latestAch;
-        }
+        }*/
 
 
     }
