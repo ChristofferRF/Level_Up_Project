@@ -33,22 +33,12 @@ namespace Client
         {
             if ((IsValidUserName(txtBoxUsername.Text)) && (txtBoxPassword.Text != null))
             {
-                //User user = new User();
-                //user.Name = "Ronnie";
-                //user.Password = "meh";
-                //user.Username = "Kielgasten";
-                //user.Weight = 85;
-                //user.Height = 170;  
-
-                //user = UserCalls.AddUser(user);
-                //txtBoxUsername.Text = user.Name;
                 try
                 {
                     User u = null;
                     u = UserCalls.GetUser(txtBoxUsername.Text, txtBoxPassword.Text);
-                    if (u != null)
+                    if (u.Username != null)
                     {
-                        Console.WriteLine("user object is: " + u.Name);
                         Session["UserItem"] = u;
                         Response.Redirect("ProgressTab.aspx");
                     }
@@ -58,10 +48,9 @@ namespace Client
                         ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + display + "');", true);
                     }
                 }
-                catch (ThreadAbortException)
+                catch (Exception ex)
                 {
-                    string display = "Bruger ikke fundet";
-                    ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + display + "');", true);
+                    Debug.WriteLine(ex.StackTrace);
                 }
             }
             else
