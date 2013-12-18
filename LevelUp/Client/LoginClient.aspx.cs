@@ -7,6 +7,8 @@ using System.Web.UI.WebControls;
 using DataAccess;
 using Client.App_Code;
 using System.Text.RegularExpressions;
+using System.Diagnostics;
+using System.Threading;
 
 namespace Client
 {
@@ -31,21 +33,24 @@ namespace Client
         {
             if ((IsValidUserName(txtBoxUsername.Text)) && (txtBoxPassword.Text != null))
             {
-                //User user = new User();
-                //user.Name = "Ronnie";
-                //user.Password = "meh";
-                //user.Username = "Kielgasten";
-                //user.Weight = 85;
-                //user.Height = 170;  
-
-                //user = UserCalls.AddUser(user);
-                //txtBoxUsername.Text = user.Name;
-                User u = null;
-                u = UserCalls.GetUser(txtBoxUsername.Text, txtBoxPassword.Text);
-                if (u != null)
+                try
                 {
-                    Session["UserItem"] = u;
-                    Response.Redirect("ProgressTab.aspx");
+                    User u = null;
+                    u = UserCalls.GetUser(txtBoxUsername.Text, txtBoxPassword.Text);
+                    if (u.Username != null)
+                    {
+                        Session["UserItem"] = u;
+                        Response.Redirect("ProgressTab.aspx");
+                    }
+                    else
+                    {
+                        string display = "Bruger ikke fundet";
+                        ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + display + "');", true);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Debug.WriteLine(ex.StackTrace);
                 }
             }
             else

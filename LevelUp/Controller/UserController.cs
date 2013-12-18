@@ -20,62 +20,49 @@ namespace Controller
         {
             User newUser = new User();
             //Check if username exist if it does, return null object
-            try
-            {
-                User CheckUser = GetUser(username, password);
-            }
-            catch (Exception e)
-            {
-                int result = -1;
+            
+            int result = -1;
 
-                using (var db = new DataAccessContext())
+            using (var db = new DataAccessContext())
+            {
+                User user = new User
                 {
-                    User user = new User
-                    {
-                        Username = username,
-                        Password = password,
-                        Name = name,
-                        Age = age,
-                        Weight = weight,
-                        Height = height,
-                        Xp = xp,
-                        Level = level
-                    };
-                    db.Users.Add(user);
-                    result = db.SaveChanges();
-                    if (result != -1)
-                        newUser = user;
-                }
+                    Username = username,
+                    Password = password,
+                    Name = name,
+                    Age = age,
+                    Weight = weight,
+                    Height = height,
+                    Xp = xp,
+                    Level = level
+                };
+                db.Users.Add(user);
+                result = db.SaveChanges();
+                if (result != -1)
+                    newUser = user;
             }
             return newUser;
         }
         public User GetUser(string username, string password)
         {
             User newUser = new User();
-            using (var db = new DataAccessContext())
+            try
             {
-                User theUser = (from user in db.Users
-                                    .Include("Achievements")
-                                    .Include("Titles")
-                                    .Include("Logs")
-                                where user.Username == username & user.Password == password
-                                select user).FirstOrDefault();
+                using (var db = new DataAccessContext())
+                {
+                    User theUser = (from user in db.Users
+                                        .Include("Achievements")
+                                        .Include("Titles")
+                                        .Include("Logs")
+                                    where user.Username == username & user.Password == password
+                                    select user).FirstOrDefault();
 
-                //List<Achievement> achievements = (from ach in db.Achievements
-                //                                  where ach.UserId == theUser.UserId
-                //                                  select ach).ToList();
-
-                //List<Title> titles = (from tit in db.Titles
-                //                      where tit.UserId == theUser.UserId
-                //                      select tit).ToList();
-
-                //List<LogEntry> logs = (from log in db.LogEntries
-                //                       where log.UserId == theUser.UserId
-                //                       select log).ToList();
-                //theUser.Achievements = achievements;
-                //theUser.Titles = titles;
-                //theUser.Logs = logs;
-                newUser = theUser;
+                    newUser = theUser;
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception();
             }
             
             return newUser;
@@ -127,7 +114,7 @@ namespace Controller
             using (var db = new DataAccessContext())
             {
                 User theUser = (from user in db.Users
-                                where user.Username == name
+                                where user.Username == userName
                                 select user).FirstOrDefault();
 
                 // Update user
@@ -139,6 +126,11 @@ namespace Controller
                 theUser.Height = height;
                 theUser.Xp = xp;
                 theUser.Level = level;
+
+                theUser.PrivacyName = "";
+                theUser.PrivacyAge = "";
+                theUser.PrivacyWeight = "";
+                theUser.PrivacyHeight = "";
 
                 newUser = theUser;
 
