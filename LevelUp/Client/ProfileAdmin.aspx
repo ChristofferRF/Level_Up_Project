@@ -78,7 +78,7 @@
 
                     <div class="adminBox">
                         <div class="form-group">
-                            <label for="inputEmail3" class="col-sm-4 control-label">Select title</label>
+                            <label for="inputEmail3" class="col-sm-4 control-label">Vælg Titel</label>
                             <div class="col-sm-5">
                                 <select class="form-control">
                                     <option>Brute</option>
@@ -91,26 +91,26 @@
 
                     <div class="adminBox">
                         <br />
-                        <b>Select visibility of your information</b><br />
+                        <b>Vælg dine informationers synlighed</b><br />
                         <br />
                         <div class="form-group">
                             <label for="inputEmail3" class="col-sm-4 control-label">Name</label>
                             <div class="col-sm-5">
                                 <select class="form-control">
-                                    <option>Everyone</option>
-                                    <option>Only friends</option>
-                                    <option>None</option>
+                                    <option>Alle</option>
+                                    <option>Kun Venner</option>
+                                    <option>Ingen</option>
                                 </select>
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label for="inputEmail3" class="col-sm-4 control-label">Age</label>
+                            <label for="inputEmail3" class="col-sm-4 control-label">Alder</label>
                             <div class="col-sm-5">
                                 <select class="form-control">
-                                    <option>Everyone</option>
-                                    <option>Only friends</option>
-                                    <option>None</option>
+                                    <option>Alle</option>
+                                    <option>Kun Venner</option>
+                                    <option>Ingen</option>
                                 </select>
                             </div>
                         </div>
@@ -119,9 +119,9 @@
                             <label for="inputEmail3" class="col-sm-4 control-label">Height</label>
                             <div class="col-sm-5">
                                 <select class="form-control">
-                                    <option>Everyone</option>
-                                    <option>Only friends</option>
-                                    <option>None</option>
+                                    <option>Alle</option>
+                                    <option>Kun Venner</option>
+                                    <option>Ingen</option>
                                 </select>
                             </div>
                         </div>
@@ -130,9 +130,9 @@
                             <label for="inputEmail3" class="col-sm-4 control-label">Weight</label>
                             <div class="col-sm-5">
                                 <select class="form-control">
-                                    <option>Everyone</option>
-                                    <option>Only friends</option>
-                                    <option>None</option>
+                                    <option>Alle</option>
+                                    <option>Kun Venner</option>
+                                    <option>Ingen</option>
                                 </select>
                             </div>
                         </div>
@@ -143,7 +143,7 @@
                     <b>Change e-mail</b><br />
                     <div class="adminBox">
                         <div class="form-group">
-                            <label for="inputEmail3" class="col-sm-4 control-label">Change e-mail</label>
+                            <label for="inputEmail3" class="col-sm-4 control-label">Ændre e-mail</label>
                             <div class="col-sm-5">
                                 <input class="form-control" placeholder="Enter new email" />
                             </div>
@@ -154,19 +154,19 @@
                     <b>Change password</b><br />
                     <div class="adminBox">
                         <div class="form-group">
-                            <label for="inputEmail3" class="col-sm-4 control-label">Current password</label>
+                            <label for="inputEmail3" class="col-sm-4 control-label">Nuværende kodeord</label>
                             <div class="col-sm-5">
                                 <asp:TextBox ID="txtBoxPW1" runat="server"></asp:TextBox>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="inputEmail3" class="col-sm-4 control-label">Change password</label>
+                            <label for="inputEmail3" class="col-sm-4 control-label">Nyt kodeord</label>
                             <div class="col-sm-5">
                                 <asp:TextBox ID="txtBoxPW2" runat="server"></asp:TextBox>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="inputEmail3" class="col-sm-4 control-label">Repeat password</label>
+                            <label for="inputEmail3" class="col-sm-4 control-label">Gentag Nyt kodeord</label>
                             <div class="col-sm-5">
                                 <asp:TextBox ID="txtBoxPW3" runat="server"></asp:TextBox>
                             </div>
@@ -176,9 +176,9 @@
                     <div class="adminBox">
                         <asp:Button ID="Button1" runat="server" Text="Save all changes" OnClick="btnSave_Click" class="btn btn-primary" />
 
-                        <button type="button" class="btn btn-danger">Reset account</button>
+                        <button type="button" class="btn btn-danger">Nulstil Konto</button>
 
-                        <button type="button" class="btn btn-danger">Delete account</button>
+                        <button type="button" class="btn btn-danger">Slet Konto</button>
                         <br /><br />
                     </div>
             </div>
