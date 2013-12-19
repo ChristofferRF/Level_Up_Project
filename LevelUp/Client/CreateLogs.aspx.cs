@@ -151,7 +151,7 @@ namespace Client
             
             string achievementName = "Collector";
             string achFlavourText = "Bedrift for at oprette din første træning";
-
+            
             RewardOutput.Text += StringValues.REWARDS_TITLE;
             RewardOutput.Text += "\n";
             RewardOutput.Text += " Du har i alt "+ u.Xp + " XP";
@@ -160,9 +160,14 @@ namespace Client
             RewardOutput.Text += "\n";
             RewardOutput.Text += StringValues.ACHIEVEMENT_TITLE;
             RewardOutput.Text += "\n";
-            RewardOutput.Text += "  - " + achievementName;
-            RewardOutput.Text += "\n";
-            RewardOutput.Text += "  - " + achFlavourText;
+            foreach( Achievement ach in u.Achievements)
+            {
+                RewardOutput.Text += "  - " + ach.Name;
+                RewardOutput.Text += "\n";
+                RewardOutput.Text += "  - " + ach.Description;
+                RewardOutput.Text += "\n" + "---------------";
+            }
+
         }
 
         public void ShowLogEntries()
