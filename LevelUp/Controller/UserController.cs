@@ -16,7 +16,7 @@ namespace Controller
 
         }
 
-        public User AddUserToDb(string username, string password, string name, int age, double weight, double height, 
+        public User AddUserToDb(string userName, string password, string name, int age, double weight, double height, 
                                 long xp, int level, string privacyName, string privacyAge, string privacyWeight, string privacyHeight)
         {
             User newUser = new User();
@@ -28,7 +28,7 @@ namespace Controller
             {
                 User user = new User
                 {
-                    UserName = username,
+                    UserName = userName,
                     Password = password,
                     Name = name,
                     Age = age,
