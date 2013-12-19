@@ -3,6 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using DataAccess;
 using Controller;
 using System.Diagnostics;
+using System.Collections.Generic;
 
 namespace UnitTest
 {
@@ -149,6 +150,32 @@ namespace UnitTest
 
             UserController userCtr = new UserController();
             userCtr.UpdateUserProfile(userName,passWord,name,age,weight,height,xp,level);
+        }
+
+        [TestMethod]
+        public void TestAssignAchievement()
+        {
+            List<Achievement> aList = new List<Achievement>();
+            Achievement a1 = new Achievement
+            {
+                AchievementId = 1
+            };
+
+            Achievement a2 = new Achievement
+            {
+                AchievementId = 2
+            };
+            aList.Add(a1);
+            aList.Add(a2);
+
+
+            User u = new User
+            {
+                UserId = 56
+            };
+
+            UserController userCtr = new UserController();
+            userCtr.AssignAchievement(aList, u);
         }
     }
 }
