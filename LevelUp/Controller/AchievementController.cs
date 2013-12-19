@@ -21,15 +21,15 @@ namespace Controller
             //By userID, find latest achievement and send to client
             Achievement latestAch = new Achievement();
 
-            /*using (var db = new DataAccessContext())
+            using (var db = new DataAccessContext())
             {
-                Achievement dbItem = (from achievements in db.Achievements
-                                      where achievements.UserId == userId
-                                      orderby achievements.AchievementId descending
-                                      select achievements).LastOrDefault();
+                var query = "select * from achievements as a where achievementid ="+
+                            "(select achievement_achievementid from userachievements "+
+                            "where  user_userid = 57 and achievement_achievementid = a.achievementid)";
 
-                latestAch = dbItem;
-            }*/
+                var data = db.Database.SqlQuery<Achievement>(query).First();
+                latestAch = data;
+            }
             return latestAch;
         }
 
