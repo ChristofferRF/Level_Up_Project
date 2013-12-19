@@ -19,6 +19,7 @@ namespace Client
             if(IsPostBack == false)
             {
                 ShowText();
+                
             }
         }
 
@@ -46,6 +47,7 @@ namespace Client
                 IsValidHeight(userHeight.Text) &&
                 IsValidWeight(userWeight.Text))
             {
+                
                 Debug.WriteLine(CultureInfo.CurrentCulture.ToString());
                 User user = new User();
                 user.Username = selectedUsername.Text;

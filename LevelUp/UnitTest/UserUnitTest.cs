@@ -21,15 +21,19 @@ namespace UnitTest
             double HeightExpected = 185;
             long XpExpected = 1292; 
             int LevelExpected = 2;
+            string privacyName = "none";
+            string privacyAge = "none";
+            string privacyHeight = "none";
+            string privacyWeight = "none";
 
             // Add the expected user to DB
             UserController userCtr = new UserController();
-            userCtr.AddUserToDb(UserNameExpected,PassWordExpected,NameExpected,AgeExpected,WeightExpected,HeightExpected,XpExpected,LevelExpected);
+            userCtr.AddUserToDb(UserNameExpected,PassWordExpected,NameExpected,AgeExpected,WeightExpected,HeightExpected,XpExpected,LevelExpected,privacyName, privacyAge, privacyHeight, privacyWeight);
 
             /* GET THE ACTUAL USER FROM USERNAME AND PASSWORD */
             User actualUser = new User();
             actualUser = userCtr.GetUser(UserNameExpected,PassWordExpected);
-
+            
             // Properties of the Actual user - retrieved from DB
             string userNameActual = actualUser.Username;
             string passWordActual = actualUser.Password;
