@@ -112,11 +112,11 @@ namespace Controller
             using (var db = new DataAccessContext())
             {
                 User theUser = (from user in db.Users
-                                where user.Username == userName
+                                where user.UserName == userName
                                 select user).FirstOrDefault();
 
                 // Update user
-                theUser.Username = userName;
+                theUser.UserName = userName;
                 theUser.Password = password;
                 theUser.Name = name;
                 theUser.Age = age;

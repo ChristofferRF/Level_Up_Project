@@ -5,6 +5,10 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using DataAccess;
+using System.Diagnostics;
+using Client.App_Code;
+using System.Text.RegularExpressions;
+using System.Globalization;
 
 namespace Client
 {
@@ -51,20 +55,23 @@ namespace Client
 
         protected void btnSave_Click(object sender, EventArgs e)
         {
-            // Pseudo object
-            string userName = "Kielgasten";
-            string password = "meh";
-            string name = "Ronnie";
-            int age = 0;
-            double weight = 85.0;
-            double height = 170.0;
-            long xp = 2795;
-            int level = 4;
-            // kald servicen 
-            // --> send on button click to controller.updateUser();
-            /*
-             string username, string password, string name, int age, double weight, double height, long xp, int level
-             */
+            User user = (User)Session["UserItem"];
+            if (txtBoxPW2.Text == txtBoxPW3.Text)
+            {
+                user.Password = txtBoxPW2.Text;
+                user = UserCalls.UpdateUser(user);
+            }
+            else
+            {
+                // Pop up some dialog + accumulate error message
+                string display = "Fejl i Input";
+                ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + display + "');", true);
+            }
+        }
+
+        protected void btnUpdateUser_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

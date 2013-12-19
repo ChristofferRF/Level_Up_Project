@@ -156,19 +156,19 @@
                         <div class="form-group">
                             <label for="inputEmail3" class="col-sm-4 control-label">Current password</label>
                             <div class="col-sm-5">
-                                <input type="password" class="form-control" placeholder="Enter password" />
+                                <asp:TextBox ID="txtBoxPW1" runat="server"></asp:TextBox>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="inputEmail3" class="col-sm-4 control-label">Change password</label>
                             <div class="col-sm-5">
-                                <input type="password" class="form-control" placeholder="Enter new password" />
+                                <asp:TextBox ID="txtBoxPW2" runat="server"></asp:TextBox>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="inputEmail3" class="col-sm-4 control-label">Repeat password</label>
                             <div class="col-sm-5">
-                                <input type="password" class="form-control" placeholder="Repeat new password" />
+                                <asp:TextBox ID="txtBoxPW3" runat="server"></asp:TextBox>
                             </div>
                         </div>
                         <br />
