@@ -37,7 +37,7 @@ namespace Test
                 //    Console.WriteLine("incorrect username found");
                 //}
                 Console.WriteLine("UserID: " + demoUser.UserId.ToString() + "\n");
-                Console.WriteLine("Username: " + demoUser.Username.ToString() + "\n");
+                Console.WriteLine("Username: " + demoUser.UserName.ToString() + "\n");
                 Console.WriteLine("Password: " + demoUser.Password.ToString() + "\n");
                 Console.WriteLine("Age: " + demoUser.Age.ToString() + "\n");
                 Console.WriteLine("Weight: " + demoUser.Weight.ToString() + "\n");

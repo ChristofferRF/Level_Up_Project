@@ -80,7 +80,7 @@ namespace UnitTest
 
             /* COMPARE */
             int useridActual = expectedUser.UserId;
-            string usernameActual = expectedUser.Username;
+            string usernameActual = expectedUser.UserName;
             string passwordActual = expectedUser.Password;
             string nameActual = expectedUser.Name;
             int ageActual = expectedUser.Age;
