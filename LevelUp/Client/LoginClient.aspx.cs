@@ -41,7 +41,7 @@ namespace Client
                 {
                     User u = null;
                     u = UserCalls.GetUser(txtBoxUsername.Text, txtBoxPassword.Text);
-                    if (u.Username != null)
+                    if (u.UserName != null)
                     {
                         Session["UserItem"] = u;
                         Response.Redirect("ProgressTab.aspx");

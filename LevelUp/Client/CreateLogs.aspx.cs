@@ -90,9 +90,9 @@ namespace Client
 
                 log = EntryCalls.AddLogEntry(log);
 
-                UserCalls.UpdateUserXP(user.Username, log.Kcal);
+                UserCalls.UpdateUserXP(user.UserName, log.Kcal);
 
-                Session["UserItem"] = UserCalls.GetUser(user.Username, user.Password);
+                Session["UserItem"] = UserCalls.GetUser(user.UserName, user.Password);
                 user = (User)Session["UserItem"];
 
                 UpdateFields(log);

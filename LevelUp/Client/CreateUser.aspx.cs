@@ -50,7 +50,7 @@ namespace Client
                 
                 Debug.WriteLine(CultureInfo.CurrentCulture.ToString());
                 User user = new User();
-                user.Username = selectedUsername.Text;
+                user.UserName = selectedUsername.Text;
                 user.Password = selectedPassword.Text;
                 user.Name = userName.Text;
                 user.Age = Convert.ToInt32(userAge.Text);
@@ -64,7 +64,7 @@ namespace Client
                 user.PrivacyWeight = "none";
 
                 user = UserCalls.AddUser(user);
-                if (user.Username != null)
+                if (user.UserName != null)
                 { 
                     Session["UserItem"] = user;
                     Response.Redirect("ProgressTab.aspx");

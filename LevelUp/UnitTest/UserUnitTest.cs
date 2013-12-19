@@ -35,7 +35,7 @@ namespace UnitTest
             actualUser = userCtr.GetUser(UserNameExpected,PassWordExpected);
             
             // Properties of the Actual user - retrieved from DB
-            string userNameActual = actualUser.Username;
+            string userNameActual = actualUser.UserName;
             string passWordActual = actualUser.Password;
             string nameActual = actualUser.Name;
             int ageActual = actualUser.Age;

@@ -28,7 +28,7 @@ namespace Controller
             {
                 User user = new User
                 {
-                    Username = username,
+                    UserName = username,
                     Password = password,
                     Name = name,
                     Age = age,
@@ -58,7 +58,7 @@ namespace Controller
                                         .Include("Achievements")
                                         .Include("Titles")
                                         .Include("Logs")
-                                    where user.Username == username & user.Password == password
+                                    where user.UserName == username & user.Password == password
                                     select user).FirstOrDefault();
 
                     newUser = theUser;
@@ -75,7 +75,7 @@ namespace Controller
             using (var db = new DataAccessContext())
             {
                 User theUser = (from user in db.Users
-                                where user.Username == userName
+                                where user.UserName == userName
                                 select user).FirstOrDefault();
 
                 // Get the old xp for user before accumulating
