@@ -3,6 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using DataAccess;
 using Controller;
 using System.Diagnostics;
+using System.Collections.Generic;
 
 namespace UnitTest
 {
@@ -21,17 +22,21 @@ namespace UnitTest
             double HeightExpected = 185;
             long XpExpected = 1292; 
             int LevelExpected = 2;
+            string privacyName = "none";
+            string privacyAge = "none";
+            string privacyHeight = "none";
+            string privacyWeight = "none";
 
             // Add the expected user to DB
             UserController userCtr = new UserController();
-            userCtr.AddUserToDb(UserNameExpected,PassWordExpected,NameExpected,AgeExpected,WeightExpected,HeightExpected,XpExpected,LevelExpected);
+            userCtr.AddUserToDb(UserNameExpected,PassWordExpected,NameExpected,AgeExpected,WeightExpected,HeightExpected,XpExpected,LevelExpected,privacyName, privacyAge, privacyHeight, privacyWeight);
 
             /* GET THE ACTUAL USER FROM USERNAME AND PASSWORD */
             User actualUser = new User();
             actualUser = userCtr.GetUser(UserNameExpected,PassWordExpected);
-
+            
             // Properties of the Actual user - retrieved from DB
-            string userNameActual = actualUser.Username;
+            string userNameActual = actualUser.UserName;
             string passWordActual = actualUser.Password;
             string nameActual = actualUser.Name;
             int ageActual = actualUser.Age;
@@ -76,7 +81,7 @@ namespace UnitTest
 
             /* COMPARE */
             int useridActual = expectedUser.UserId;
-            string usernameActual = expectedUser.Username;
+            string usernameActual = expectedUser.UserName;
             string passwordActual = expectedUser.Password;
             string nameActual = expectedUser.Name;
             int ageActual = expectedUser.Age;
@@ -145,6 +150,32 @@ namespace UnitTest
 
             UserController userCtr = new UserController();
             userCtr.UpdateUserProfile(userName,passWord,name,age,weight,height,xp,level);
+        }
+
+        [TestMethod]
+        public void TestAssignAchievement()
+        {
+            List<Achievement> aList = new List<Achievement>();
+            Achievement a1 = new Achievement
+            {
+                AchievementId = 1
+            };
+
+            Achievement a2 = new Achievement
+            {
+                AchievementId = 2
+            };
+            aList.Add(a1);
+            aList.Add(a2);
+
+
+            User u = new User
+            {
+                UserId = 56
+            };
+
+            UserController userCtr = new UserController();
+            userCtr.AssignAchievement(aList, u);
         }
     }
 }

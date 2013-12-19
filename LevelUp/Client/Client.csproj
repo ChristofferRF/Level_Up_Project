@@ -81,6 +81,7 @@
     <Compile Include="App_Code\AchievementCalls.cs" />
     <Compile Include="App_Code\JSONhelper.cs" />
     <Compile Include="App_Code\EntryCalls.cs" />
+    <Compile Include="App_Code\Security.cs" />
     <Compile Include="App_Code\UserCalls.cs" />
     <Compile Include="LoginClient.aspx.cs">
       <DependentUpon>LoginClient.aspx</DependentUpon>

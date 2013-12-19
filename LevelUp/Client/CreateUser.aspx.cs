@@ -19,6 +19,7 @@ namespace Client
             if(IsPostBack == false)
             {
                 ShowText();
+                
             }
         }
 
@@ -46,10 +47,11 @@ namespace Client
                 IsValidHeight(userHeight.Text) &&
                 IsValidWeight(userWeight.Text))
             {
+                
                 Debug.WriteLine(CultureInfo.CurrentCulture.ToString());
                 User user = new User();
-                user.Username = selectedUsername.Text;
-                user.Password = selectedPassword.Text;
+                user.UserName = selectedUsername.Text;
+                user.Password = Security.HashMe(selectedPassword.Text);
                 user.Name = userName.Text;
                 user.Age = Convert.ToInt32(userAge.Text);
                 user.Height = Convert.ToDouble(userHeight.Text, CultureInfo.CurrentCulture);
@@ -62,7 +64,7 @@ namespace Client
                 user.PrivacyWeight = "none";
 
                 user = UserCalls.AddUser(user);
-                if (user.Username != null)
+                if (user.UserName != null)
                 { 
                     Session["UserItem"] = user;
                     Response.Redirect("ProgressTab.aspx");

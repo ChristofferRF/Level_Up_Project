@@ -17,7 +17,7 @@ namespace DataAccess
         public int UserId { get; set; }
 
         [DataMember]
-        public string Username { get; set; }
+        public string UserName { get; set; }
 
         [DataMember]
         public string Password { get; set; }

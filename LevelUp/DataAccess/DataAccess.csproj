@@ -102,6 +102,14 @@
     <Compile Include="Migrations\201312170748160_tiløjet kolonner til achievements.Designer.cs">
       <DependentUpon>201312170748160_tiløjet kolonner til achievements.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201312190929105_UserName rettet.cs" />
+    <Compile Include="Migrations\201312190929105_UserName rettet.Designer.cs">
+      <DependentUpon>201312190929105_UserName rettet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201312191004329_kapitaliser UserName.. igen.cs" />
+    <Compile Include="Migrations\201312191004329_kapitaliser UserName.. igen.Designer.cs">
+      <DependentUpon>201312191004329_kapitaliser UserName.. igen.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Title.cs" />
@@ -152,6 +160,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201312170748160_tiløjet kolonner til achievements.resx">
       <DependentUpon>201312170748160_tiløjet kolonner til achievements.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201312190929105_UserName rettet.resx">
+      <DependentUpon>201312190929105_UserName rettet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201312191004329_kapitaliser UserName.. igen.resx">
+      <DependentUpon>201312191004329_kapitaliser UserName.. igen.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

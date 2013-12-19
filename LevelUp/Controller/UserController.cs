@@ -16,7 +16,7 @@ namespace Controller
 
         }
 
-        public User AddUserToDb(string username, string password, string name, int age, double weight, double height, 
+        public User AddUserToDb(string userName, string password, string name, int age, double weight, double height, 
                                 long xp, int level, string privacyName, string privacyAge, string privacyWeight, string privacyHeight)
         {
             User newUser = new User();
@@ -28,7 +28,7 @@ namespace Controller
             {
                 User user = new User
                 {
-                    Username = username,
+                    UserName = userName,
                     Password = password,
                     Name = name,
                     Age = age,
@@ -58,7 +58,7 @@ namespace Controller
                                         .Include("Achievements")
                                         .Include("Titles")
                                         .Include("Logs")
-                                    where user.Username == username & user.Password == password
+                                    where user.UserName == username & user.Password == password
                                     select user).FirstOrDefault();
 
                     newUser = theUser;
@@ -75,7 +75,7 @@ namespace Controller
             using (var db = new DataAccessContext())
             {
                 User theUser = (from user in db.Users
-                                where user.Username == userName
+                                where user.UserName == userName
                                 select user).FirstOrDefault();
 
                 // Get the old xp for user before accumulating
@@ -112,11 +112,11 @@ namespace Controller
             using (var db = new DataAccessContext())
             {
                 User theUser = (from user in db.Users
-                                where user.Username == userName
+                                where user.UserName == userName
                                 select user).FirstOrDefault();
 
                 // Update user
-                theUser.Username = userName;
+                theUser.UserName = userName;
                 theUser.Password = password;
                 theUser.Name = name;
                 theUser.Age = age;
@@ -185,18 +185,25 @@ namespace Controller
         /// </summary>
         /// <param name="list"></param>
         /// <param name="currentUser"></param>
-        private void AssignAchievement(List<Achievement> list, User currentUser)
+        public void AssignAchievement(List<Achievement> list, User currentUser)
         {
             
             using (var db = new DataAccessContext())
             {
-                User dbUser = (from user in db.Users
-                                where user.UserId == currentUser.UserId
-                                select user).FirstOrDefault();
+                foreach(Achievement a in list)
+                {
+                    int result = -1;
+                    result = db.Database.ExecuteSqlCommand("INSERT INTO UserAchievements" +
+                                                            "VALUES("+a.AchievementId.ToString()+","+currentUser.UserId.ToString()+")");
+                }
 
-                dbUser.Achievements = list;
+                //User dbUser = (from user in db.Users
+                //                where user.UserId == currentUser.UserId
+                //                select user).FirstOrDefault();
 
-                db.SaveChanges();
+                //dbUser.Achievements = list;
+
+                //db.SaveChanges();
             }
 
         }

@@ -20,7 +20,8 @@ namespace Client
             ShowText();
             BindGrid();
             DisplayUser();
-         
+            
+            
         }
 
         private void ShowText()
@@ -90,9 +91,9 @@ namespace Client
 
                 log = EntryCalls.AddLogEntry(log);
 
-                UserCalls.UpdateUserXP(user.Username, log.Kcal);
-
-                Session["UserItem"] = UserCalls.GetUser(user.Username, user.Password);
+                UserCalls.UpdateUserXP(user.UserName, log.Kcal);
+                
+                Session["UserItem"] = UserCalls.GetUser(user.UserName, user.Password);
                 user = (User)Session["UserItem"];
 
                 UpdateFields(log);
