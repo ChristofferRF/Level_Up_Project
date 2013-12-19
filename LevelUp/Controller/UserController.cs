@@ -187,23 +187,24 @@ namespace Controller
         /// <param name="currentUser"></param>
         public void AssignAchievement(List<Achievement> list, User currentUser)
         {
-            
-            using (var db = new DataAccessContext())
+            foreach (Achievement a in list)
             {
-                foreach(Achievement a in list)
+                using (var db = new DataAccessContext())
                 {
-                    int result = -1;
-                    result = db.Database.ExecuteSqlCommand("INSERT INTO UserAchievements" +
-                                                            "VALUES("+a.AchievementId.ToString()+","+currentUser.UserId.ToString()+")");
+                    
+                        int result = -1;
+                        int userId = currentUser.UserId;
+                        int achId = a.AchievementId;
+                        result = db.Database.ExecuteSqlCommand("INSERT INTO UserAchievements VALUES(" + userId + "," + achId + ")");
+                        db.SaveChanges();
+                    //User dbUser = (from user in db.Users
+                    //                where user.UserId == currentUser.UserId
+                    //                select user).FirstOrDefault();
+
+                    //dbUser.Achievements = list;
+
+                    //db.SaveChanges();
                 }
-
-                //User dbUser = (from user in db.Users
-                //                where user.UserId == currentUser.UserId
-                //                select user).FirstOrDefault();
-
-                //dbUser.Achievements = list;
-
-                //db.SaveChanges();
             }
 
         }

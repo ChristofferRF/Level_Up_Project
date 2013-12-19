@@ -158,12 +158,12 @@ namespace UnitTest
             List<Achievement> aList = new List<Achievement>();
             Achievement a1 = new Achievement
             {
-                AchievementId = 1
+                AchievementId = 520
             };
 
             Achievement a2 = new Achievement
             {
-                AchievementId = 2
+                AchievementId = 521
             };
             aList.Add(a1);
             aList.Add(a2);
@@ -171,7 +171,7 @@ namespace UnitTest
 
             User u = new User
             {
-                UserId = 56
+                UserId = 65
             };
 
             UserController userCtr = new UserController();
