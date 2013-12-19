@@ -18,7 +18,7 @@ namespace RESTService
             ResponseFormat = WebMessageFormat.Json,
             BodyStyle = WebMessageBodyStyle.WrappedRequest,
             UriTemplate = "add")]
-        User AddUser(string Age, string Height, string Name, string Password, string UserId, string Username, string Weight, string Xp, string Level, string PrivacyName, string PrivacyAge, string PrivacyHeight, string PrivacyWeight);
+        User AddUser(string Age, string Height, string Name, string Password, string UserId, string UserName, string Weight, string Xp, string Level, string PrivacyName, string PrivacyAge, string PrivacyHeight, string PrivacyWeight);
 
         [OperationContract]
         [WebInvoke(Method = "POST",
