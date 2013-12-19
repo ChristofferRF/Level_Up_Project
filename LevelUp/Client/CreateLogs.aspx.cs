@@ -92,8 +92,8 @@ namespace Client
                 log = EntryCalls.AddLogEntry(log);
 
                 UserCalls.UpdateUserXP(user.UserName, log.Kcal);
-                
-                Session["UserItem"] = UserCalls.GetUser(user.UserName, user.Password);
+                User u = UserCalls.GetUser(user.UserName, user.Password);
+                Session["UserItem"] = u;
                 user = (User)Session["UserItem"];
 
                 UpdateFields(log);
@@ -149,7 +149,7 @@ namespace Client
         public void ShowRewardsOutput(User u, LogEntry log)
         {
             
-            string achievementName = "Collector";
+            string achievementName = "Samleren";
             string achFlavourText = "Bedrift for at oprette din første træning";
             
             RewardOutput.Text += StringValues.REWARDS_TITLE;
@@ -160,13 +160,17 @@ namespace Client
             RewardOutput.Text += "\n";
             RewardOutput.Text += StringValues.ACHIEVEMENT_TITLE;
             RewardOutput.Text += "\n";
-            foreach( Achievement ach in u.Achievements)
-            {
-                RewardOutput.Text += "  - " + ach.Name;
-                RewardOutput.Text += "\n";
-                RewardOutput.Text += "  - " + ach.Description;
-                RewardOutput.Text += "\n" + "---------------";
-            }
+            RewardOutput.Text += "  - " + achievementName;
+            RewardOutput.Text += "\n";
+            RewardOutput.Text += "  - " + achFlavourText;
+           
+            //foreach( Achievement ach in u.Achievements)
+            //{
+            //    RewardOutput.Text += "  - " + ach.Name;
+            //    RewardOutput.Text += "\n";
+            //    RewardOutput.Text += "  - " + ach.Description;
+            //    RewardOutput.Text += "\n" + "---------------";
+            //}
 
         }
 
