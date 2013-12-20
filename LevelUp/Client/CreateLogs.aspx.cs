@@ -93,7 +93,7 @@ namespace Client
 
                 UserCalls.UpdateUserXP(user.UserName, log.Kcal);
                 
-                Session["UserItem"] = UserCalls.GetUser(user.UserName, user.Password);
+                Session["UserItem"] = UserCalls.GetUser(user.UserName, Security.HashMe(user.Password));
                 user = (User)Session["UserItem"];
 
                 UpdateFields(log);
